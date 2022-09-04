@@ -1,0 +1,111 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
+ */
+package pplaner;
+
+import java.io.IOException;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.scene.input.DragEvent;
+import javafx.scene.input.KeyEvent;
+import model.Task;
+import model.dao.TaskDao;
+import pplaner.App;
+
+/**
+ * FXML Controller class
+ *
+ * @author Gabriel Porto
+ */
+public class CreateTaskController implements Initializable {
+    
+    private List<Task> tasks = new ArrayList<>();
+    private final TaskDao taskDao = new TaskDao();
+    
+    
+    @FXML
+    private TextField inputTaskName;
+    @FXML
+    private TextField inputTaskType;
+    @FXML
+    private TextField inputTaskMember;
+    
+
+    /**
+     * Initializes the controller class.
+     */
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+
+    }    
+
+    @FXML
+    private void switchToSecondary(ActionEvent event) throws IOException {
+        App.setRoot("TasksBacklog");
+    }
+    
+    @FXML
+    private void createTask(ActionEvent event) throws IOException {
+        TaskDao taskDao = new TaskDao();
+        this.taskDao.checkFile();
+        
+        Boolean allCorrect = true;
+        
+        if(inputTaskName.getText().equals("")) {
+            inputTaskName.setStyle("-fx-border-color: red;");
+            allCorrect = false;
+        } else {
+            inputTaskName.setStyle("");
+        }
+        
+        if(inputTaskType.getText().equals("")) {
+            inputTaskType.setStyle("-fx-border-color: red;");
+            allCorrect = false;
+        } else {
+            inputTaskType.setStyle("");
+        }
+        
+        if(inputTaskMember.getText().equals("")) {
+            inputTaskMember.setStyle("-fx-border-color: red;");
+            allCorrect = false;
+        } else {
+            inputTaskMember.setStyle("");
+        }
+                
+        
+        if(allCorrect == true) {
+            Task task = new Task();
+            task.setName(inputTaskName.getText());
+            task.setDescription("Lorem");
+            task.setType(inputTaskType.getText());
+            task.setMember(inputTaskMember.getText());
+            this.taskDao.create(task);
+
+            App.setRoot("TasksBacklog");
+        }
+    }
+
+    @FXML
+    private void nameTaskKeyPressed(KeyEvent event) {
+        inputTaskName.setStyle("");
+    }
+
+    @FXML
+    private void typeTaskKeyPressed(KeyEvent event) {
+        inputTaskType.setStyle("");
+    }
+
+    @FXML
+    private void memberTaskKeyPressed(KeyEvent event) {
+        inputTaskMember.setStyle("");
+    }
+    
+}

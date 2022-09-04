@@ -1,0 +1,5 @@
+model\Task.class
+pplaner\TasksBacklogController.class
+model\dao\TaskDao.class
+pplaner\App.class
+pplaner\CreateTaskController.class
