@@ -20,9 +20,9 @@ public class App extends Application {
         scene = new Scene(loadFXML("TasksBacklog"), 1280, 720);
         stage.setScene(scene);
         stage.setTitle("Project Planner");
-        stage.show();      
+        stage.show();   
     }
-
+    
     static void setRoot(String fxml) throws IOException {
         scene.setRoot(loadFXML(fxml));
     }
