@@ -1,0 +1,34 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 05/09/2022, 10:21:19
+    Author     : Gabriel Porto
+*/
+
+.button1 {
+    -fx-background-color : #3F045B00;
+}
+
+.ppbutton {
+    -fx-background-color : #3F045B00;
+    -fx-background-radius :  15 15 15 15;
+}
+
+.ppbutton:hover {
+    -fx-background-color : #1C1C1C ;
+}
+
+.ppbutton:pressed {
+    -fx-background-color : #2B2B2B ;
+}
+
+.button1:hover {
+    -fx-background-color : #1C1C1C ;
+}
+
+.button1:pressed {
+    -fx-background-color : #2B2B2B ;
+}
+

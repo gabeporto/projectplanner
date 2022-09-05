@@ -65,7 +65,11 @@ public class TasksBacklogController implements Initializable {
     @FXML
     private Button saveChangesButton;
     @FXML
+    private Button ppButton;
+    @FXML
     private Button kanbanButton;
+    @FXML
+    private Button LeaveButton;
 
     /**
      * Initializes the controller class.
@@ -113,10 +117,10 @@ public class TasksBacklogController implements Initializable {
     
     @FXML
     private void switchToKanban(ActionEvent event) throws IOException {
+        System.out.print("G to Kanban Page");
         App.setRoot("Kanban"); 
     }
     
-
     @FXML
     private void deleteTask(ActionEvent event) {
         Task task = tasksBacklog.getSelectionModel().getSelectedItem();
@@ -198,7 +202,6 @@ public class TasksBacklogController implements Initializable {
 
         }
               
-
     }
 
     @FXML
