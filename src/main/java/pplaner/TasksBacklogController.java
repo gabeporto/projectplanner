@@ -82,9 +82,19 @@ public class TasksBacklogController implements Initializable {
         labelTaskTypeDetail.setDisable(true);
         labelTaskMemberDetail.setDisable(true);
         saveChangesButton.setVisible(false);
+        editTaskButton.setVisible(false);
+        deleteTaskButton.setVisible(false);
 
         tasksBacklog.getSelectionModel().selectedItemProperty().addListener(
-                (observable, oldValue, newValue) -> selectTaskBacklog(newValue));
+                
+                (observable, oldValue, newValue) -> 
+                {
+            try {
+                selectTaskBacklog(newValue);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(TasksBacklogController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        });
         
         
     }    
@@ -100,13 +110,27 @@ public class TasksBacklogController implements Initializable {
         tasksBacklog.setItems(observableTasks);
     }   
     
-    public void selectTaskBacklog(Task task) {
+    public void selectTaskBacklog(Task task) throws InterruptedException {
+        //Task taskSelected = tasksBacklog.getSelectionModel().getSelectedItem();
         
+        editTaskButton.setVisible(true);
+        deleteTaskButton.setVisible(true);    
         if(!saveChangesButton.isVisible()) {
             labelTaskNameDetail.setText(task.getName());
             labelTaskDescriptionDetail.setText(task.getDescription());
             labelTaskTypeDetail.setText(task.getType());
             labelTaskMemberDetail.setText(task.getMember());
+        } else if(saveChangesButton.isVisible()) {
+            labelTaskNameDetail.setDisable(true);
+            labelTaskDescriptionDetail.setDisable(true);
+            labelTaskTypeDetail.setDisable(true);
+            labelTaskMemberDetail.setDisable(true);  
+            saveChangesButton.setVisible(false);
+            
+            labelTaskNameDetail.setText("");
+            labelTaskDescriptionDetail.setText("");
+            labelTaskTypeDetail.setText("");
+            labelTaskMemberDetail.setText("");
         }
     }
 
@@ -117,7 +141,6 @@ public class TasksBacklogController implements Initializable {
     
     @FXML
     private void switchToKanban(ActionEvent event) throws IOException {
-        System.out.print("G to Kanban Page");
         App.setRoot("Kanban"); 
     }
     
@@ -126,6 +149,7 @@ public class TasksBacklogController implements Initializable {
         Task task = tasksBacklog.getSelectionModel().getSelectedItem();
         taskDao.delete(task.getId());
         tasksBacklog.getItems().remove(task);
+        
     }
     
     private void showTaskDetails() throws IOException{     
@@ -135,17 +159,18 @@ public class TasksBacklogController implements Initializable {
 
     @FXML
     private void editTask(ActionEvent event) {
+
+        Task taskSelected = tasksBacklog.getSelectionModel().getSelectedItem();
         
-        
+        // Quando nenhuma task foi selecionada e não habilitada para edição.
         String value = labelTaskNameDetail.getText();
             if(!value.equals("")) {
-            saveChangesButton.setVisible(true);
-            labelTaskNameDetail.setDisable(false);
-            labelTaskDescriptionDetail.setDisable(false);
-            labelTaskTypeDetail.setDisable(false);
-            labelTaskMemberDetail.setDisable(false);
-            
-            }
+                saveChangesButton.setVisible(true);
+                labelTaskNameDetail.setDisable(false);
+                labelTaskDescriptionDetail.setDisable(false);
+                labelTaskTypeDetail.setDisable(false);
+                labelTaskMemberDetail.setDisable(false);   
+            }           
     }
 
     @FXML

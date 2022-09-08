@@ -1,7 +1,6 @@
-{"id":"fc013397-1c5f-4746-975f-8661de53a63f","name":"Task 1 ","description":"Teste","type":"Prototipagem","stage":"To Do Stage","member":"Lucas"}
-{"id":"be243637-b253-473b-a5f7-dade34e6902b","name":"Task 13","description":"Teste","type":"Desenvolvimento","stage":"In Progress Stage","member":"Nathan"}
-{"id":"dc54910f-d440-415c-a759-64cbeedc6dc0","name":"Task 5","description":"Lorem","type":"Prototipagem","stage":"To Do Stage","member":"Gabriel"}
-{"id":"7440bea7-a75e-47b7-9c65-6d572b33f09c","name":"Task 2","description":"Lorem ipsum","type":"Testes","stage":"In Progress Stage","member":"Lucas"}
-{"id":"a5103ec9-dcd6-492d-9c18-81b6c3f1f570","name":"Task 23","description":"Lorem","type":"Correções","stage":"Done Stage","member":"Gabriel"}
-{"id":"11961270-0694-41cc-86aa-20d82f38b6bb","name":"Task 13","description":"Teste","type":"Desenvolvimento","stage":"To Do Stage","member":"Nathan"}
-{"id":"b97a22e7-5c45-49e2-b50b-1ba1be887ecf","name":"Task 58","description":"Lorem","type":"Desenvolvimento","stage":"To Do Stage","member":"Lucas"}
+{"id":"fc013397-1c5f-4746-975f-8661de53a63f","name":"Adicionar transferência de tasks no Backlog","description":"Adicionar opções de manipulação.","type":"Desenvolvimento","stage":"In Progress Stage","member":"Gabriel Porto"}
+{"id":"be243637-b253-473b-a5f7-dade34e6902b","name":"Atualizar documentação v2","description":"Com base nos apontamentos do Andrey","type":"Documentação","stage":"Done Stage","member":"Lucas"}
+{"id":"7440bea7-a75e-47b7-9c65-6d572b33f09c","name":"Estilizar página de Adicionar Task","description":"Usar CSS e manter padrão do Figma.","type":"Desenvolvimento","stage":"In Progress Stage","member":"Gabriel Porto"}
+{"id":"a5103ec9-dcd6-492d-9c18-81b6c3f1f570","name":"Atualizar documentação online","description":"Usar o Google Docs","type":"Documentação","stage":"To Do Stage","member":"Lucas"}
+{"id":"b97a22e7-5c45-49e2-b50b-1ba1be887ecf","name":"Estilizar tabelas do Backlog","description":"Seguir orientações da prototipagem","type":"Desenvolvimento","stage":"Done Stage","member":"Gabriel Porto"}
+{"id":"f937ca33-fc54-47c7-a14d-df43c3b2141e","name":"Desenvolver solução para utilização do objeto Membros","description":"Manter Git atualizado.","type":"Desenvolvimento","stage":"To Do Stage","member":"Nathan"}

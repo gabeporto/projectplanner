@@ -7,7 +7,9 @@ package pplaner;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -15,9 +17,12 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceDialog;
+import javafx.scene.control.Dialog;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 import model.Task;
 import model.dao.TaskDao;
 
@@ -66,9 +71,11 @@ public class KanbanController implements Initializable {
     
     @FXML
     private Button backlogButton;
+    @FXML
+    private Button leaveButton;
+    @FXML
+    private Button ppButton;
     
-
-
     /**
      * Initializes the controller class.
      */
@@ -112,13 +119,135 @@ public class KanbanController implements Initializable {
     
 
     public void selectTaskInTabke(Task task) {
-            System.out.print("Select Task!");
+            System.out.println("Task selected!");
 
         }
 
     @FXML
     private void switchToBacklog(ActionEvent event) throws IOException {
         App.setRoot("TasksBacklog"); 
+    }
+
+    @FXML
+    private void transferTaskToDo(MouseEvent event) {
+        String [] arrayData = {"A fazer", "Em progresso", "Concluído"};
+        List<String> dialogData;
+
+        if (event.getClickCount() == 2) // Checking double click
+        {
+            Dialog dialog = new Dialog();
+            dialogData = Arrays.asList(arrayData);
+            dialog = new ChoiceDialog(dialogData.get(0), dialogData);
+            dialog.setGraphic(null);
+            dialog.setContentText("Estado: ");
+            dialog.setTitle("Transferir task");
+            dialog.setHeaderText("\nNome da task: " + 
+                    tableTasksToDo.getSelectionModel().getSelectedItem().getName() + "\n\nDescrição: " + 
+                    tableTasksToDo.getSelectionModel().getSelectedItem().getDescription() + "\n\nMembro: " +
+                    tableTasksToDo.getSelectionModel().getSelectedItem().getMember() + "\n\n");
+            Task task = tableTasksToDo.getSelectionModel().getSelectedItem();
+
+            Optional<String> result = dialog.showAndWait();
+            String selected = "";
+   
+            if (result.isPresent()) {
+                selected = result.get();
+                this.taskDao.checkFile();
+                if(selected == "A fazer") {
+                    task.setStage("To Do Stage");
+                    fillTableTasks();
+                }  else if(selected == "Em progresso") {
+                    task.setStage("In Progress Stage");
+                } else if(selected == "Concluído") {
+                    task.setStage("Done Stage");
+                }
+                this.taskDao.update(task);
+                fillTableTasks();
+            } else {
+                System.out.println("Transfer cancelled.");
+            }
+        }
+    }
+
+    @FXML
+    private void transferTaskInProgress(MouseEvent event) {
+        String [] arrayData = {"Em progresso", "A fazer", "Concluído"};
+        List<String> dialogData;
+
+        if (event.getClickCount() == 2) // Checking double click
+        {
+            Dialog dialog = new Dialog();
+            dialogData = Arrays.asList(arrayData);
+            dialog = new ChoiceDialog(dialogData.get(0), dialogData);
+            dialog.setGraphic(null);
+            dialog.setContentText("Estado: ");
+            dialog.setTitle("Transferir task");
+            dialog.setHeaderText("\nNome da task: " + 
+                    tableTasksInProgress.getSelectionModel().getSelectedItem().getName() + "\n\nDescrição: " + 
+                    tableTasksInProgress.getSelectionModel().getSelectedItem().getDescription() + "\n\nMembro: " +
+                    tableTasksInProgress.getSelectionModel().getSelectedItem().getMember() + "\n\n");
+            Task task = tableTasksInProgress.getSelectionModel().getSelectedItem();
+
+            Optional<String> result = dialog.showAndWait();
+            String selected = "";
+   
+            if (result.isPresent()) {
+                selected = result.get();
+                this.taskDao.checkFile();
+                if(selected == "A fazer") {
+                    task.setStage("To Do Stage");
+                    fillTableTasks();
+                }  else if(selected == "Em progresso") {
+                    task.setStage("In Progress Stage");
+                } else if(selected == "Concluído") {
+                    task.setStage("Done Stage");
+                }
+                this.taskDao.update(task);
+                fillTableTasks();
+            } else {
+                System.out.println("Transfer cancelled.");
+            }
+        }
+    }
+
+    @FXML
+    private void transferTaskDone(MouseEvent event) {
+        String [] arrayData = {"Concluído", "A fazer", "Em progresso"};
+        List<String> dialogData;
+
+        if (event.getClickCount() == 2) // Checking double click
+        {
+            Dialog dialog = new Dialog();
+            dialogData = Arrays.asList(arrayData);
+            dialog = new ChoiceDialog(dialogData.get(0), dialogData);
+            dialog.setGraphic(null);
+            dialog.setContentText("Estado: ");
+            dialog.setTitle("Transferir task");
+            dialog.setHeaderText("\nNome da task: " + 
+                    tableTasksDone.getSelectionModel().getSelectedItem().getName() + "\n\nDescrição: " + 
+                    tableTasksDone.getSelectionModel().getSelectedItem().getDescription() + "\n\nMembro: " +
+                    tableTasksDone.getSelectionModel().getSelectedItem().getMember() + "\n\n");
+            Task task = tableTasksDone.getSelectionModel().getSelectedItem();
+
+            Optional<String> result = dialog.showAndWait();
+            String selected = "";
+            
+            if (result.isPresent()) {
+                selected = result.get();
+                this.taskDao.checkFile();
+                if(selected == "A fazer") {
+                    task.setStage("To Do Stage");
+                }  else if(selected == "Em progresso") {
+                    task.setStage("In Progress Stage");
+                } else if(selected == "Concluído") {
+                    task.setStage("Done Stage");
+                }
+                this.taskDao.update(task);
+                fillTableTasks();
+            } else {
+                System.out.println("Transfer cancelled.");
+            }
+        }
     }
     
 }

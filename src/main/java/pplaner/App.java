@@ -21,6 +21,7 @@ public class App extends Application {
         scene = new Scene(loadFXML("TasksBacklog"), 1280, 720);
         stage.setScene(scene);
         stage.setTitle("Project Planner");
+        stage.setResizable(false);
         stage.getIcons().add(new Image(App.class.getResourceAsStream("logo1000x1000.png")));
         stage.show();   
     }

@@ -1,6 +1,7 @@
 model\Task.class
+pplaner\App.class
+pplaner\CreateTaskController.class
 pplaner\KanbanController.class
 pplaner\TasksBacklogController.class
 model\dao\TaskDao.class
-pplaner\App.class
-pplaner\CreateTaskController.class
+pplaner\TaskInfoController.class
