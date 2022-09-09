@@ -12,6 +12,8 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.DragEvent;
@@ -29,14 +31,25 @@ public class CreateTaskController implements Initializable {
     
     private List<Task> tasks = new ArrayList<>();
     private final TaskDao taskDao = new TaskDao();
-    
+   
+    String[] tasksType = {"Prototipagem", "Desenvolvimento", "Documentação", "Testes"};
     
     @FXML
     private TextField inputTaskName;
     @FXML
-    private TextField inputTaskType;
+    private ChoiceBox<String> inputTaskType;
     @FXML
     private TextField inputTaskMember;
+    @FXML
+    private Button backlogButton;
+    @FXML
+    private Button leaveButton;
+    @FXML
+    private Button ppButton;
+    @FXML
+    private TextField inputTaskDescription;
+    @FXML
+    private Button createTaskButton;
     
 
     /**
@@ -44,13 +57,10 @@ public class CreateTaskController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        inputTaskType.getItems().addAll(tasksType);
+        inputTaskType.setValue("Desenvolvimento");
 
     }    
-
-    @FXML
-    private void switchToSecondary(ActionEvent event) throws IOException {
-        App.setRoot("TasksBacklog");
-    }
     
     @FXML
     private void createTask(ActionEvent event) throws IOException {
@@ -66,11 +76,19 @@ public class CreateTaskController implements Initializable {
             inputTaskName.setStyle("");
         }
         
-        if(inputTaskType.getText().equals("")) {
+        if(inputTaskType.equals("")) {
             inputTaskType.setStyle("-fx-border-color: red;");
             allCorrect = false;
         } else {
             inputTaskType.setStyle("");
+        }      
+        
+        if(inputTaskDescription.getText().equals("")) {
+            inputTaskDescription.setStyle("-fx-border-color: red;");
+
+            allCorrect = false;
+        } else {
+            inputTaskDescription.setStyle("");
         }
         
         if(inputTaskMember.getText().equals("")) {
@@ -84,8 +102,8 @@ public class CreateTaskController implements Initializable {
         if(allCorrect == true) {
             Task task = new Task();
             task.setName(inputTaskName.getText());
-            task.setDescription("Lorem");
-            task.setType(inputTaskType.getText());
+            task.setDescription(inputTaskDescription.getText());
+            task.setType(inputTaskType.getValue());
             task.setMember(inputTaskMember.getText());
             this.taskDao.create(task);
 
@@ -97,15 +115,19 @@ public class CreateTaskController implements Initializable {
     private void nameTaskKeyPressed(KeyEvent event) {
         inputTaskName.setStyle("");
     }
-
-    @FXML
-    private void typeTaskKeyPressed(KeyEvent event) {
-        inputTaskType.setStyle("");
+    
+     @FXML
+    private void descriptionTaskKeyPressed(KeyEvent event) {
+        inputTaskDescription.setStyle("");
     }
 
     @FXML
     private void memberTaskKeyPressed(KeyEvent event) {
         inputTaskMember.setStyle("");
     }
-    
+
+    @FXML
+    private void switchToBacklog(ActionEvent event) throws IOException {
+        App.setRoot("TasksBacklog");
+    }
 }
