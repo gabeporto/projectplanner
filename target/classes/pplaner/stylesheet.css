@@ -99,6 +99,18 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
     -fx-background-color: transparent;
 }
 
+.scroll-bar:horizontal {
+    -fx-opacity: 0;
+    -fx-padding:-7;
+}
+
+.scroll-bar:vertical .track{
+    -fx-background-color :transparent;
+    -fx-border-color :transparent;
+    -fx-background-radius : 0.0em;
+    -fx-border-radius :2.0em;
+}
+
 
 .table-view .column-header-background{
     -fx-background-color: linear-gradient(#131313 0%, #424141 100%);
@@ -210,6 +222,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
     -fx-background-color: #484848;
     -fx-background-radius: 5px;
     -fx-text-fill: white;
+    -fx-mark-color: white;
 }
 
 .inputTaskType .menu-item .label {
@@ -218,4 +231,18 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
 
 .inputTaskType .label {
     -fx-text-fill: white;
+}
+
+.text-field-selectstage {
+    -fx-background-color: #a6a6a6;
+    -fx-text-fill: white;
+    -fx-mark-color: black;
+}
+
+.text-field-selectstage .menu-item .label {
+    -fx-text-fill: black;
+}
+
+.text-field-selectstage .label {
+    -fx-text-fill: black;
 }

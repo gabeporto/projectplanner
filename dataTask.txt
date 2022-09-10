@@ -1,12 +1,6 @@
 {"id":"fc013397-1c5f-4746-975f-8661de53a63f","name":"Adicionar transferência de tasks no Backlog","description":"Adicionar opções de manipulação.","type":"Desenvolvimento","stage":"In Progress Stage","member":"Gabriel Porto"}
 {"id":"be243637-b253-473b-a5f7-dade34e6902b","name":"Atualizar documentação v2","description":"Com base nos apontamentos do Andrey","type":"Documentação","stage":"Done Stage","member":"Lucas"}
-{"id":"7440bea7-a75e-47b7-9c65-6d572b33f09c","name":"Estilizar página de Adicionar Task","description":"Usar CSS e manter padrão do Figma.","type":"Desenvolvimento","stage":"In Progress Stage","member":"Gabriel Porto"}
+{"id":"7440bea7-a75e-47b7-9c65-6d572b33f09c","name":"Estilizar página de Adicionar Task","description":"Teste","type":"Desenvolvimento","stage":"In Progress Stage","member":"Gabriel Porto"}
 {"id":"a5103ec9-dcd6-492d-9c18-81b6c3f1f570","name":"Atualizar documentação online","description":"Usar o Google Docs","type":"Documentação","stage":"To Do Stage","member":"Lucas"}
-{"id":"b97a22e7-5c45-49e2-b50b-1ba1be887ecf","name":"Estilizar tabelas do Backlog","description":"Seguir orientações da prototipagem","type":"Desenvolvimento","stage":"Done Stage","member":"Gabriel Porto"}
-{"id":"f937ca33-fc54-47c7-a14d-df43c3b2141e","name":"Desenvolver solução para utilização do objeto Membros","description":"Manter Git atualizado.","type":"Desenvolvimento","stage":"Done Stage","member":"Nathan"}
-{"id":"d443110b-b6f8-49c7-ac7d-a246e4d4e49d","name":"Teste","description":"Lorem","type":"Prototipagem","stage":"In Progress Stage","member":"Nathan"}
-{"id":"5ecb6896-e790-4748-a966-c3c721ad9d83","name":"Teste 2","description":"Lorem","type":"Desenvolvimento","stage":"In Progress Stage","member":"Nathan"}
-{"id":"b8d8f4a0-c072-4f9b-971a-58560b5c8768","name":"Teste 3","description":"Lorem","type":"Documentação","stage":"To Do Stage","member":"Roberto"}
-{"id":"431984e8-1043-4fcf-856a-0f7d1eee61e6","name":"Task 231231","description":"Desciteste","type":"Desenvolvimento","stage":"To Do Stage","member":"Gabriel"}
-{"id":"0259e89c-6939-4c0c-aea7-ad362316c887","name":"Teste 29","description":"Teste descrição","type":"Documentação","stage":"To Do Stage","member":"Lucas"}
-{"id":"d021a616-2f68-481e-8164-9e1eacf62f2c","name":"Teste 231","description":"Tesasdas","type":"Desenvolvimento","stage":"To Do Stage","member":"Gabriel"}
+{"id":"b97a22e7-5c45-49e2-b50b-1ba1be887ecf","name":"Estilizar tabelas do Backlog","description":"Seguir orientações da prototipagem","type":"Desenvolvimento","stage":"To Do Stage","member":"Gabriel Porto"}
+{"id":"f1c065e1-92ba-435d-b877-6eace2194028","name":"Task 4","description":"Teste","type":"Documentação","stage":"In Progress Stage","member":"Lucas"}

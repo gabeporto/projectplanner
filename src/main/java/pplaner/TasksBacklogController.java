@@ -17,6 +17,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -24,6 +25,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.input.MouseEvent;
 import model.Task;
 import model.dao.TaskDao;
 
@@ -39,6 +41,9 @@ public class TasksBacklogController implements Initializable {
     
     private List<Task> tasksList = new ArrayList();
     private ObservableList<Task> observableTasks;
+    
+    String[] tasksStage = {"A fazer", "Em progresso", "Concluído"};
+    String[] empty = {"", "."};
 
     @FXML
     private Button secondaryButton;
@@ -70,6 +75,18 @@ public class TasksBacklogController implements Initializable {
     private Button kanbanButton;
     @FXML
     private Button LeaveButton;
+    @FXML
+    private Label labelName;
+    @FXML
+    private Label labelDescription;
+    @FXML
+    private Label labelType;
+    @FXML
+    private Label labelMember;
+    @FXML
+    private ChoiceBox<String> labelTaskStageDetail;
+    @FXML
+    private Label labelStage;
 
     /**
      * Initializes the controller class.
@@ -77,6 +94,8 @@ public class TasksBacklogController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         fillTasksBacklog();
+        labelTaskStageDetail.getItems().addAll(tasksStage);
+        labelTaskStageDetail.setDisable(true);
         labelTaskNameDetail.setDisable(true);
         labelTaskDescriptionDetail.setDisable(true);
         labelTaskTypeDetail.setDisable(true);
@@ -84,7 +103,7 @@ public class TasksBacklogController implements Initializable {
         saveChangesButton.setVisible(false);
         editTaskButton.setVisible(false);
         deleteTaskButton.setVisible(false);
-
+        
         tasksBacklog.getSelectionModel().selectedItemProperty().addListener(
                 
                 (observable, oldValue, newValue) -> 
@@ -96,10 +115,8 @@ public class TasksBacklogController implements Initializable {
             }
         });
         
-        
     }    
-    
-    
+      
     private void fillTasksBacklog(){
         nameTaskColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
         typeTaskColumn.setCellValueFactory(new PropertyValueFactory<>("type"));
@@ -111,18 +128,27 @@ public class TasksBacklogController implements Initializable {
     }   
     
     public void selectTaskBacklog(Task task) throws InterruptedException {
-        //Task taskSelected = tasksBacklog.getSelectionModel().getSelectedItem();
         
         editTaskButton.setVisible(true);
         deleteTaskButton.setVisible(true);    
         if(!saveChangesButton.isVisible()) {
             labelTaskNameDetail.setText(task.getName());
             labelTaskDescriptionDetail.setText(task.getDescription());
+            String taskStage = task.getStage();
+            if(taskStage.contentEquals("To Do Stage")) {
+                labelTaskStageDetail.setValue("A fazer");
+            } else if(taskStage.contentEquals("In Progress Stage")) {
+                labelTaskStageDetail.setValue("Em progresso");
+            } else if(taskStage.contentEquals("Done Stage")) {
+                labelTaskStageDetail.setValue("Concluído");
+            }
             labelTaskTypeDetail.setText(task.getType());
             labelTaskMemberDetail.setText(task.getMember());
+            
         } else if(saveChangesButton.isVisible()) {
             labelTaskNameDetail.setDisable(true);
             labelTaskDescriptionDetail.setDisable(true);
+            labelTaskStageDetail.setDisable(true);
             labelTaskTypeDetail.setDisable(true);
             labelTaskMemberDetail.setDisable(true);  
             saveChangesButton.setVisible(false);
@@ -168,6 +194,7 @@ public class TasksBacklogController implements Initializable {
                 saveChangesButton.setVisible(true);
                 labelTaskNameDetail.setDisable(false);
                 labelTaskDescriptionDetail.setDisable(false);
+                labelTaskStageDetail.setDisable(false);
                 labelTaskTypeDetail.setDisable(false);
                 labelTaskMemberDetail.setDisable(false);   
             }           
@@ -184,6 +211,7 @@ public class TasksBacklogController implements Initializable {
         Boolean allCorrect = true;
         
         if(labelTaskNameDetail.getText().equals("")) {
+            labelName.setStyle("-fx-text-fill: #c71616;");
             labelTaskNameDetail.setStyle("-fx-border-color: red;");
             allCorrect = false;
         } else {
@@ -191,6 +219,7 @@ public class TasksBacklogController implements Initializable {
         }
         
         if(labelTaskDescriptionDetail.getText().equals("")) {
+            labelDescription.setStyle("-fx-text-fill: #c71616;");
             labelTaskDescriptionDetail.setStyle("-fx-border-color: red;");
             allCorrect = false;
         } else {
@@ -198,55 +227,83 @@ public class TasksBacklogController implements Initializable {
         }
         
         if(labelTaskTypeDetail.getText().equals("")) {
+            labelType.setStyle("-fx-text-fill: #c71616;");
             labelTaskTypeDetail.setStyle("-fx-border-color: red;");
             allCorrect = false;
         } else {
             labelTaskTypeDetail.setStyle("");
         }
         
+        if(labelTaskStageDetail.getValue().equals("")) {
+            labelStage.setStyle("-fx-text-fill: #c71616;");
+            labelTaskStageDetail.setStyle("-fx-border-color: red;");
+            allCorrect = false;
+        } else {
+            labelTaskStageDetail.setStyle("");
+        }
+        
         if(labelTaskMemberDetail.getText().equals("")) {
+            labelMember.setStyle("-fx-text-fill: #c71616;");
             labelTaskMemberDetail.setStyle("-fx-border-color: red;");
             allCorrect = false;
         } else {
             labelTaskMemberDetail.setStyle("");
         }
-               
-        
+                  
         if(allCorrect == true) {
             task.setName(labelTaskNameDetail.getText());
             task.setDescription(labelTaskDescriptionDetail.getText());
             task.setType(labelTaskTypeDetail.getText());
+            
+            if(labelTaskStageDetail.getValue() == "A fazer") {
+                task.setStage("To Do Stage");
+            } else if(labelTaskStageDetail.getValue() == "Em Progresso") {
+                task.setStage("In Progress Stage");
+            } else if(labelTaskStageDetail.getValue() == "Concluído") {
+                task.setStage("Done Stage");
+            }
+            
             task.setMember(labelTaskMemberDetail.getText());
             this.taskDao.update(task);
             fillTasksBacklog();
             labelTaskNameDetail.setDisable(true);
             labelTaskDescriptionDetail.setDisable(true);
+            labelTaskStageDetail.setDisable(true);
             labelTaskTypeDetail.setDisable(true);
             labelTaskMemberDetail.setDisable(true);
             saveChangesButton.setVisible(false);
-
-        }
-              
+        }     
     }
 
     @FXML
     private void labelTaskNameDetailPressed(KeyEvent event) {
         labelTaskNameDetail.setStyle("");
+        labelName.setStyle("");
     }
 
     @FXML
     private void labelTaskDescriptionDetailPressed(KeyEvent event) {
         labelTaskDescriptionDetail.setStyle("");
+        labelDescription.setStyle("");
     }
-
+    
     @FXML
     private void labelTaskTypeDetailPressed(KeyEvent event) {
         labelTaskTypeDetail.setStyle("");
+        labelType.setStyle("");
+    }
+    
+    
+    @FXML
+    private void labelTaskStageDetailPressed(MouseEvent event) {
+        labelTaskStageDetail.setStyle("");
+        labelStage.setStyle("");
     }
 
     @FXML
     private void labelTaskMemberDetailPressed(KeyEvent event) {
         labelTaskMemberDetail.setStyle("");
+        labelMember.setStyle("");     
     }
 
 }

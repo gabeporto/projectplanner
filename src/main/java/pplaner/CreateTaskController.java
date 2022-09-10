@@ -50,6 +50,14 @@ public class CreateTaskController implements Initializable {
     private TextField inputTaskDescription;
     @FXML
     private Button createTaskButton;
+    @FXML
+    private Label labelTaskName;
+    @FXML
+    private Label labelTaskType;
+    @FXML
+    private Label labelTaskMember;
+    @FXML
+    private Label labelTaskDescription;
     
 
     /**
@@ -70,6 +78,7 @@ public class CreateTaskController implements Initializable {
         Boolean allCorrect = true;
         
         if(inputTaskName.getText().equals("")) {
+            labelTaskName.setStyle("-fx-text-fill: #c71616;");
             inputTaskName.setStyle("-fx-border-color: red;");
             allCorrect = false;
         } else {
@@ -77,6 +86,7 @@ public class CreateTaskController implements Initializable {
         }
         
         if(inputTaskType.equals("")) {
+            labelTaskType.setStyle("-fx-text-fill: #c71616;");
             inputTaskType.setStyle("-fx-border-color: red;");
             allCorrect = false;
         } else {
@@ -84,6 +94,7 @@ public class CreateTaskController implements Initializable {
         }      
         
         if(inputTaskDescription.getText().equals("")) {
+            labelTaskDescription.setStyle("-fx-text-fill: #c71616;");
             inputTaskDescription.setStyle("-fx-border-color: red;");
 
             allCorrect = false;
@@ -92,6 +103,7 @@ public class CreateTaskController implements Initializable {
         }
         
         if(inputTaskMember.getText().equals("")) {
+            labelTaskMember.setStyle("-fx-text-fill: #c71616;");
             inputTaskMember.setStyle("-fx-border-color: red;");
             allCorrect = false;
         } else {
@@ -114,20 +126,24 @@ public class CreateTaskController implements Initializable {
     @FXML
     private void nameTaskKeyPressed(KeyEvent event) {
         inputTaskName.setStyle("");
+        labelTaskName.setStyle("");
     }
     
      @FXML
     private void descriptionTaskKeyPressed(KeyEvent event) {
         inputTaskDescription.setStyle("");
+        labelTaskDescription.setStyle("");
     }
 
     @FXML
     private void memberTaskKeyPressed(KeyEvent event) {
         inputTaskMember.setStyle("");
+        labelTaskMember.setStyle("");
     }
 
     @FXML
     private void switchToBacklog(ActionEvent event) throws IOException {
         App.setRoot("TasksBacklog");
+        
     }
 }
