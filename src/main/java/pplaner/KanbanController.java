@@ -75,6 +75,8 @@ public class KanbanController implements Initializable {
     private Button leaveButton;
     @FXML
     private Button ppButton;
+    @FXML
+    private Button MemberButton;
     
     /**
      * Initializes the controller class.
@@ -126,6 +128,11 @@ public class KanbanController implements Initializable {
     @FXML
     private void switchToBacklog(ActionEvent event) throws IOException {
         App.setRoot("TasksBacklog"); 
+    }
+    
+    @FXML
+    private void switchToMember(ActionEvent event) throws IOException {
+        App.setRoot("Member"); 
     }
 
     @FXML

@@ -1,6 +1,5 @@
-{"id":"fc013397-1c5f-4746-975f-8661de53a63f","name":"Adicionar transferência de tasks no Backlog","description":"Adicionar opções de manipulação.","type":"Desenvolvimento","stage":"In Progress Stage","member":"Gabriel Porto"}
-{"id":"be243637-b253-473b-a5f7-dade34e6902b","name":"Atualizar documentação v2","description":"Com base nos apontamentos do Andrey","type":"Documentação","stage":"Done Stage","member":"Lucas"}
-{"id":"7440bea7-a75e-47b7-9c65-6d572b33f09c","name":"Estilizar página de Adicionar Task","description":"Teste","type":"Desenvolvimento","stage":"In Progress Stage","member":"Gabriel Porto"}
-{"id":"a5103ec9-dcd6-492d-9c18-81b6c3f1f570","name":"Atualizar documentação online","description":"Usar o Google Docs","type":"Documentação","stage":"To Do Stage","member":"Lucas"}
-{"id":"b97a22e7-5c45-49e2-b50b-1ba1be887ecf","name":"Estilizar tabelas do Backlog","description":"Seguir orientações da prototipagem","type":"Desenvolvimento","stage":"To Do Stage","member":"Gabriel Porto"}
-{"id":"f1c065e1-92ba-435d-b877-6eace2194028","name":"Task 4","description":"Teste","type":"Documentação","stage":"In Progress Stage","member":"Lucas"}
+{"id":"de826289-6114-46d5-993e-60838a93c0ca","name":"Criar projeto","description":"Pontapé inicial","type":"Prototipagem","stage":"To Do Stage","member":"Gabriel Porto"}
+{"id":"3a26c849-bcf6-4c91-bf6a-9c90d92b09be","name":"Documentar segunda entrega","description":"Segunda entrega para Professor Andrey","type":"Documentação","stage":"To Do Stage","member":"Lucas Antônio"}
+{"id":"24ed61ba-bd9c-48b0-b94d-494b8083adb4","name":"Solucionar bug dos inputs","description":"Inputs de task","type":"Desenvolvimento","stage":"To Do Stage","member":"Nathan Faria"}
+{"id":"5cb4b4f5-86c2-4721-87ef-22c6620dcb8a","name":"Adicionar membros ao projeto","description":"Pra já","type":"Desenvolvimento","stage":"In Progress Stage","member":"Gabriel Porto"}
+{"id":"4b43eeeb-c445-44bc-9edc-6fc065cdb6f0","name":"Enviar primeira entrega do projeto","description":"Para Professor Gavião","type":"Documentação","stage":"Done Stage","member":"Gabriel Porto"}

@@ -14,7 +14,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.geometry.Insets?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #2B2B2B;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pplaner.TasksBacklogController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #2B2B2B;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pplaner.MemberController">
    <children>
       <AnchorPane prefHeight="720.0" prefWidth="200.0" style="-fx-background-color: #000000;">
          <children>
@@ -26,23 +26,23 @@
                   <Font size="18.0" />
                </font>
             </Button>
-            <Button alignment="CENTER" graphicTextGap="25.0" layoutY="383.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="57.0" prefWidth="207.0" styleClass="button1" stylesheets="@stylesheet.css" text="Tarefas" textAlignment="CENTER" textFill="#05b80b">
+            <Button fx:id="backlogButton" alignment="CENTER" graphicTextGap="25.0" layoutY="383.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#switchToBacklog" prefHeight="57.0" prefWidth="207.0" styleClass="button1" stylesheets="@stylesheet.css" text="Tarefas" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font>
                <graphic>
-                  <SVGPath content="M6 3.5A1.5 1.5 0 0 1 7.5 2h1A1.5 1.5 0 0 1 10 3.5v1A1.5 1.5 0 0 1 8.5 6v1H14a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-1 0V8h-5v.5a.5.5 0 0 1-1 0V8h-5v.5a.5.5 0 0 1-1 0v-1A.5.5 0 0 1 2 7h5.5V6A1.5 1.5 0 0 1 6 4.5v-1zM8.5 5a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1zM0 11.5A1.5 1.5 0 0 1 1.5 10h1A1.5 1.5 0 0 1 4 11.5v1A1.5 1.5 0 0 1 2.5 14h-1A1.5 1.5 0 0 1 0 12.5v-1zm1.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1zm4.5.5A1.5 1.5 0 0 1 7.5 10h1a1.5 1.5 0 0 1 1.5 1.5v1A1.5 1.5 0 0 1 8.5 14h-1A1.5 1.5 0 0 1 6 12.5v-1zm1.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1zm4.5.5a1.5 1.5 0 0 1 1.5-1.5h1a1.5 1.5 0 0 1 1.5 1.5v1a1.5 1.5 0 0 1-1.5 1.5h-1a1.5 1.5 0 0 1-1.5-1.5v-1zm1.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1z" fill="#05b80b" scaleX="2.0" scaleY="2.0" />
+                  <SVGPath content="M6 3.5A1.5 1.5 0 0 1 7.5 2h1A1.5 1.5 0 0 1 10 3.5v1A1.5 1.5 0 0 1 8.5 6v1H14a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-1 0V8h-5v.5a.5.5 0 0 1-1 0V8h-5v.5a.5.5 0 0 1-1 0v-1A.5.5 0 0 1 2 7h5.5V6A1.5 1.5 0 0 1 6 4.5v-1zM8.5 5a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1zM0 11.5A1.5 1.5 0 0 1 1.5 10h1A1.5 1.5 0 0 1 4 11.5v1A1.5 1.5 0 0 1 2.5 14h-1A1.5 1.5 0 0 1 0 12.5v-1zm1.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1zm4.5.5A1.5 1.5 0 0 1 7.5 10h1a1.5 1.5 0 0 1 1.5 1.5v1A1.5 1.5 0 0 1 8.5 14h-1A1.5 1.5 0 0 1 6 12.5v-1zm1.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1zm4.5.5a1.5 1.5 0 0 1 1.5-1.5h1a1.5 1.5 0 0 1 1.5 1.5v1a1.5 1.5 0 0 1-1.5 1.5h-1a1.5 1.5 0 0 1-1.5-1.5v-1zm1.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1z" fill="WHITE" scaleX="2.0" scaleY="2.0" />
                </graphic>
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
             </Button>
-            <Button fx:id="MemberButton" alignment="CENTER" graphicTextGap="25.0" layoutY="326.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#switchToMember" prefHeight="57.0" prefWidth="207.0" styleClass="button1" stylesheets="@stylesheet.css" text="Equipe" textAlignment="CENTER" textFill="WHITE">
+            <Button alignment="CENTER" graphicTextGap="25.0" layoutY="326.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="57.0" prefWidth="207.0" styleClass="button1" stylesheets="@stylesheet.css" text="Equipe" textAlignment="CENTER" textFill="#05b80b">
                <font>
                   <Font size="18.0" />
                </font>
                <graphic>
-                  <SVGPath content="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1h8zm-7.978-1A.261.261 0 0 1 7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002a.274.274 0 0 1-.014.002H7.022zM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0zM6.936 9.28a5.88 5.88 0 0 0-1.23-.247A7.35 7.35 0 0 0 5 9c-4 0-5 3-5 4 0 .667.333 1 1 1h4.216A2.238 2.238 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816zM4.92 10A5.493 5.493 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275zM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0zm3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4z" fill="WHITE" scaleX="2.0" scaleY="2.0" />
+                  <SVGPath content="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1h8zm-7.978-1A.261.261 0 0 1 7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002a.274.274 0 0 1-.014.002H7.022zM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0zM6.936 9.28a5.88 5.88 0 0 0-1.23-.247A7.35 7.35 0 0 0 5 9c-4 0-5 3-5 4 0 .667.333 1 1 1h4.216A2.238 2.238 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816zM4.92 10A5.493 5.493 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275zM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0zm3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4z" fill="#05b80b" scaleX="2.0" scaleY="2.0" />
                </graphic>
                <opaqueInsets>
                   <Insets />
@@ -103,52 +103,57 @@
             </Button>
          </children>
       </AnchorPane>
-      <Button fx:id="createTaskButton" layoutX="1120.0" layoutY="63.0" mnemonicParsing="false" onAction="#switchToCreateTask" styleClass="addtask-button" stylesheets="@stylesheet.css" text="+ Add task" />
-      <TableView fx:id="tasksBacklog" layoutX="228.0" layoutY="140.0" prefHeight="536.0" prefWidth="587.0" stylesheets="@stylesheet.css">
+      <Button fx:id="createMemberButton" layoutX="1116.0" layoutY="63.0" mnemonicParsing="false" onAction="#switchToCreateMember" styleClass="addtask-button" stylesheets="@stylesheet.css" text="+ Add membro" />
+      <TableView fx:id="membersTable" layoutX="228.0" layoutY="140.0" prefHeight="536.0" prefWidth="587.0" stylesheets="@stylesheet.css">
         <columns>
-          <TableColumn fx:id="nameTaskColumn" editable="false" prefWidth="303.0" resizable="false" text="Task" />
-          <TableColumn fx:id="typeTaskColumn" editable="false" minWidth="0.0" prefWidth="154.0" resizable="false" text="Tipo" />
-            <TableColumn fx:id="memberTaskColumn" editable="false" prefWidth="127.0" resizable="false" text="Membro" />
+          <TableColumn fx:id="nameMemberColumn" editable="false" prefWidth="213.0" resizable="false" text="Nome" />
+          <TableColumn fx:id="typeMemberColumn" editable="false" minWidth="0.0" prefWidth="373.0" resizable="false" text="Tipo" />
         </columns>
       </TableView>
       <AnchorPane layoutX="812.0" layoutY="141.0" prefHeight="536.0" prefWidth="426.0" styleClass="anchor-pane-backlog" stylesheets="@stylesheet.css">
          <children>
-            <Button fx:id="deleteTaskButton" layoutX="246.0" layoutY="487.0" mnemonicParsing="false" onAction="#deleteTask" styleClass="button-delete" stylesheets="@stylesheet.css" text="Deletar" />
-            <Label fx:id="labelName" layoutX="33.0" layoutY="39.0" prefHeight="35.0" prefWidth="165.0" styleClass="label-backlog" stylesheets="@stylesheet.css" text="Nome da Task">
+            <Button fx:id="deleteMemberButton" layoutX="246.0" layoutY="487.0" mnemonicParsing="false" onAction="#deleteMember" styleClass="button-delete" stylesheets="@stylesheet.css" text="Deletar" />
+            <Label fx:id="labelMemberName" layoutX="34.0" layoutY="200.0" prefHeight="35.0" prefWidth="165.0" styleClass="label-backlog" stylesheets="@stylesheet.css" text="Nome do membro">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <Label fx:id="labelDescription" layoutX="33.0" layoutY="119.0" prefHeight="25.0" prefWidth="93.0" styleClass="label-backlog" stylesheets="@stylesheet.css" text="Descrição">
+            <Label fx:id="labelMemberType" layoutX="34.0" layoutY="291.0" prefHeight="25.0" prefWidth="93.0" styleClass="label-backlog" stylesheets="@stylesheet.css" text="Tipo">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <Label fx:id="labelType" layoutX="33.0" layoutY="255.0" prefHeight="25.0" prefWidth="93.0" styleClass="label-backlog" stylesheets="@stylesheet.css" text="Tipo">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </Label>
-            <Label fx:id="labelMember" layoutX="33.0" layoutY="345.0" prefHeight="25.0" prefWidth="93.0" styleClass="label-backlog" stylesheets="@stylesheet.css" text="Membro">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </Label>
-            <TextField fx:id="labelTaskNameDetail" layoutX="33.0" layoutY="73.0" onKeyPressed="#labelTaskNameDetailPressed" prefHeight="34.0" prefWidth="361.0" styleClass="text-field-backlogtask" stylesheets="@stylesheet.css" />
-            <TextField fx:id="labelTaskDescriptionDetail" layoutX="33.0" layoutY="155.0" onKeyPressed="#labelTaskDescriptionDetailPressed" prefHeight="82.0" prefWidth="361.0" styleClass="text-field-backlogtask" stylesheets="@stylesheet.css" />
-            <TextField fx:id="labelTaskTypeDetail" layoutX="33.0" layoutY="287.0" onKeyPressed="#labelTaskTypeDetailPressed" prefHeight="34.0" prefWidth="165.0" styleClass="text-field-backlogtask" stylesheets="@stylesheet.css" />
-            <TextField fx:id="labelTaskMemberDetail" layoutX="33.0" layoutY="376.0" onKeyPressed="#labelTaskMemberDetailPressed" prefHeight="34.0" prefWidth="361.0" styleClass="text-field-backlogtask" stylesheets="@stylesheet.css" />
-            <Button fx:id="editTaskButton" layoutX="120.0" layoutY="487.0" mnemonicParsing="false" onAction="#editTask" styleClass="button2" stylesheets="@stylesheet.css" text="Editar" />
+            <TextField fx:id="labelMemberNameDetail" layoutX="34.0" layoutY="234.0" onKeyPressed="#labelMemberNameDetailPressed" prefHeight="34.0" prefWidth="361.0" styleClass="text-field-backlogtask" stylesheets="@stylesheet.css" />
+            <Button fx:id="editMemberButton" layoutX="120.0" layoutY="487.0" mnemonicParsing="false" onAction="#editMember" styleClass="button2" stylesheets="@stylesheet.css" text="Editar" />
             <Button fx:id="saveChangesButton" layoutX="33.0" layoutY="431.0" mnemonicParsing="false" onAction="#saveChangesTask" prefHeight="25.0" prefWidth="361.0" styleClass="button2" stylesheets="@stylesheet.css" text="Salvar alterações" />
-            <Label fx:id="labelStage" layoutX="230.0" layoutY="255.0" prefHeight="25.0" prefWidth="93.0" styleClass="label-backlog" stylesheets="@stylesheet.css" text="Estado">
+            <CheckBox fx:id="checkBoxType1" layoutX="33.0" layoutY="316.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="165.0" text="Tipo 1" textFill="WHITE">
                <font>
-                  <Font name="System Bold" size="12.0" />
+                  <Font size="14.0" />
                </font>
-            </Label>
-            <ChoiceBox fx:id="labelTaskStageDetail" layoutX="229.0" layoutY="287.0" onMousePressed="#labelTaskStageDetailPressed" prefHeight="34.0" prefWidth="165.0" styleClass="text-field-selectstage" stylesheets="@stylesheet.css" />
+            </CheckBox>
+            <CheckBox fx:id="checkBoxType2" layoutX="229.0" layoutY="316.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="165.0" text="Tipo 2" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </CheckBox>
+            <CheckBox fx:id="checkBoxType3" layoutX="33.0" layoutY="360.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="165.0" text="Tipo 3" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </CheckBox>
+            <CheckBox fx:id="checkBoxType4" layoutX="229.0" layoutY="360.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="165.0" text="Tipo 4" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </CheckBox>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="140.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@teammatte.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
-      <Text fill="WHITE" layoutX="244.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Backlog de tarefas" wrappingWidth="322.13671875">
+      <Text fill="WHITE" layoutX="244.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Equipe" wrappingWidth="322.13671875">
          <font>
             <Font name="System Bold" size="36.0" />
          </font>

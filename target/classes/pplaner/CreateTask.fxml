@@ -18,7 +18,7 @@
          <children>
             <AnchorPane prefHeight="720.0" prefWidth="200.0" style="-fx-background-color: #000000;">
                <children>
-                  <Button alignment="BASELINE_CENTER" graphicTextGap="15.0" layoutY="440.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="207.0" styleClass="button1" stylesheets="@stylesheet.css" text=" Kanban" textFill="WHITE">
+                  <Button fx:id="kanbanButton" alignment="BASELINE_CENTER" graphicTextGap="15.0" layoutY="440.0" mnemonicParsing="false" onAction="#switchToKanban" prefHeight="57.0" prefWidth="207.0" styleClass="button1" stylesheets="@stylesheet.css" text=" Kanban" textFill="WHITE">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -37,7 +37,7 @@
                         <Insets />
                      </opaqueInsets>
                   </Button>
-                  <Button alignment="CENTER" graphicTextGap="25.0" layoutY="326.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="57.0" prefWidth="207.0" styleClass="button1" stylesheets="@stylesheet.css" text="Equipe" textAlignment="CENTER" textFill="WHITE">
+                  <Button fx:id="memberButton" alignment="CENTER" graphicTextGap="25.0" layoutY="326.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#switchToMember" prefHeight="57.0" prefWidth="207.0" styleClass="button1" stylesheets="@stylesheet.css" text="Equipe" textAlignment="CENTER" textFill="WHITE">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -104,7 +104,6 @@
                </children>
             </AnchorPane>
             <TextField fx:id="inputTaskName" layoutX="491.0" layoutY="220.0" onKeyPressed="#nameTaskKeyPressed" prefHeight="38.0" prefWidth="467.0" styleClass="input-addtask" stylesheets="@stylesheet.css" />
-            <TextField fx:id="inputTaskMember" layoutX="758.0" layoutY="501.0" onKeyPressed="#memberTaskKeyPressed" prefHeight="38.0" prefWidth="200.0" styleClass="input-addtask" stylesheets="@stylesheet.css" />
             <Button layoutX="1164.0" layoutY="57.0" mnemonicParsing="false" onAction="#switchToBacklog" prefHeight="25.0" prefWidth="35.0" styleClass="button-delete" stylesheets="@stylesheet.css" text="X" />
             <Label fx:id="labelTaskName" layoutX="490.0" layoutY="167.0" text="Nome da Task" textFill="WHITE">
                <font>
@@ -134,6 +133,7 @@
                </font>
             </Label>
             <TextField fx:id="inputTaskDescription" layoutX="490.0" layoutY="343.0" onKeyPressed="#descriptionTaskKeyPressed" prefHeight="75.0" prefWidth="467.0" styleClass="input-addtask" stylesheets="@stylesheet.css" />
+            <ChoiceBox fx:id="inputTaskMember" layoutX="756.0" layoutY="501.0" onKeyPressed="#memberTaskKeyPressed" prefHeight="38.0" prefWidth="200.0" styleClass="inputTaskType" stylesheets="@stylesheet.css" />
          </children>
       </AnchorPane>
    </children>

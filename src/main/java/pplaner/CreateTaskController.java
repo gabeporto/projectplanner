@@ -16,9 +16,12 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.DragEvent;
 import javafx.scene.input.KeyEvent;
+import model.Member;
 import model.Task;
+import model.dao.MemberDao;
 import model.dao.TaskDao;
 import pplaner.App;
 
@@ -31,7 +34,12 @@ public class CreateTaskController implements Initializable {
     
     private List<Task> tasks = new ArrayList<>();
     private final TaskDao taskDao = new TaskDao();
-   
+    private final MemberDao memberDao = new MemberDao();
+    
+    List<String> membersList = this.memberDao.readAllByName();
+    String[] membersName = membersList.toArray(new String[membersList.size()]);
+    
+    
     String[] tasksType = {"Prototipagem", "Desenvolvimento", "Documentação", "Testes"};
     
     @FXML
@@ -39,7 +47,7 @@ public class CreateTaskController implements Initializable {
     @FXML
     private ChoiceBox<String> inputTaskType;
     @FXML
-    private TextField inputTaskMember;
+    private ChoiceBox<String> inputTaskMember;
     @FXML
     private Button backlogButton;
     @FXML
@@ -58,6 +66,10 @@ public class CreateTaskController implements Initializable {
     private Label labelTaskMember;
     @FXML
     private Label labelTaskDescription;
+    @FXML
+    private Button kanbanButton;
+    @FXML
+    private Button memberButton;
     
 
     /**
@@ -66,14 +78,20 @@ public class CreateTaskController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         inputTaskType.getItems().addAll(tasksType);
-        inputTaskType.setValue("Desenvolvimento");
+        inputTaskType.setValue(tasksType[0]);
+        inputTaskMember.getItems().addAll(membersList);
+        inputTaskMember.setValue(membersName[0]);
 
     }    
     
     @FXML
     private void createTask(ActionEvent event) throws IOException {
         TaskDao taskDao = new TaskDao();
+        MemberDao memberDao = new MemberDao();
+        List<Member> membersList;
+        membersList = this.memberDao.readAll();
         this.taskDao.checkFile();
+        this.memberDao.checkFile();
         
         Boolean allCorrect = true;
         
@@ -102,21 +120,21 @@ public class CreateTaskController implements Initializable {
             inputTaskDescription.setStyle("");
         }
         
-        if(inputTaskMember.getText().equals("")) {
+        if(inputTaskMember.equals("")) {
             labelTaskMember.setStyle("-fx-text-fill: #c71616;");
             inputTaskMember.setStyle("-fx-border-color: red;");
             allCorrect = false;
         } else {
             inputTaskMember.setStyle("");
-        }
-                
+        }  
+        
         
         if(allCorrect == true) {
             Task task = new Task();
             task.setName(inputTaskName.getText());
             task.setDescription(inputTaskDescription.getText());
             task.setType(inputTaskType.getValue());
-            task.setMember(inputTaskMember.getText());
+            task.setMember(inputTaskMember.getValue());
             this.taskDao.create(task);
 
             App.setRoot("TasksBacklog");
@@ -145,5 +163,15 @@ public class CreateTaskController implements Initializable {
     private void switchToBacklog(ActionEvent event) throws IOException {
         App.setRoot("TasksBacklog");
         
+    }
+
+    @FXML
+    private void switchToKanban(ActionEvent event) throws IOException {
+        App.setRoot("Kanban");
+    }
+
+    @FXML
+    private void switchToMember(ActionEvent event) throws IOException {
+        App.setRoot("Member");
     }
 }

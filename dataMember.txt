@@ -1,0 +1,3 @@
+{"id":"43e05dc8-f056-4c8e-afc1-aa380f621678","name":"Gabriel Porto","type":["Prototipagem","Desenvolvimento","Documentação","Testes"]}
+{"id":"7446e685-48cc-45e4-862c-187ba4fb776a","name":"Nathan Faria","type":["Desenvolvimento","Documentação"]}
+{"id":"5576b968-3d4f-4d52-9ef3-247d23a4f814","name":"Lucas Antônio","type":["Documentação","Testes"]}

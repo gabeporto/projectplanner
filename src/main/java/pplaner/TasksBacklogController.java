@@ -26,7 +26,9 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
+import model.Member;
 import model.Task;
+import model.dao.MemberDao;
 import model.dao.TaskDao;
 
 /**
@@ -42,11 +44,11 @@ public class TasksBacklogController implements Initializable {
     private List<Task> tasksList = new ArrayList();
     private ObservableList<Task> observableTasks;
     
+    private List<Member> members = new ArrayList<>();
+    private final MemberDao memberDao = new MemberDao();
+    
     String[] tasksStage = {"A fazer", "Em progresso", "Concluído"};
-    String[] empty = {"", "."};
 
-    @FXML
-    private Button secondaryButton;
     @FXML
     private TableView<Task> tasksBacklog;
     @FXML
@@ -87,6 +89,10 @@ public class TasksBacklogController implements Initializable {
     private ChoiceBox<String> labelTaskStageDetail;
     @FXML
     private Label labelStage;
+    @FXML
+    private Button MemberButton;
+    @FXML
+    private Button createTaskButton;
 
     /**
      * Initializes the controller class.
@@ -103,6 +109,12 @@ public class TasksBacklogController implements Initializable {
         saveChangesButton.setVisible(false);
         editTaskButton.setVisible(false);
         deleteTaskButton.setVisible(false);
+        
+        if(memberDao.checkEmpty()) {
+            createTaskButton.setDisable(true);
+        } else {
+            createTaskButton.setDisable(false);
+        }
         
         tasksBacklog.getSelectionModel().selectedItemProperty().addListener(
                 
@@ -161,7 +173,7 @@ public class TasksBacklogController implements Initializable {
     }
 
     @FXML
-    private void switchToPrimary(ActionEvent event) throws IOException {
+    private void switchToCreateTask(ActionEvent event) throws IOException {
         App.setRoot("CreateTask"); 
     }
     
@@ -171,10 +183,19 @@ public class TasksBacklogController implements Initializable {
     }
     
     @FXML
+    private void switchToMember(ActionEvent event) throws IOException {
+        App.setRoot("Member");
+    }
+    
+    @FXML
     private void deleteTask(ActionEvent event) {
         Task task = tasksBacklog.getSelectionModel().getSelectedItem();
         taskDao.delete(task.getId());
         tasksBacklog.getItems().remove(task);
+        
+        saveChangesButton.setVisible(false);
+        editTaskButton.setVisible(false);
+        deleteTaskButton.setVisible(false);
         
     }
     

@@ -37,7 +37,7 @@
                   <Insets />
                </opaqueInsets>
             </Button>
-            <Button alignment="CENTER" graphicTextGap="25.0" layoutY="326.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="57.0" prefWidth="207.0" styleClass="button1" stylesheets="@stylesheet.css" text="Equipe" textAlignment="CENTER" textFill="WHITE">
+            <Button fx:id="MemberButton" alignment="CENTER" graphicTextGap="25.0" layoutY="326.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#switchToMember" prefHeight="57.0" prefWidth="207.0" styleClass="button1" stylesheets="@stylesheet.css" text="Equipe" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font>
@@ -103,7 +103,7 @@
             </Button>
          </children>
       </AnchorPane>
-      <Button fx:id="secondaryButton" layoutX="1120.0" layoutY="63.0" mnemonicParsing="false" onAction="#switchToPrimary" styleClass="addtask-button" stylesheets="@stylesheet.css" text="+ Add task" />
+      <Button fx:id="createTaskButton" layoutX="1120.0" layoutY="63.0" mnemonicParsing="false" onAction="#switchToCreateTask" styleClass="addtask-button" stylesheets="@stylesheet.css" text="+ Add task" />
       <TableView fx:id="tasksBacklog" layoutX="228.0" layoutY="140.0" prefHeight="536.0" prefWidth="587.0" stylesheets="@stylesheet.css">
         <columns>
           <TableColumn fx:id="nameTaskColumn" editable="false" prefWidth="303.0" resizable="false" text="Task" />
