@@ -58,6 +58,8 @@ public class CreateMemberController implements Initializable {
     private CheckBox checkBoxType3;
     @FXML
     private CheckBox checkBoxType4;
+    @FXML
+    private Button projectButton;
 
     /**
      * Initializes the controller class.
@@ -86,7 +88,11 @@ public class CreateMemberController implements Initializable {
         App.setRoot("Kanban");
     }
 
-
+    @FXML
+    private void switchToProject(ActionEvent event) throws IOException {
+        App.setRoot("Project");
+    }
+    
     @FXML
     private void createMember(ActionEvent event) throws IOException {
         MemberDao memberDao = new MemberDao();
@@ -149,5 +155,5 @@ public class CreateMemberController implements Initializable {
         labelMemberType.setStyle("");
     }
 
-    
+
 }

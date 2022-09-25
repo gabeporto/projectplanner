@@ -1,7 +1,13 @@
-C:\Users\Gabriel Porto\Documents\PPlanner\src\main\java\pplaner\TasksBacklogController.java
 C:\Users\Gabriel Porto\Documents\PPlanner\src\main\java\model\Task.java
-C:\Users\Gabriel Porto\Documents\PPlanner\src\main\java\pplaner\App.java
-C:\Users\Gabriel Porto\Documents\PPlanner\src\main\java\pplaner\KanbanController.java
+C:\Users\Gabriel Porto\Documents\PPlanner\src\main\java\pplaner\CreateMemberController.java
+C:\Users\Gabriel Porto\Documents\PPlanner\src\main\java\model\Member.java
 C:\Users\Gabriel Porto\Documents\PPlanner\src\main\java\model\dao\TaskDao.java
 C:\Users\Gabriel Porto\Documents\PPlanner\src\main\java\pplaner\CreateTaskController.java
-C:\Users\Gabriel Porto\Documents\PPlanner\src\main\java\pplaner\TaskInfoController.java
+C:\Users\Gabriel Porto\Documents\PPlanner\src\main\java\pplaner\ProjectController.java
+C:\Users\Gabriel Porto\Documents\PPlanner\src\main\java\model\dao\MemberDao.java
+C:\Users\Gabriel Porto\Documents\PPlanner\src\main\java\pplaner\MemberController.java
+C:\Users\Gabriel Porto\Documents\PPlanner\src\main\java\model\Project.java
+C:\Users\Gabriel Porto\Documents\PPlanner\src\main\java\pplaner\TasksBacklogController.java
+C:\Users\Gabriel Porto\Documents\PPlanner\src\main\java\pplaner\App.java
+C:\Users\Gabriel Porto\Documents\PPlanner\src\main\java\pplaner\KanbanController.java
+C:\Users\Gabriel Porto\Documents\PPlanner\src\main\java\model\dao\ProjectDao.java

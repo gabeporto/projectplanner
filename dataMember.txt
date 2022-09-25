@@ -1,3 +1,5 @@
 {"id":"43e05dc8-f056-4c8e-afc1-aa380f621678","name":"Gabriel Porto","type":["Prototipagem","Desenvolvimento","Documentação","Testes"]}
 {"id":"7446e685-48cc-45e4-862c-187ba4fb776a","name":"Nathan Faria","type":["Desenvolvimento","Documentação"]}
 {"id":"5576b968-3d4f-4d52-9ef3-247d23a4f814","name":"Lucas Antônio","type":["Documentação","Testes"]}
+{"id":"7451cb9e-55f3-4e2c-a997-224b95527625","name":"Vinicius Castro","type":["Prototipagem","Desenvolvimento"]}
+{"id":"d9e132f2-b8f2-464b-aaa8-e3d927fcb5ae","name":"Matheus","type":["Prototipagem","Desenvolvimento","Documentação","Testes"]}

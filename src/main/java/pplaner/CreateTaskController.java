@@ -70,6 +70,8 @@ public class CreateTaskController implements Initializable {
     private Button kanbanButton;
     @FXML
     private Button memberButton;
+    @FXML
+    private Button ProjectButton;
     
 
     /**
@@ -173,5 +175,10 @@ public class CreateTaskController implements Initializable {
     @FXML
     private void switchToMember(ActionEvent event) throws IOException {
         App.setRoot("Member");
+    }
+
+    @FXML
+    private void switchToProject(ActionEvent event) throws IOException {
+        App.setRoot("Project");
     }
 }

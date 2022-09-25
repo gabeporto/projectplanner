@@ -93,6 +93,8 @@ public class TasksBacklogController implements Initializable {
     private Button MemberButton;
     @FXML
     private Button createTaskButton;
+    @FXML
+    private Button projectButton;
 
     /**
      * Initializes the controller class.
@@ -185,6 +187,11 @@ public class TasksBacklogController implements Initializable {
     @FXML
     private void switchToMember(ActionEvent event) throws IOException {
         App.setRoot("Member");
+    }
+    
+    @FXML
+    private void switchToProject(ActionEvent event) throws IOException {
+        App.setRoot("Project");
     }
     
     @FXML

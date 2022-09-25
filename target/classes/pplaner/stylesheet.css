@@ -129,6 +129,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
     -fx-alignment: center-left;
     -fx-text-fill: white;
     -fx-transition: all ease 0.9s;
+    -fx-alignment: center;
 }
 
 .table-row-cell{
@@ -246,3 +247,11 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
 .text-field-selectstage .label {
     -fx-text-fill: black;
 }
+
+.table-view2 .table-row-cell{
+    -fx-alignment: center-left;
+    -fx-text-fill: white;
+    -fx-transition: all ease 0.9s;
+    -fx-cell-size: 75px;
+}
+

@@ -48,7 +48,7 @@
                         <Insets />
                      </opaqueInsets>
                   </Button>
-                  <Button alignment="CENTER" graphicTextGap="20.0" layoutY="269.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="57.0" prefWidth="207.0" styleClass="button1" stylesheets="@stylesheet.css" text="Projeto" textAlignment="CENTER" textFill="WHITE">
+                  <Button fx:id="projectButton" alignment="CENTER" graphicTextGap="20.0" layoutY="269.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#switchToProject" prefHeight="57.0" prefWidth="207.0" styleClass="button1" stylesheets="@stylesheet.css" text="Projeto" textAlignment="CENTER" textFill="WHITE">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -108,7 +108,7 @@
                   <Font name="System Bold" size="36.0" />
                </font>
             </Text>
-            <Text fill="WHITE" layoutX="640.0" layoutY="132.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Em progresso" textAlignment="CENTER" wrappingWidth="203.13671875">
+            <Text fill="#d9d96f" layoutX="640.0" layoutY="132.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Em progresso" textAlignment="CENTER" wrappingWidth="203.13671875">
                <font>
                   <Font size="29.0" />
                </font>
@@ -143,12 +143,12 @@
                   <TableColumn fx:id="memberTaskColumnDone" prefWidth="113.0" text="Membro" />
                </columns>
             </TableView>
-            <Text fill="WHITE" layoutX="992.0" layoutY="131.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Concluído" textAlignment="CENTER" wrappingWidth="203.13671875">
+            <Text fill="#6fd9aa" layoutX="992.0" layoutY="131.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Concluído" textAlignment="CENTER" wrappingWidth="203.13671875">
                <font>
                   <Font size="29.0" />
                </font>
             </Text>
-            <Text fill="WHITE" layoutX="287.0" layoutY="133.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A fazer" textAlignment="CENTER" wrappingWidth="203.13671875">
+            <Text fill="#da7a6e" layoutX="287.0" layoutY="133.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A fazer" textAlignment="CENTER" wrappingWidth="203.13671875">
                <font>
                   <Font size="29.0" />
                </font>

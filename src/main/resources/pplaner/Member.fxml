@@ -48,7 +48,7 @@
                   <Insets />
                </opaqueInsets>
             </Button>
-            <Button alignment="CENTER" graphicTextGap="20.0" layoutY="269.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="57.0" prefWidth="207.0" styleClass="button1" stylesheets="@stylesheet.css" text="Projeto" textAlignment="CENTER" textFill="WHITE">
+            <Button fx:id="projectButton" alignment="CENTER" graphicTextGap="20.0" layoutY="269.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#switchToProject" prefHeight="57.0" prefWidth="207.0" styleClass="button1" stylesheets="@stylesheet.css" text="Projeto" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font>
@@ -104,16 +104,16 @@
          </children>
       </AnchorPane>
       <Button fx:id="createMemberButton" layoutX="1116.0" layoutY="63.0" mnemonicParsing="false" onAction="#switchToCreateMember" styleClass="addtask-button" stylesheets="@stylesheet.css" text="+ Add membro" />
-      <TableView fx:id="membersTable" layoutX="228.0" layoutY="140.0" prefHeight="536.0" prefWidth="587.0" stylesheets="@stylesheet.css">
+      <TableView id="table-view2" fx:id="membersTable" layoutX="228.0" layoutY="140.0" prefHeight="536.0" prefWidth="587.0" styleClass="table-view2" stylesheets="@stylesheet.css">
         <columns>
           <TableColumn fx:id="nameMemberColumn" editable="false" prefWidth="213.0" resizable="false" text="Nome" />
           <TableColumn fx:id="typeMemberColumn" editable="false" minWidth="0.0" prefWidth="373.0" resizable="false" text="Tipo" />
         </columns>
       </TableView>
-      <AnchorPane layoutX="812.0" layoutY="141.0" prefHeight="536.0" prefWidth="426.0" styleClass="anchor-pane-backlog" stylesheets="@stylesheet.css">
+      <AnchorPane layoutX="812.0" layoutY="141.0" prefHeight="536.0" prefWidth="426.0" style="-fx-background-radius: 0 15px 15px 0px;" styleClass="anchor-pane-backlog" stylesheets="@stylesheet.css">
          <children>
             <Button fx:id="deleteMemberButton" layoutX="246.0" layoutY="487.0" mnemonicParsing="false" onAction="#deleteMember" styleClass="button-delete" stylesheets="@stylesheet.css" text="Deletar" />
-            <Label fx:id="labelMemberName" layoutX="34.0" layoutY="200.0" prefHeight="35.0" prefWidth="165.0" styleClass="label-backlog" stylesheets="@stylesheet.css" text="Nome do membro">
+            <Label fx:id="labelMemberName" layoutX="34.0" layoutY="200.0" prefHeight="35.0" prefWidth="165.0" styleClass="label-backlog" stylesheets="@stylesheet.css" text="Nome do Membro">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>

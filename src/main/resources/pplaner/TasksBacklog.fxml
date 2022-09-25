@@ -48,7 +48,7 @@
                   <Insets />
                </opaqueInsets>
             </Button>
-            <Button alignment="CENTER" graphicTextGap="20.0" layoutY="269.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="57.0" prefWidth="207.0" styleClass="button1" stylesheets="@stylesheet.css" text="Projeto" textAlignment="CENTER" textFill="WHITE">
+            <Button fx:id="projectButton" alignment="CENTER" graphicTextGap="20.0" layoutY="269.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#switchToProject" prefHeight="57.0" prefWidth="207.0" styleClass="button1" stylesheets="@stylesheet.css" text="Projeto" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font>

@@ -83,6 +83,8 @@ public class MemberController implements Initializable {
     private CheckBox checkBoxType3;
     @FXML
     private CheckBox checkBoxType4;
+    @FXML
+    private Button projectButton;
     
 
     /**
@@ -172,6 +174,11 @@ public class MemberController implements Initializable {
     private void switchToCreateMember(ActionEvent event) throws IOException {
         App.setRoot("CreateMember");
     }
+    
+    @FXML
+    private void switchToProject(ActionEvent event) throws IOException {
+        App.setRoot("Project");
+    }
 
     private void fillMembersTable(){
         nameMemberColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
@@ -250,10 +257,10 @@ public class MemberController implements Initializable {
             this.memberDao.update(member);
             fillMembersTable();
             labelMemberNameDetail.setDisable(true);
-            checkBoxType1.setDisable(false);
-            checkBoxType2.setDisable(false);
-            checkBoxType3.setDisable(false);   
-            checkBoxType4.setDisable(false);;
+            checkBoxType1.setDisable(true);
+            checkBoxType2.setDisable(true);
+            checkBoxType3.setDisable(true);
+            checkBoxType4.setDisable(true);
             saveChangesButton.setVisible(false);
         }  
     }

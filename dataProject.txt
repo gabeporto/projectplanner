@@ -1,0 +1,1 @@
+{"id":"c8d1122e-61bc-43aa-bbc9-504a0cf91903","name":"Project Planner","deliveryDate":"2022-10-17","type1":"Saúde","type2":"Bem-estar","type3":"Entretenimento","type4":"Finanças","allTypes":["Saúde","Bem-estar","Entretenimento","Finanças"]}

@@ -77,6 +77,8 @@ public class KanbanController implements Initializable {
     private Button ppButton;
     @FXML
     private Button MemberButton;
+    @FXML
+    private Button projectButton;
     
     /**
      * Initializes the controller class.
@@ -133,6 +135,11 @@ public class KanbanController implements Initializable {
     @FXML
     private void switchToMember(ActionEvent event) throws IOException {
         App.setRoot("Member"); 
+    }
+    
+    @FXML
+    private void switchToProject(ActionEvent event) throws IOException {
+        App.setRoot("Project"); 
     }
 
     @FXML
@@ -256,5 +263,5 @@ public class KanbanController implements Initializable {
             }
         }
     }
-    
+
 }
