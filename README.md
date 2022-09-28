@@ -1,6 +1,5 @@
-# projectplanner
-Simplified project management
-
+# Project Planner
+Gerenciamento de tarefas dentro de uma equipe de forma eficaz!
 
 Esse projeto está sendo desenvolvido para aprendizagem utilizando a linguagem Java.
 
