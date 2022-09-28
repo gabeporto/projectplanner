@@ -117,30 +117,30 @@
                </font>
             </Label>
             <TextField fx:id="inputProjectType1" layoutX="262.0" layoutY="314.0" onKeyPressed="#labelMemberNameDetailPressed" prefHeight="38.0" prefWidth="220.0" styleClass="text-field-backlogtask" stylesheets="@stylesheet.css" />
-            <Label fx:id="labelTaskDescription11" layoutX="510.0" layoutY="265.0" prefHeight="38.0" prefWidth="220.0" stylesheets="@stylesheet.css" text="Tipo 2" textFill="WHITE">
+            <Label fx:id="labelTaskDescription2" layoutX="510.0" layoutY="265.0" prefHeight="38.0" prefWidth="220.0" stylesheets="@stylesheet.css" text="Tipo 2" textFill="WHITE">
                <font>
                   <Font size="26.0" />
                </font>
             </Label>
-            <TextField fx:id="inputProjectType11" layoutX="509.0" layoutY="314.0" onKeyPressed="#labelMemberNameDetailPressed" prefHeight="38.0" prefWidth="220.0" styleClass="text-field-backlogtask" stylesheets="@stylesheet.css" />
-            <Label fx:id="labelTaskName" layoutX="260.0" layoutY="40.0" stylesheets="@stylesheet.css" text="Nome do projeto" textFill="WHITE">
+            <TextField fx:id="inputProjectType2" layoutX="509.0" layoutY="314.0" onKeyPressed="#labelMemberNameDetailPressed" prefHeight="38.0" prefWidth="220.0" styleClass="text-field-backlogtask" stylesheets="@stylesheet.css" />
+            <Label fx:id="labelProjectName" layoutX="260.0" layoutY="40.0" stylesheets="@stylesheet.css" text="Nome do projeto" textFill="WHITE">
                <font>
                   <Font size="26.0" />
                </font>
             </Label>
-            <TextField fx:id="inputProjectType111" layoutX="262.0" layoutY="420.0" onKeyPressed="#labelMemberNameDetailPressed" prefHeight="38.0" prefWidth="220.0" styleClass="text-field-backlogtask" stylesheets="@stylesheet.css" />
-            <Label fx:id="labelTaskDescription111" layoutX="260.0" layoutY="371.0" prefHeight="38.0" prefWidth="220.0" stylesheets="@stylesheet.css" text="Tipo 3" textFill="WHITE">
+            <TextField fx:id="inputProjectType3" layoutX="262.0" layoutY="420.0" onKeyPressed="#labelMemberNameDetailPressed" prefHeight="38.0" prefWidth="220.0" styleClass="text-field-backlogtask" stylesheets="@stylesheet.css" />
+            <Label fx:id="labelTaskDescription3" layoutX="260.0" layoutY="371.0" prefHeight="38.0" prefWidth="220.0" stylesheets="@stylesheet.css" text="Tipo 3" textFill="WHITE">
                <font>
                   <Font size="26.0" />
                </font>
             </Label>
-            <Button fx:id="createTaskButton" layoutX="260.0" layoutY="490.0" mnemonicParsing="false" onAction="#createTask" prefHeight="38.0" prefWidth="467.0" styleClass="button3" stylesheets="@stylesheet.css" text="Criar projeto" />
-            <Label fx:id="labelTaskDescription1111" layoutX="510.0" layoutY="371.0" prefHeight="38.0" prefWidth="220.0" stylesheets="@stylesheet.css" text="Tipo 4" textFill="WHITE">
+            <Label fx:id="labelTaskDescription4" layoutX="510.0" layoutY="371.0" prefHeight="38.0" prefWidth="220.0" stylesheets="@stylesheet.css" text="Tipo 4" textFill="WHITE">
                <font>
                   <Font size="26.0" />
                </font>
             </Label>
-            <TextField fx:id="inputProjectType1111" layoutX="509.0" layoutY="420.0" onKeyPressed="#labelMemberNameDetailPressed" prefHeight="38.0" prefWidth="220.0" styleClass="text-field-backlogtask" stylesheets="@stylesheet.css" />
+            <TextField fx:id="inputProjectType4" layoutX="509.0" layoutY="420.0" onKeyPressed="#labelMemberNameDetailPressed" prefHeight="38.0" prefWidth="220.0" styleClass="text-field-backlogtask" stylesheets="@stylesheet.css" />
+            <Button fx:id="createTaskButton" layoutX="260.0" layoutY="490.0" mnemonicParsing="false" onAction="#createProject" prefHeight="38.0" prefWidth="467.0" styleClass="button3" stylesheets="@stylesheet.css" text="Criar projeto" />
          </children>
       </AnchorPane>
       <Text fill="WHITE" layoutX="244.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Adicionar projeto" wrappingWidth="322.13671875">
@@ -148,6 +148,6 @@
             <Font name="System Bold" size="36.0" />
          </font>
       </Text>
-      <TextField fx:id="inputTaskName" layoutX="501.0" layoutY="206.0" onKeyPressed="#nameTaskKeyPressed" prefHeight="38.0" prefWidth="467.0" styleClass="text-field-backlogtask" stylesheets="@stylesheet.css" />
+      <TextField fx:id="inputProjectName" layoutX="501.0" layoutY="206.0" onKeyPressed="#nameTaskKeyPressed" prefHeight="38.0" prefWidth="467.0" styleClass="text-field-backlogtask" stylesheets="@stylesheet.css" />
    </children>
 </AnchorPane>

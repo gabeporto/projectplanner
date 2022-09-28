@@ -82,29 +82,47 @@ public class ProjectController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
     
         projectDao.checkFile();
-        Project currentProject = new Project();
-        currentProject = projectDao.readOne();
-       
-        String date;
-        date = currentProject.getDeliveryDate();
-        LocalDate dateDelivery = LocalDate.parse(date);
-        inputProjectDate.setValue(dateDelivery);
         
-        inputProjectName.setText(currentProject.getName());       
-        inputProjectType1.setText(currentProject.getType1());
-        inputProjectType2.setText(currentProject.getType2());
-        inputProjectType3.setText(currentProject.getType3());
-        inputProjectType4.setText(currentProject.getType4());
-        
-        inputProjectName.setDisable(true);
-        inputProjectDate.setDisable(true);
-        inputProjectType1.setDisable(true);
-        inputProjectType2.setDisable(true);
-        inputProjectType3.setDisable(true);
-        inputProjectType4.setDisable(true);
-        
-        saveChangesButton.setVisible(false);
+        if(projectDao.checkEmpty()){
+            createProjectButton.setVisible(true);
+            
+            inputProjectName.setDisable(true);
+            inputProjectDate.setDisable(true);
+            inputProjectType1.setDisable(true);
+            inputProjectType2.setDisable(true);
+            inputProjectType3.setDisable(true);
+            inputProjectType4.setDisable(true);
+            
+            saveChangesButton.setVisible(false);
+            editProjectButton.setVisible(false);
+            
+        } else {
+            
+            createProjectButton.setVisible(false);
+            
+            Project currentProject = new Project();
+            currentProject = projectDao.readOne();
 
+            String date;
+            date = currentProject.getDeliveryDate();
+            LocalDate dateDelivery = LocalDate.parse(date);
+            inputProjectDate.setValue(dateDelivery);
+
+            inputProjectName.setText(currentProject.getName());       
+            inputProjectType1.setText(currentProject.getType1());
+            inputProjectType2.setText(currentProject.getType2());
+            inputProjectType3.setText(currentProject.getType3());
+            inputProjectType4.setText(currentProject.getType4());
+
+            inputProjectName.setDisable(true);
+            inputProjectDate.setDisable(true);
+            inputProjectType1.setDisable(true);
+            inputProjectType2.setDisable(true);
+            inputProjectType3.setDisable(true);
+            inputProjectType4.setDisable(true);
+
+            saveChangesButton.setVisible(false);      
+        }
 
     }    
 

@@ -38,6 +38,24 @@ public class ProjectDao {
             }
         }
     }
+    
+    public boolean checkEmpty() {
+        boolean result = true;
+        List<Project> projects = new ArrayList<>();
+        try {
+            BufferedReader br = new BufferedReader(new FileReader(DATA_FILE));
+            String data;
+            while ((data = br.readLine()) != null) {
+                projects.add(parseDataToProject(data));
+                result = false;
+            }
+            br.close();
+        } catch (IOException e) {
+            System.out.println("Exception reading objects. Exception: " + e);
+        }
+
+        return result;
+    }
 
     public String create(Project project) {
         project.setId(generateId());

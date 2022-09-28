@@ -6,6 +6,9 @@ package pplaner;
 
 import java.io.IOException;
 import java.net.URL;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -15,6 +18,8 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
+import model.Project;
+import model.dao.ProjectDao;
 
 /**
  * FXML Controller class
@@ -22,6 +27,9 @@ import javafx.scene.input.KeyEvent;
  * @author Gabriel Porto
  */
 public class CreateProjectController implements Initializable {
+    
+    
+    ProjectDao projectDao = new ProjectDao();
 
     @FXML
     private Button kanbanButton;
@@ -42,23 +50,23 @@ public class CreateProjectController implements Initializable {
     @FXML
     private TextField inputProjectType1;
     @FXML
-    private Label labelTaskDescription11;
-    @FXML
-    private TextField inputProjectType11;
-    @FXML
-    private Label labelTaskName;
-    @FXML
-    private TextField inputProjectType111;
-    @FXML
-    private Label labelTaskDescription111;
-    @FXML
     private Button createTaskButton;
     @FXML
-    private Label labelTaskDescription1111;
+    private Label labelTaskDescription2;
     @FXML
-    private TextField inputProjectType1111;
+    private TextField inputProjectType2;
     @FXML
-    private TextField inputTaskName;
+    private TextField inputProjectType3;
+    @FXML
+    private Label labelTaskDescription3;
+    @FXML
+    private Label labelTaskDescription4;
+    @FXML
+    private TextField inputProjectType4;
+    @FXML
+    private Label labelProjectName;
+    @FXML
+    private TextField inputProjectName;
 
     /**
      * Initializes the controller class.
@@ -88,11 +96,29 @@ public class CreateProjectController implements Initializable {
     }
 
     @FXML
-    private void createTask(ActionEvent event) {
+    private void nameTaskKeyPressed(KeyEvent event) {
     }
 
     @FXML
-    private void nameTaskKeyPressed(KeyEvent event) {
+    private void createProject(ActionEvent event) throws IOException {
+        Project project = new Project();
+        project.setName(inputProjectName.getText());
+        LocalDate date = inputProjectDate.getValue();
+        project.setDeliveryDate(date.toString());
+        project.setType1(inputProjectType1.getText());
+        project.setType2(inputProjectType2.getText());
+        project.setType3(inputProjectType3.getText());
+        project.setType4(inputProjectType4.getText());
+
+        List<String> types = new ArrayList();
+        types.add(project.getType1());
+        types.add(project.getType2());
+        types.add(project.getType3());
+        types.add(project.getType4());
+        project.setAllTypes(types);
+        this.projectDao.create(project);
+        
+        App.setRoot("Project");
     }
     
 }

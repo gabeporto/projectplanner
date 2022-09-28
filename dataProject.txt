@@ -1,1 +1,2 @@
-{"id":"c8d1122e-61bc-43aa-bbc9-504a0cf91903","name":"Project Planner","deliveryDate":"2022-10-17","type1":"Saúde","type2":"Bem-estar","type3":"Entretenimento","type4":"Finanças","allTypes":["Saúde","Bem-estar","Entretenimento","Finanças"]}
+{"id":"f1896c02-c539-45c9-8fe9-d0d0cd87bd3d","name":"Project Planner","deliveryDate":"2022-10-18","type1":"Economia","type2":"Admnistração","type3":"Sistemas","type4":"Engenharia","allTypes":["Economia","Admnistração","Sistemas","Engenharia"]}
+

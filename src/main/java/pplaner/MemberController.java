@@ -191,6 +191,14 @@ public class MemberController implements Initializable {
 
     @FXML
     private void deleteMember(ActionEvent event) {
+        Member member = membersTable.getSelectionModel().getSelectedItem();
+        memberDao.delete(member.getId());
+        membersTable.getItems().remove(member);
+        
+        saveChangesButton.setVisible(false);
+        editMemberButton.setVisible(false);
+        deleteMemberButton.setVisible(false);
+        
     }
 
 
