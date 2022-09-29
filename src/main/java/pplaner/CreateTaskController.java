@@ -72,6 +72,8 @@ public class CreateTaskController implements Initializable {
     private Button memberButton;
     @FXML
     private Button ProjectButton;
+    @FXML
+    private Button HomeButton;
     
 
     /**
@@ -180,5 +182,10 @@ public class CreateTaskController implements Initializable {
     @FXML
     private void switchToProject(ActionEvent event) throws IOException {
         App.setRoot("Project");
+    }
+
+    @FXML
+    private void switchToHome(ActionEvent event) throws IOException {
+        App.setRoot("Home");
     }
 }

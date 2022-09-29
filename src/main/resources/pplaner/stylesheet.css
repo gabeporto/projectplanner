@@ -263,3 +263,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
     -fx-opacity: 0.7;
 
 }
+
+.progress-bar {
+    -fx-backgroundcolor: green;
+}

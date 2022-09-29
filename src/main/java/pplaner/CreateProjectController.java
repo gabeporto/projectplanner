@@ -67,6 +67,8 @@ public class CreateProjectController implements Initializable {
     private Label labelProjectName;
     @FXML
     private TextField inputProjectName;
+    @FXML
+    private Button HomeButton;
 
     /**
      * Initializes the controller class.
@@ -89,6 +91,11 @@ public class CreateProjectController implements Initializable {
     @FXML
     private void switchToMember(ActionEvent event) throws IOException {
         App.setRoot("Member"); 
+    }
+    
+    @FXML
+    private void switchToHome(ActionEvent event) throws IOException {
+        App.setRoot("Home"); 
     }
 
     @FXML
@@ -120,5 +127,5 @@ public class CreateProjectController implements Initializable {
         
         App.setRoot("Project");
     }
-    
+ 
 }

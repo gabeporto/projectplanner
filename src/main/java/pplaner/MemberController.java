@@ -85,6 +85,8 @@ public class MemberController implements Initializable {
     private CheckBox checkBoxType4;
     @FXML
     private Button projectButton;
+    @FXML
+    private Button homeButton;
     
 
     /**
@@ -178,6 +180,11 @@ public class MemberController implements Initializable {
     @FXML
     private void switchToProject(ActionEvent event) throws IOException {
         App.setRoot("Project");
+    }
+    
+    @FXML
+    private void switchToHome(ActionEvent event) throws IOException {
+        App.setRoot("Home");
     }
 
     private void fillMembersTable(){

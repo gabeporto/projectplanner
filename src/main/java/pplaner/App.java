@@ -18,7 +18,7 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("TasksBacklog"), 1280, 720);
+        scene = new Scene(loadFXML("Home"), 1280, 720);
         stage.setScene(scene);
         stage.setTitle("Project Planner");
         stage.setResizable(false);

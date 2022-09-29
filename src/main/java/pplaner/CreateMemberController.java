@@ -60,6 +60,8 @@ public class CreateMemberController implements Initializable {
     private CheckBox checkBoxType4;
     @FXML
     private Button projectButton;
+    @FXML
+    private Button HomeButton;
 
     /**
      * Initializes the controller class.
@@ -91,6 +93,11 @@ public class CreateMemberController implements Initializable {
     @FXML
     private void switchToProject(ActionEvent event) throws IOException {
         App.setRoot("Project");
+    }
+    
+    @FXML
+    private void switchToHome(ActionEvent event) throws IOException {
+        App.setRoot("Home");
     }
     
     @FXML
@@ -155,5 +162,5 @@ public class CreateMemberController implements Initializable {
         labelMemberType.setStyle("");
     }
 
-
+    
 }

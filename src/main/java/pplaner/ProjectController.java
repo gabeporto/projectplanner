@@ -93,6 +93,8 @@ public class ProjectController implements Initializable {
     private TableColumn<Project, String> projectDateColumn;
     @FXML
     private Button deleteProjectButton;
+    @FXML
+    private Button HomeButton;
 
     /**
      * Initializes the controller class.
@@ -181,6 +183,11 @@ public class ProjectController implements Initializable {
     private void switchToCreateProject(ActionEvent event) throws IOException {
         App.setRoot("CreateProject");
     }
+    
+    @FXML
+    private void switchToHome(ActionEvent event) throws IOException {
+        App.setRoot("Home");
+    }
 
     @FXML
     private void labelMemberNameDetailPressed(KeyEvent event) {
@@ -238,5 +245,5 @@ public class ProjectController implements Initializable {
     private void deleteProject(ActionEvent event) {
     }
 
-  
+
 }
