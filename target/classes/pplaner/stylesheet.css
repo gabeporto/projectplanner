@@ -255,3 +255,11 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
     -fx-cell-size: 75px;
 }
 
+.date-picker2:disabled {
+    -fx-opacity: 0.3;
+}
+
+.date-picker2 {
+    -fx-opacity: 0.7;
+
+}

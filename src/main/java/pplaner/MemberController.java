@@ -38,7 +38,7 @@ import pplaner.App;
  */
 public class MemberController implements Initializable {
     
-   
+
     String[] tasksType = {"Prototipagem", "Desenvolvimento", "Documentação", "Testes"};
     
     private final MemberDao memberDao = new MemberDao();

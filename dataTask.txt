@@ -3,4 +3,4 @@
 {"id":"24ed61ba-bd9c-48b0-b94d-494b8083adb4","name":"Solucionar bug dos inputs","description":"Inputs de task","type":"Desenvolvimento","stage":"To Do Stage","member":"Nathan Faria"}
 {"id":"5cb4b4f5-86c2-4721-87ef-22c6620dcb8a","name":"Adicionar membros ao projeto","description":"Pra já","type":"Desenvolvimento","stage":"In Progress Stage","member":"Gabriel Porto"}
 {"id":"4b43eeeb-c445-44bc-9edc-6fc065cdb6f0","name":"Enviar primeira entrega do projeto","description":"Para Professor Gavião","type":"Documentação","stage":"Done Stage","member":"Gabriel Porto"}
-{"id":"d4c8fff3-5bdd-4bf7-b17b-4183ff72ad7e","name":"Desenvolver aplicativo para controle de saida do bar P35","description":"Desenvolver aplicativo para controle de saida do bar P35","type":"Desenvolvimento","stage":"To Do Stage","member":"Vinicius"}
+{"id":"d4c8fff3-5bdd-4bf7-b17b-4183ff72ad7e","name":"Desenvolver aplicativo para controle de saida do bar P35","description":"Desenvolver aplicativo para controle de saida do bar P35","type":"Desenvolvimento","stage":"Done Stage","member":"Vinicius"}

@@ -105,7 +105,7 @@
       </AnchorPane>
       <AnchorPane layoutX="242.0" layoutY="118.0" prefHeight="592.0" prefWidth="966.0">
          <children>
-            <DatePicker fx:id="inputProjectDate" layoutX="260.0" layoutY="199.0" prefHeight="38.0" prefWidth="467.0" styleClass="text-field-backlogtask" stylesheets="@stylesheet.css" />
+            <DatePicker fx:id="inputProjectDate" layoutX="260.0" layoutY="199.0" prefHeight="38.0" prefWidth="467.0" styleClass="date-picker2" stylesheets="@stylesheet.css" />
             <Label fx:id="labelTaskDescription" layoutX="260.0" layoutY="152.0" prefHeight="38.0" prefWidth="252.0" stylesheets="@stylesheet.css" text="Data de entrega" textFill="WHITE">
                <font>
                   <Font size="26.0" />

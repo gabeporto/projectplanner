@@ -10,13 +10,20 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
 import model.Member;
 import model.Project;
@@ -31,8 +38,12 @@ import model.dao.TaskDao;
  * @author Gabriel Porto
  */
 public class ProjectController implements Initializable {
+        
+    String[] projectsType = {"Prototipagem", "Desenvolvimento", "Documentação", "Testes"};
+    private final ProjectDao projectDao = new ProjectDao();
     
-    ProjectDao projectDao = new ProjectDao();
+    private List<Project> projectsList = new ArrayList();
+    private ObservableList<Project> observableProjects;
 
     @FXML
     private Button kanbanButton;
@@ -74,57 +85,82 @@ public class ProjectController implements Initializable {
     private TextField inputProjectType4;
     @FXML
     private Button createProjectButton;
+    @FXML
+    private TableView<Project> projectsTable;
+    @FXML
+    private TableColumn<Project, String> projectNameColumn;
+    @FXML
+    private TableColumn<Project, String> projectDateColumn;
+    @FXML
+    private Button deleteProjectButton;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-    
-        projectDao.checkFile();
         
-        if(projectDao.checkEmpty()){
-            createProjectButton.setVisible(true);
-            
-            inputProjectName.setDisable(true);
-            inputProjectDate.setDisable(true);
-            inputProjectType1.setDisable(true);
-            inputProjectType2.setDisable(true);
-            inputProjectType3.setDisable(true);
-            inputProjectType4.setDisable(true);
-            
-            saveChangesButton.setVisible(false);
-            editProjectButton.setVisible(false);
-            
-        } else {
-            
-            createProjectButton.setVisible(false);
-            
-            Project currentProject = new Project();
-            currentProject = projectDao.readOne();
-
-            String date;
-            date = currentProject.getDeliveryDate();
-            LocalDate dateDelivery = LocalDate.parse(date);
-            inputProjectDate.setValue(dateDelivery);
-
-            inputProjectName.setText(currentProject.getName());       
-            inputProjectType1.setText(currentProject.getType1());
-            inputProjectType2.setText(currentProject.getType2());
-            inputProjectType3.setText(currentProject.getType3());
-            inputProjectType4.setText(currentProject.getType4());
-
-            inputProjectName.setDisable(true);
-            inputProjectDate.setDisable(true);
-            inputProjectType1.setDisable(true);
-            inputProjectType2.setDisable(true);
-            inputProjectType3.setDisable(true);
-            inputProjectType4.setDisable(true);
-
-            saveChangesButton.setVisible(false);      
-        }
-
+        fillProjectsTable();
+        
+        inputProjectName.setDisable(true);
+        inputProjectDate.setDisable(true);
+        inputProjectType1.setDisable(true);
+        inputProjectType2.setDisable(true);
+        inputProjectType3.setDisable(true);
+        inputProjectType4.setDisable(true);
+        saveChangesButton.setVisible(false);
+        editProjectButton.setVisible(false);
+        deleteProjectButton.setVisible(false);
+        
+        projectsTable.getSelectionModel().selectedItemProperty().addListener(
+                
+                (observable, oldValue, newValue) -> 
+                {
+            try {
+                selectProjectBacklog(newValue);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(ProjectController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        });
     }    
+    
+    public void selectProjectBacklog(Project project) throws InterruptedException {
+       
+        editProjectButton.setVisible(true);
+        deleteProjectButton.setVisible(true);
+        deleteProjectButton.setDisable(true);
+        
+        if(!saveChangesButton.isVisible()) {
+            inputProjectName.setText(project.getName());
+            LocalDate date = LocalDate.parse(project.getDeliveryDate());
+            inputProjectDate.setValue(date);
+            inputProjectType1.setText(project.getType1());
+            inputProjectType2.setText(project.getType2());
+            inputProjectType3.setText(project.getType3());
+            inputProjectType4.setText(project.getType4());
+
+        } else if(saveChangesButton.isVisible()) {
+            inputProjectName.setDisable(true);
+            inputProjectDate.setDisable(true);
+            editProjectButton.setVisible(false);
+            saveChangesButton.setVisible(false);
+            deleteProjectButton.setVisible(false);
+            inputProjectType1.setDisable(true);
+            inputProjectType2.setDisable(true);
+            inputProjectType3.setDisable(true);
+            inputProjectType4.setDisable(true);
+
+        }
+    }
+    
+    private void fillProjectsTable(){
+        projectNameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
+        projectDateColumn.setCellValueFactory(new PropertyValueFactory<>("deliveryDate"));
+        projectsList = projectDao.readAll();
+        observableProjects = FXCollections.observableArrayList(projectsList);
+
+        projectsTable.setItems(observableProjects);
+    }   
 
     @FXML
     private void switchToKanban(ActionEvent event) throws IOException {
@@ -158,7 +194,7 @@ public class ProjectController implements Initializable {
         Boolean allCorrect = true;
         
         if(allCorrect == true) {
-            Project project = new Project();
+            Project project = projectsTable.getSelectionModel().getSelectedItem();;
             project.setName(inputProjectName.getText());
             LocalDate date = inputProjectDate.getValue();
             project.setDeliveryDate(date.toString());
@@ -173,8 +209,8 @@ public class ProjectController implements Initializable {
             types.add(project.getType3());
             types.add(project.getType4());
             project.setAllTypes(types);
-            this.projectDao.createOne(project);
-
+            this.projectDao.update(project);
+            fillProjectsTable();
         }
         
         inputProjectName.setDisable(true);
@@ -196,6 +232,10 @@ public class ProjectController implements Initializable {
         inputProjectType3.setDisable(false);
         inputProjectType4.setDisable(false);
         saveChangesButton.setVisible(true);
+    }
+
+    @FXML
+    private void deleteProject(ActionEvent event) {
     }
 
   
