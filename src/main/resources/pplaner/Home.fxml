@@ -110,9 +110,19 @@
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <ProgressBar fx:id="progressProjectType1" layoutX="52.0" layoutY="86.0" prefHeight="35.0" prefWidth="524.0" progress="0.0" stylesheets="@stylesheet.css" />
-            <ProgressBar fx:id="progressProjectType2" layoutX="52.0" layoutY="200.0" prefHeight="35.0" prefWidth="524.0" progress="0.0" stylesheets="@stylesheet.css" />
+            <ProgressBar fx:id="progressProjectType1" layoutX="52.0" layoutY="86.0" prefHeight="35.0" prefWidth="524.0" progress="0.0" styleClass="progress-bar2" stylesheets="@stylesheet.css" />
+            <Label fx:id="labelPercentageType1" alignment="CENTER" layoutX="56.0" layoutY="86.0" prefHeight="35.0" prefWidth="44.0" text="0%" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
             <Label fx:id="labelProjectType2" contentDisplay="CENTER" layoutX="52.0" layoutY="155.0" prefHeight="35.0" prefWidth="255.0" style="-fx-text-fill: white; -fx-font-size: 16px;" styleClass="label-backlog" stylesheets="@stylesheet.css" text="Tipo 2" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <ProgressBar fx:id="progressProjectType2" layoutX="52.0" layoutY="200.0" prefHeight="35.0" prefWidth="524.0" progress="0.0" stylesheets="@stylesheet.css" />
+            <Label fx:id="labelPercentageType2" alignment="CENTER" layoutX="56.0" layoutY="200.0" prefHeight="35.0" prefWidth="44.0" text="0%" textAlignment="CENTER">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
@@ -123,8 +133,18 @@
                </font>
             </Label>
             <ProgressBar fx:id="progressProjectType3" layoutX="52.0" layoutY="312.0" prefHeight="35.0" prefWidth="524.0" progress="0.0" stylesheets="@stylesheet.css" />
-            <ProgressBar fx:id="progressProjectType4" layoutX="52.0" layoutY="420.0" prefHeight="35.0" prefWidth="524.0" progress="0.0" stylesheets="@stylesheet.css" />
+            <Label fx:id="labelPercentageType3" alignment="CENTER" layoutX="56.0" layoutY="312.0" prefHeight="35.0" prefWidth="44.0" text="0%" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
             <Label fx:id="labelProjectType4" contentDisplay="CENTER" layoutX="52.0" layoutY="375.0" prefHeight="35.0" prefWidth="255.0" style="-fx-text-fill: white; -fx-font-size: 16px;" styleClass="label-backlog" stylesheets="@stylesheet.css" text="Tipo 4" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <ProgressBar fx:id="progressProjectType4" layoutX="52.0" layoutY="420.0" prefHeight="35.0" prefWidth="524.0" progress="0.0" stylesheets="@stylesheet.css" />
+            <Label fx:id="labelPercentageType4" alignment="CENTER" layoutX="56.0" layoutY="420.0" prefHeight="35.0" prefWidth="44.0" text="0%" textAlignment="CENTER">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
@@ -138,17 +158,13 @@
       </Text>
       <AnchorPane layoutX="909.0" layoutY="141.0" prefHeight="503.0" prefWidth="334.0" style="-fx-background-radius: 20px; -fx-background-color: #484747;" styleClass="anchor-pane-backlog" stylesheets="@stylesheet.css">
          <children>
-            <Label fx:id="labelProjectName" alignment="CENTER" contentDisplay="CENTER" layoutX="40.0" layoutY="44.0" prefHeight="48.0" prefWidth="266.0" style="-fx-text-fill: white; -fx-font-size: 18px;" styleClass="label-backlog" stylesheets="@stylesheet.css" text="Nome do Projeto" textAlignment="CENTER">
+            <Label fx:id="labelProjectName" alignment="CENTER" contentDisplay="CENTER" layoutX="34.0" layoutY="55.0" prefHeight="48.0" prefWidth="266.0" style="-fx-text-fill: #3AD45C; -fx-font-size: 24px;" styleClass="label-backlog" stylesheets="@stylesheet.css" text="Nome do Projeto" textAlignment="CENTER" textFill="#3ad45c">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <ProgressIndicator fx:id="projectProgress" layoutX="106.0" layoutY="194.0" prefHeight="115.0" prefWidth="122.0" progress="0.0" />
-            <Label fx:id="labelCompletedTasks" alignment="CENTER" contentDisplay="CENTER" layoutX="89.0" layoutY="430.0" prefHeight="35.0" prefWidth="168.0" style="-fx-text-fill: white; -fx-font-size: 16px;" styleClass="label-backlog" stylesheets="@stylesheet.css" text="tarefas concluídas" textAlignment="CENTER" textFill="#00ff35">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </Label>
+            <ProgressIndicator fx:id="projectProgress" layoutX="51.0" layoutY="138.0" prefHeight="219.0" prefWidth="232.0" progress="0.0" />
+            <Label fx:id="labelCompletedTasks" alignment="CENTER" contentDisplay="CENTER" layoutX="83.0" layoutY="404.0" prefHeight="35.0" prefWidth="168.0" style="-fx-text-fill: white; -fx-font-size: 16px;" styleClass="label-backlog" stylesheets="@stylesheet.css" text="das tarefas concluídas" textAlignment="CENTER" textFill="WHITE" />
          </children>
       </AnchorPane>
    </children>

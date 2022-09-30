@@ -265,5 +265,33 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
 }
 
 .progress-bar {
-    -fx-backgroundcolor: green;
+    -fx-accent: #3AD45C;
+    -fx-control-inner-background: #D9D9D9;
+
+}
+
+ .progress-bar > .bar {
+    -fx-padding: 0;
+    -fx-background-radius: 10px;
+    -fx-background-insets: 0;
+    -fx-background-color: #3AD45C;
+}
+
+.progress-bar > .track {
+   -fx-background-color: #D9D9D9;
+   -fx-background-radius: 10px;
+   -fx-background-insets: 0, 1;
+}
+
+.progress-indicator {
+    -fx-accent: #3AD45C;
+}
+
+.progress-indicator > .track {
+    -fx-background-color: #3AD45C;
+}
+
+.progress-indicator .percentage {
+   -fx-fill: #3AD45C;
+   -fx-font-size: 50px;
 }

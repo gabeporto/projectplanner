@@ -6,6 +6,7 @@ package pplaner;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -14,6 +15,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.control.ProgressIndicator;
+import model.Project;
+import model.dao.ProjectDao;
 
 /**
  * FXML Controller class
@@ -56,17 +59,43 @@ public class HomeController implements Initializable {
     private Button ProjectButton;
     @FXML
     private ProgressIndicator projectProgress;
+    @FXML
+    private Label labelPercentageType1;
+    @FXML
+    private Label labelPercentageType2;
+    @FXML
+    private Label labelPercentageType3;
+    @FXML
+    private Label labelPercentageType4;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        progressProjectType1.setProgress(0.5);
-        progressProjectType2.setProgress(0.3);
-        progressProjectType3.setProgress(0.7);
-        progressProjectType4.setProgress(0.9);
-        projectProgress.setProgress(0.8);
+        
+        ProjectDao projectDao = new ProjectDao();
+        Boolean isEmpty = projectDao.checkEmpty();
+        
+        if(!isEmpty){
+            Project project = projectDao.readOne();
+            labelProjectName.setText(project.getName());
+            labelProjectType1.setText(project.getType1());
+            labelPercentageType1.setText("50%");
+            progressProjectType1.setProgress(0.5);
+            labelProjectType2.setText(project.getType2());
+            labelPercentageType2.setText("30%");
+            progressProjectType2.setProgress(0.3);
+            labelProjectType3.setText(project.getType3());
+            labelPercentageType3.setText("70%");
+            progressProjectType3.setProgress(0.7);
+            labelProjectType4.setText(project.getType4());
+            labelPercentageType4.setText("90");
+            progressProjectType4.setProgress(0.9);
+            
+            projectProgress.setProgress(0.8);
+
+        }
         
     }    
 
