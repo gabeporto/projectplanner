@@ -14,6 +14,7 @@ import java.util.List;
 public class Member {
     private String id;
     private String name;
+    private List<Integer> typeActive = new ArrayList<>();
     private List<String> type = new ArrayList<>();
     
     public Member() {
@@ -21,10 +22,10 @@ public class Member {
         this.name = "";
     }
     
-    public Member(String id, String name, List<String> type) {
+    public Member(String id, String name, List<Integer> type) {
         this.id = id;
         this.name = name;
-        this.type = type;
+        this.typeActive = type;
     }
 
     public String getId() {
@@ -33,6 +34,10 @@ public class Member {
 
     public String getName() {
         return name;
+    }
+
+    public List<Integer> getTypeActive() {
+        return typeActive;
     }
 
     public List<String> getType() {
@@ -47,9 +52,13 @@ public class Member {
         this.name = name;
     }
 
+    public void setTypeActive(List<Integer> type) {
+        this.typeActive = type;
+    }
+
     public void setType(List<String> type) {
         this.type = type;
     }
     
-    
+
 }

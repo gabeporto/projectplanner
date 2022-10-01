@@ -313,7 +313,6 @@ public class TasksBacklogController implements Initializable {
             task.setDescription(labelTaskDescriptionDetail.getText());
             task.setType(labelTaskTypeDetail.getText());
             
-            System.out.println("Save" + previousTaskStage);
             if(previousTaskStage.contentEquals("To Do Stage")) {
                 project.subNumberOfToDoTasks();
             } else if(previousTaskStage.contentEquals("In Progress Stage")) {
@@ -322,7 +321,6 @@ public class TasksBacklogController implements Initializable {
                 project.subNumberOfDoneTasks();
             }
             
-            System.out.println("INPUT " + labelTaskStageDetail.getValue());
             if(labelTaskStageDetail.getValue() == "A fazer") {
                 task.setStage("To Do Stage");
                 project.addNumberOfToDoTasks();

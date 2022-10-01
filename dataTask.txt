@@ -6,7 +6,5 @@
 {"id":"d4c8fff3-5bdd-4bf7-b17b-4183ff72ad7e","name":"Desenvolver aplicativo para controle de saida do bar P35","description":"Desenvolver aplicativo para controle de saida do bar P35","type":"Desenvolvimento","stage":"In Progress Stage","member":"Vinicius"}
 {"id":"830091c6-df73-4291-9425-5130ca84bd68","name":"Implementar tela Home","description":"test","type":"Desenvolvimento","stage":"To Do Stage","member":"Gabriel Porto"}
 {"id":"c9e26dc4-8697-431a-b580-c46efde1579a","name":"Adicionar responsividade","description":"Teste","type":"Desenvolvimento","stage":"To Do Stage","member":"Gabriel Porto"}
-{"id":"6fa1a1a6-481e-4a27-ab05-ef7f82fd4c41","name":"Preparar apresentação para FAITEC","description":"Preparação","type":"Documentação","stage":"In Progress Stage","member":"Lucas Antônio"}
+{"id":"6fa1a1a6-481e-4a27-ab05-ef7f82fd4c41","name":"Preparar apresentação para FAITEC","description":"Preparação","type":"Documentação","stage":"Done Stage","member":"Lucas Antônio"}
 {"id":"35f6b2e0-af25-4805-a13a-fc6af95018c0","name":"Criar vídeo de apresentação como projeto de Extensão","description":"Colocar no site após","type":"Desenvolvimento","stage":"To Do Stage","member":"Gabriel Porto"}
-{"id":"784b6334-6778-4d15-8010-6e219c5e480e","name":"TTask nsdasdasd","description":"asdasddaasd","type":"Prototipagem","stage":"In Progress Stage","member":"Gabriel Porto"}
-{"id":"9e7167ba-24ac-454c-b235-ade7e2a0e8dd","name":"tetewtewwte","description":"wetwetwetwet","type":"Prototipagem","stage":"Done Stage","member":"Gabriel Porto"}

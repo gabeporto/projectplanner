@@ -28,7 +28,9 @@ import javafx.scene.input.DragEvent;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.shape.Circle;
 import model.Member;
+import model.Project;
 import model.dao.MemberDao;
+import model.dao.ProjectDao;
 import pplaner.App;
 
 /**
@@ -38,10 +40,10 @@ import pplaner.App;
  */
 public class MemberController implements Initializable {
     
-
-    String[] tasksType = {"Prototipagem", "Desenvolvimento", "Documentação", "Testes"};
-    
     private final MemberDao memberDao = new MemberDao();
+    private final ProjectDao projectDao = new ProjectDao();
+    
+    private Project project = projectDao.readOne();
     
     private List<Member> membersList = new ArrayList();
     private ObservableList<Member> observableMembers;
@@ -95,10 +97,10 @@ public class MemberController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         fillMembersTable();
-        checkBoxType1.setText(tasksType[0]);
-        checkBoxType2.setText(tasksType[1]);
-        checkBoxType3.setText(tasksType[2]);
-        checkBoxType4.setText(tasksType[3]);
+        checkBoxType1.setText(project.getType1());
+        checkBoxType2.setText(project.getType2());
+        checkBoxType3.setText(project.getType3());
+        checkBoxType4.setText(project.getType4());
         labelMemberNameDetail.setDisable(true);
         checkBoxType1.setDisable(true);
         checkBoxType2.setDisable(true);
@@ -133,17 +135,17 @@ public class MemberController implements Initializable {
         
         if(!saveChangesButton.isVisible()) {
             labelMemberNameDetail.setText(member.getName());
-            List<String> mTypes = member.getType();
-            if(mTypes.contains(tasksType[0])) {
+            List<Integer> mTypes = member.getTypeActive();
+            if(mTypes.get(0) == 1) {
                 checkBoxType1.setSelected(true);
             }
-            if(mTypes.contains(tasksType[1])) {
+            if(mTypes.get(1) == 1) {
                 checkBoxType2.setSelected(true);
             }
-            if(mTypes.contains(tasksType[2])) {
+            if(mTypes.get(2) == 1) {
                 checkBoxType3.setSelected(true);
             }
-            if(mTypes.contains(tasksType[3])) {
+            if(mTypes.get(3) == 1) {
                 checkBoxType4.setSelected(true);
             }
   
@@ -189,13 +191,13 @@ public class MemberController implements Initializable {
 
     private void fillMembersTable(){
         nameMemberColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
-        typeMemberColumn.setCellValueFactory(new PropertyValueFactory<>("type"));
+        typeMemberColumn.setCellValueFactory(new PropertyValueFactory<>("type"));  
         membersList = memberDao.readAll();
         observableMembers = FXCollections.observableArrayList(membersList);
 
         membersTable.setItems(observableMembers);
     }   
-
+    
     @FXML
     private void deleteMember(ActionEvent event) {
         Member member = membersTable.getSelectionModel().getSelectedItem();
@@ -251,24 +253,55 @@ public class MemberController implements Initializable {
         
                   
         if(allCorrect == true) {
-            List<String> type = new ArrayList<>(); 
+            List<Integer> typeActive = new ArrayList<>(); 
+
             
             member.setName(labelMemberNameDetail.getText());
             
             if(checkBoxType1.isSelected()){
-                type.add(tasksType[0]);
+                typeActive.add(1);
+            } else {
+                typeActive.add(0);
             }
             if(checkBoxType2.isSelected()){
-                type.add(tasksType[1]);
+                typeActive.add(1);
+            } else {
+                typeActive.add(0);
             }
             if(checkBoxType3.isSelected()){
-                type.add(tasksType[2]);
+                typeActive.add(1);
+            } else {
+                typeActive.add(0);
             }
             if(checkBoxType4.isSelected()){
-                type.add(tasksType[3]);
+                typeActive.add(1);
+            } else {
+                typeActive.add(0);
             }
             
+            // 1 ou 0 caso tenha o tipo de projeto.
+            member.setTypeActive(typeActive);
+            
+            
+            List<String> type = new ArrayList<>(); 
+            
+            if(typeActive.get(0) == 1) {
+                type.add(project.getType1());
+            }
+            if(typeActive.get(1) == 1) {
+                type.add(project.getType2());
+            }
+            if(typeActive.get(2) == 1) {
+                type.add(project.getType3());
+            }
+            if(typeActive.get(3) == 1) {
+                type.add(project.getType4());
+            }
+            
+            // Setando tipos de projeto ao membro.
             member.setType(type);
+            
+            
             this.memberDao.update(member);
             fillMembersTable();
             labelMemberNameDetail.setDisable(true);

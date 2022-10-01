@@ -22,7 +22,9 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
 import model.Member;
+import model.Project;
 import model.dao.MemberDao;
+import model.dao.ProjectDao;
 
 /**
  * FXML Controller class
@@ -32,6 +34,10 @@ import model.dao.MemberDao;
 public class CreateMemberController implements Initializable {
     
     private final MemberDao memberDao = new MemberDao();
+    private final ProjectDao projectDao = new ProjectDao();
+    private Project project = projectDao.readOne();
+    
+    
     String[] tasksType = {"Prototipagem", "Desenvolvimento", "Documentação", "Testes"};
 
     @FXML
@@ -68,10 +74,10 @@ public class CreateMemberController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        checkBoxType1.setText(tasksType[0]);
-        checkBoxType2.setText(tasksType[1]);
-        checkBoxType3.setText(tasksType[2]);
-        checkBoxType4.setText(tasksType[3]);
+        checkBoxType1.setText(project.getType1());
+        checkBoxType2.setText(project.getType2());
+        checkBoxType3.setText(project.getType3());
+        checkBoxType4.setText(project.getType4());
 
     }    
 
@@ -124,25 +130,53 @@ public class CreateMemberController implements Initializable {
         
         
         if(allCorrect == true) {
-            List<String> type = new ArrayList<>();
+
             Member member = new Member();
+            List<Integer> typeActive = new ArrayList<>();
             
             member.setName(inputMemberName.getText());
             
             if(checkBoxType1.isSelected()){
-                
-                type.add(tasksType[0]);
+                typeActive.add(1);
+            } else {
+                typeActive.add(0);
             }
             if(checkBoxType2.isSelected()){
-                type.add(tasksType[1]);
+                typeActive.add(1);
+            } else {
+                typeActive.add(0);
             }
             if(checkBoxType3.isSelected()){
-                type.add(tasksType[2]);
+                typeActive.add(1);
+            } else {
+                typeActive.add(0);
             }
             if(checkBoxType4.isSelected()){
-                type.add(tasksType[3]);
+                typeActive.add(1);
+            } else {
+                typeActive.add(0);
             }
             
+            // 1 ou 0 caso tenha o tipo de projeto.
+            member.setTypeActive(typeActive);
+
+            
+            List<String> type = new ArrayList<>(); 
+            
+            if(typeActive.get(0) == 1) {
+                type.add(project.getType1());
+            }
+            if(typeActive.get(1) == 1) {
+                type.add(project.getType2());
+            }
+            if(typeActive.get(2) == 1) {
+                type.add(project.getType3());
+            }
+            if(typeActive.get(3) == 1) {
+                type.add(project.getType4());
+            }
+            
+            // Setando tipos de projeto ao membro.
             member.setType(type);
            
             this.memberDao.create(member);

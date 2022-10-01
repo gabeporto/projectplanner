@@ -1,4 +1,4 @@
-{"id":"43e05dc8-f056-4c8e-afc1-aa380f621678","name":"Gabriel Porto","type":["Prototipagem","Desenvolvimento","Documentação","Testes"]}
-{"id":"7446e685-48cc-45e4-862c-187ba4fb776a","name":"Nathan Faria","type":["Desenvolvimento","Documentação"]}
-{"id":"5576b968-3d4f-4d52-9ef3-247d23a4f814","name":"Lucas Antônio","type":["Documentação","Testes"]}
-{"id":"7451cb9e-55f3-4e2c-a997-224b95527625","name":"Vinicius ","type":["Prototipagem","Desenvolvimento"]}
+{"id":"43e05dc8-f056-4c8e-afc1-aa380f621678","name":"Gabriel Porto","typeActive":[1,1,1,1],"type":["Flamengo","Palmeiras","Corinthians","Fluminense"]}
+{"id":"7446e685-48cc-45e4-862c-187ba4fb776a","name":"Nathan Faria","typeActive":[1,0,0,1],"type":["Flamengo","Fluminense"]}
+{"id":"5576b968-3d4f-4d52-9ef3-247d23a4f814","name":"Lucas Antônio","typeActive":[0,0,1,1],"type":["Corinthians","Fluminense"]}
+{"id":"7451cb9e-55f3-4e2c-a997-224b95527625","name":"Vinicius ","typeActive":[1,0,1,1],"type":["Flamengo","Corinthians","Fluminense"]}

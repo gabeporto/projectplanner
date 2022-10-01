@@ -44,6 +44,11 @@ public class ProjectController implements Initializable {
     
     private List<Project> projectsList = new ArrayList();
     private ObservableList<Project> observableProjects;
+    
+    String oldType1;
+    String oldType2;
+    String oldType3;
+    String oldType4;
 
     @FXML
     private Button kanbanButton;
@@ -104,6 +109,10 @@ public class ProjectController implements Initializable {
         
         fillProjectsTable();
         
+        if(!projectDao.checkEmpty()) {
+           createProjectButton.setDisable(true);
+        }
+        
         inputProjectName.setDisable(true);
         inputProjectDate.setDisable(true);
         inputProjectType1.setDisable(true);
@@ -151,7 +160,6 @@ public class ProjectController implements Initializable {
             inputProjectType2.setDisable(true);
             inputProjectType3.setDisable(true);
             inputProjectType4.setDisable(true);
-
         }
     }
     
@@ -198,10 +206,18 @@ public class ProjectController implements Initializable {
         ProjectDao projectDao = new ProjectDao();
         projectDao.checkFile();
         
+        Project project = projectsTable.getSelectionModel().getSelectedItem();
+        
         Boolean allCorrect = true;
         
+        oldType1 = project.getType1();
+        oldType2 = project.getType2();
+        oldType3 = project.getType3();
+        oldType4 = project.getType4();
+
+        // Ainda necessita validar os inputs para validar se está tudo Correto.
         if(allCorrect == true) {
-            Project project = projectsTable.getSelectionModel().getSelectedItem();;
+
             project.setName(inputProjectName.getText());
             LocalDate date = inputProjectDate.getValue();
             project.setDeliveryDate(date.toString());
@@ -219,6 +235,19 @@ public class ProjectController implements Initializable {
             this.projectDao.update(project);
             fillProjectsTable();
         }
+        
+        
+        // Caso: quando os tipos de projeto forem alterados, os membros também devem trocar o tipo de projeto.
+        if(!oldType1.contentEquals(project.getType1()) || !oldType2.contentEquals(project.getType2()) || !oldType3.contentEquals(project.getType3()) 
+                || !oldType4.contentEquals(project.getType4())) {
+            MemberDao memberDao = new MemberDao();
+            
+            List<Member> membersUpdate = memberDao.changeMemberTypes();
+            for(Member member : membersUpdate) {
+                memberDao.update(member);        
+            }
+        } 
+        
         
         inputProjectName.setDisable(true);
         inputProjectDate.setDisable(true);

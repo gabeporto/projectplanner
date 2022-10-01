@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 import model.Member;
+import model.Project;
 import org.codehaus.jackson.map.ObjectMapper;
 
 /**
@@ -137,6 +138,44 @@ public class MemberDao {
             System.out.println("Exception reading objects. Exception: " + e);
         }
         return nameMembers;
+    }
+    
+    public List<Member> changeMemberTypes() {
+        List<Member> members = this.readAll();
+        List<Member> membersUpdate = new ArrayList<>();
+        ProjectDao projectDao = new ProjectDao();
+        Project project = projectDao.readOne();
+
+        try {
+            BufferedReader br = new BufferedReader(new FileReader(DATA_FILE));
+            String data;
+            int i = 0;
+            while ((data = br.readLine()) != null) {
+                List<Integer> typeActive = new ArrayList<>();
+                List<String> type = new ArrayList<>();
+                Member member = members.get(i);
+                typeActive = members.get(i).getTypeActive();
+                if(typeActive.get(0) == 1) {
+                    type.add(project.getType1());
+                }
+                if(typeActive.get(1) == 1) {
+                    type.add(project.getType2());
+                }
+                if(typeActive.get(2) == 1) {
+                    type.add(project.getType3());
+                }
+                if(typeActive.get(3) == 1) {
+                    type.add(project.getType4());
+                }
+                member.setType(type);
+                membersUpdate.add(member);
+                i++;
+            }
+            br.close();
+        } catch (IOException e) {
+            System.out.println("Exception reading objects. Exception: " + e);
+        }
+        return membersUpdate;
     }
     
     public void update(Member member) {

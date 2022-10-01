@@ -20,10 +20,27 @@ public class Project {
     private String type3;
     private String type4;
     private List<String> allTypes = new ArrayList<>();
+    
     private int numberOfType1Tasks = 0;
+    private int numberOfType1ToDo = 0;
+    private int numberOfType1InProgress = 0;
+    private int numberOfType1Done = 0;
+    
     private int numberOfType2Tasks = 0;
+    private int numberOfType2ToDo = 0;
+    private int numberOfType2InProgress = 0;
+    private int numberOfType2Done = 0;
+    
     private int numberOfType3Tasks = 0;
+    private int numberOfType3ToDo = 0;
+    private int numberOfType3InProgress = 0;
+    private int numberOfType3Done = 0;
+
     private int numberOfType4Tasks = 0;
+    private int numberOfType4ToDo = 0;
+    private int numberOfType4InProgress = 0;
+    private int numberOfType4Done = 0;
+    
     private int numberOfToDoTasks = 0;
     private int numberOfInProgressTasks = 0;
     private int numberOfDoneTasks = 0;
@@ -118,6 +135,93 @@ public class Project {
         return percentageProgress;
     }
 
+    public int getNumberOfType1ToDo() {
+        return numberOfType1ToDo;
+    }
+
+    public void addNumberOfType1ToDo() {
+        this.numberOfType1ToDo = this.numberOfType1ToDo + 1;
+    }
+
+    public int getNumberOfType1InProgress() {
+        return numberOfType1InProgress;
+    }
+
+    public void addNumberOfType1InProgress() {
+        this.numberOfType1InProgress = this.numberOfType1InProgress + 1;
+    }
+
+    public int getNumberOfType2ToDo() {
+        return numberOfType2ToDo;
+    }
+
+    public void addNumberOfType2ToDo() {
+        this.numberOfType2ToDo = this.numberOfType2ToDo + 1;
+    }
+
+    public int getNumberOfType2InProgress() {
+        return numberOfType2InProgress;
+    }
+
+    public void addNumberOfType2InProgress() {
+        this.numberOfType2InProgress = this.numberOfType2InProgress + 1;
+    }
+
+    public int getNumberOfType2Done() {
+        return numberOfType2Done;
+    }
+
+    public void addNumberOfType2Done() {
+        this.numberOfType2Done = this.numberOfType2Done + 1;
+    }
+
+    public int getNumberOfType3ToDo() {
+        return numberOfType3ToDo;
+    }
+
+    public void addNumberOfType3ToDo() {
+        this.numberOfType3ToDo = this.numberOfType3ToDo + 1;
+    }
+
+    public int getNumberOfType3InProgress() {
+        return numberOfType3InProgress;
+    }
+
+    public void addNumberOfType3InProgress() {
+        this.numberOfType3InProgress = this.numberOfType3InProgress + 1;
+    }
+
+    public int getNumberOfType3Done() {
+        return numberOfType3Done;
+    }
+
+    public void addNumberOfType3Done() {
+        this.numberOfType3Done = this.numberOfType3Done + 1;
+    }
+
+    public int getNumberOfType4ToDo() {
+        return numberOfType4ToDo;
+    }
+
+    public void addNumberOfType4ToDo() {
+        this.numberOfType4ToDo = this.numberOfType4ToDo + 1;
+    }
+
+    public int getNumberOfType4InProgress() {
+        return numberOfType4InProgress;
+    }
+
+    public void addNumberOfType4InProgress() {
+        this.numberOfType4InProgress = this.numberOfType4InProgress + 1;
+    }
+
+    public int getNumberOfType4Done() {
+        return numberOfType4Done;
+    }
+
+    public void addNumberOfType4Done() {
+        this.numberOfType4Done = this.numberOfType4Done + 1;
+    }
     
     public void setId(String id) {
         this.id = id;
