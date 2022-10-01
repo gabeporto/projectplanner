@@ -20,6 +20,15 @@ public class Project {
     private String type3;
     private String type4;
     private List<String> allTypes = new ArrayList<>();
+    private int numberOfType1Tasks = 0;
+    private int numberOfType2Tasks = 0;
+    private int numberOfType3Tasks = 0;
+    private int numberOfType4Tasks = 0;
+    private int numberOfToDoTasks = 0;
+    private int numberOfInProgressTasks = 0;
+    private int numberOfDoneTasks = 0;
+    private int numberOfTasks = 0;
+    private float percentageProgress = 0;
     
     public Project() {
         this.id = "";
@@ -73,6 +82,43 @@ public class Project {
         return allTypes;
     }
 
+    public int getNumberOfType1Tasks() {
+        return numberOfType1Tasks;
+    }
+
+    public int getNumberOfType2Tasks() {
+        return numberOfType2Tasks;
+    }
+
+    public int getNumberOfType3Tasks() {
+        return numberOfType3Tasks;
+    }
+
+    public int getNumberOfType4Tasks() {
+        return numberOfType4Tasks;
+    }
+
+    public int getNumberOfToDoTasks() {
+        return numberOfToDoTasks;
+    }
+
+    public int getNumberOfInProgressTasks() {
+        return numberOfInProgressTasks;
+    }
+
+    public int getNumberOfDoneTasks() {
+        return numberOfDoneTasks;
+    }
+
+    public int getNumberOfTasks() {
+        return numberOfTasks;
+    }
+
+    public float getPercentageProgress() {
+        return percentageProgress;
+    }
+
+    
     public void setId(String id) {
         this.id = id;
     }
@@ -104,7 +150,77 @@ public class Project {
     public void setAllTypes(List<String> allTypes) {
         this.allTypes = allTypes;
     }
+
+    public void addNumberOfType1Tasks() {
+        this.numberOfType1Tasks = this.numberOfType1Tasks + 1;
+    }
+
+    public void addNumberOfType2Tasks() {
+        this.numberOfType2Tasks = this.numberOfType2Tasks + 1;
+    }
     
+    public void addNumberOfType3Tasks() {
+        this.numberOfType3Tasks = this.numberOfType3Tasks + 1;
+    }
+
+    public void addNumberOfType4Tasks() {
+        this.numberOfType4Tasks = this.numberOfType4Tasks + 1;
+    }
+
+    public void subNumberOfType1Tasks() {
+        this.numberOfType1Tasks = this.numberOfType1Tasks - 1;
+    }
+
+    public void subNumberOfType2Tasks() {
+        this.numberOfType2Tasks = this.numberOfType2Tasks - 1;
+    }
     
+    public void subNumberOfType3Tasks() {
+        this.numberOfType3Tasks = this.numberOfType3Tasks - 1;
+    }
+
+    public void subNumberOfType4Tasks() {
+        this.numberOfType4Tasks = this.numberOfType4Tasks - 1;
+    }
+
+    public void addNumberOfToDoTasks() {
+        this.numberOfToDoTasks = this.numberOfToDoTasks + 1;
+    }
+
+    public void addNumberOfInProgressTasks() {
+        this.numberOfInProgressTasks = this.numberOfInProgressTasks + 1;
+    }
+
+    public void addNumberOfDoneTasks() {
+        this.numberOfDoneTasks = this.numberOfDoneTasks + 1;
+    }
     
+    public void subNumberOfToDoTasks() {
+        this.numberOfToDoTasks = this.numberOfToDoTasks - 1;
+    }
+
+    public void subNumberOfInProgressTasks() {
+        this.numberOfInProgressTasks = this.numberOfInProgressTasks - 1;
+    }
+
+    public void subNumberOfDoneTasks() {
+        this.numberOfDoneTasks = this.numberOfDoneTasks - 1;
+    }
+
+    public void addNumberOfTasks() {
+        this.numberOfTasks = this.numberOfTasks + 1;
+    }
+    
+    public void subNumberOfTasks() {
+        this.numberOfTasks = this.numberOfTasks - 1;
+    }
+
+    public float calculatePercentageProgress() {
+        float doneTasks = this.numberOfDoneTasks;
+        float numOfTasks = this.numberOfTasks;
+        
+        this.percentageProgress = doneTasks / numOfTasks;
+        return this.percentageProgress;
+    }
+
 }

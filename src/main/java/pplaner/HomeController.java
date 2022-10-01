@@ -90,11 +90,14 @@ public class HomeController implements Initializable {
             labelPercentageType3.setText("70%");
             progressProjectType3.setProgress(0.7);
             labelProjectType4.setText(project.getType4());
-            labelPercentageType4.setText("90");
+            labelPercentageType4.setText("90%");
             progressProjectType4.setProgress(0.9);
-            
-            projectProgress.setProgress(0.8);
 
+            projectProgress.setProgress(project.calculatePercentageProgress());
+            if(project.calculatePercentageProgress() == 1) {
+                labelCompletedTasks.setVisible(false);
+            }
+            
         }
         
     }    

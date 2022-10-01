@@ -23,7 +23,9 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
+import model.Project;
 import model.Task;
+import model.dao.ProjectDao;
 import model.dao.TaskDao;
 
 /**
@@ -35,9 +37,12 @@ public class KanbanController implements Initializable {
     
     private List<Task> tasks = new ArrayList<>();
     private final TaskDao taskDao = new TaskDao();
+    private final ProjectDao projectDao = new ProjectDao();
     
     private List<Task> tasksList = new ArrayList();
     private ObservableList<Task> observableTasks;
+    
+    String [] arrayData = {"A fazer", "Em progresso", "Concluído"};
 
     
     @FXML
@@ -151,8 +156,9 @@ public class KanbanController implements Initializable {
 
     @FXML
     private void transferTaskToDo(MouseEvent event) {
-        String [] arrayData = {"A fazer", "Em progresso", "Concluído"};
         List<String> dialogData;
+        
+        Project project = projectDao.readOne();
 
         if (event.getClickCount() == 2) // Checking double click
         {
@@ -176,13 +182,17 @@ public class KanbanController implements Initializable {
                 this.taskDao.checkFile();
                 if(selected == "A fazer") {
                     task.setStage("To Do Stage");
-                    fillTableTasks();
                 }  else if(selected == "Em progresso") {
                     task.setStage("In Progress Stage");
+                    project.addNumberOfInProgressTasks();
+                    project.subNumberOfToDoTasks();
                 } else if(selected == "Concluído") {
                     task.setStage("Done Stage");
+                    project.addNumberOfDoneTasks();
+                    project.subNumberOfToDoTasks();
                 }
                 this.taskDao.update(task);
+                this.projectDao.update(project);
                 fillTableTasks();
             } else {
                 System.out.println("Transfer cancelled.");
@@ -192,8 +202,9 @@ public class KanbanController implements Initializable {
 
     @FXML
     private void transferTaskInProgress(MouseEvent event) {
-        String [] arrayData = {"Em progresso", "A fazer", "Concluído"};
         List<String> dialogData;
+        
+        Project project = projectDao.readOne();
 
         if (event.getClickCount() == 2) // Checking double click
         {
@@ -217,13 +228,17 @@ public class KanbanController implements Initializable {
                 this.taskDao.checkFile();
                 if(selected == "A fazer") {
                     task.setStage("To Do Stage");
-                    fillTableTasks();
+                    project.addNumberOfToDoTasks();
+                    project.subNumberOfInProgressTasks();
                 }  else if(selected == "Em progresso") {
                     task.setStage("In Progress Stage");
                 } else if(selected == "Concluído") {
                     task.setStage("Done Stage");
+                    project.addNumberOfDoneTasks();
+                    project.subNumberOfInProgressTasks();
                 }
                 this.taskDao.update(task);
+                this.projectDao.update(project);
                 fillTableTasks();
             } else {
                 System.out.println("Transfer cancelled.");
@@ -233,8 +248,9 @@ public class KanbanController implements Initializable {
 
     @FXML
     private void transferTaskDone(MouseEvent event) {
-        String [] arrayData = {"Concluído", "A fazer", "Em progresso"};
         List<String> dialogData;
+        
+        Project project = projectDao.readOne();
 
         if (event.getClickCount() == 2) // Checking double click
         {
@@ -258,12 +274,17 @@ public class KanbanController implements Initializable {
                 this.taskDao.checkFile();
                 if(selected == "A fazer") {
                     task.setStage("To Do Stage");
+                    project.addNumberOfToDoTasks();
+                    project.subNumberOfDoneTasks();
                 }  else if(selected == "Em progresso") {
                     task.setStage("In Progress Stage");
+                    project.addNumberOfInProgressTasks();
+                    project.subNumberOfDoneTasks();
                 } else if(selected == "Concluído") {
                     task.setStage("Done Stage");
                 }
                 this.taskDao.update(task);
+                this.projectDao.update(project);
                 fillTableTasks();
             } else {
                 System.out.println("Transfer cancelled.");

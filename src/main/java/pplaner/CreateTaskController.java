@@ -20,7 +20,9 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.DragEvent;
 import javafx.scene.input.KeyEvent;
 import model.Member;
+import model.Project;
 import model.Task;
+import model.dao.ProjectDao;
 import model.dao.MemberDao;
 import model.dao.TaskDao;
 import pplaner.App;
@@ -35,6 +37,7 @@ public class CreateTaskController implements Initializable {
     private List<Task> tasks = new ArrayList<>();
     private final TaskDao taskDao = new TaskDao();
     private final MemberDao memberDao = new MemberDao();
+    private final ProjectDao projectDao = new ProjectDao();
     
     List<String> membersList = this.memberDao.readAllByName();
     String[] membersName = membersList.toArray(new String[membersList.size()]);
@@ -135,12 +138,16 @@ public class CreateTaskController implements Initializable {
         
         if(allCorrect == true) {
             Task task = new Task();
+            Project project = projectDao.readOne();
             task.setName(inputTaskName.getText());
             task.setDescription(inputTaskDescription.getText());
             task.setType(inputTaskType.getValue());
             task.setMember(inputTaskMember.getValue());
             this.taskDao.create(task);
-
+            
+            project.addNumberOfToDoTasks();
+            project.addNumberOfTasks();
+            this.projectDao.update(project);
             App.setRoot("TasksBacklog");
         }
     }

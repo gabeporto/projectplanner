@@ -27,8 +27,10 @@ import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import model.Member;
+import model.Project;
 import model.Task;
 import model.dao.MemberDao;
+import model.dao.ProjectDao;
 import model.dao.TaskDao;
 
 /**
@@ -40,6 +42,7 @@ public class TasksBacklogController implements Initializable {
     
     private List<Task> tasks = new ArrayList<>();
     private final TaskDao taskDao = new TaskDao();
+    private final ProjectDao projectDao = new ProjectDao();
     
     private List<Task> tasksList = new ArrayList();
     private ObservableList<Task> observableTasks;
@@ -48,6 +51,7 @@ public class TasksBacklogController implements Initializable {
     private final MemberDao memberDao = new MemberDao();
     
     String[] tasksStage = {"A fazer", "Em progresso", "Concluído"};
+    String previousTaskStage;
 
     @FXML
     private TableView<Task> tasksBacklog;
@@ -146,7 +150,8 @@ public class TasksBacklogController implements Initializable {
     public void selectTaskBacklog(Task task) throws InterruptedException {
         
         editTaskButton.setVisible(true);
-        deleteTaskButton.setVisible(true);    
+        deleteTaskButton.setVisible(true);
+        
         if(!saveChangesButton.isVisible()) {
             labelTaskNameDetail.setText(task.getName());
             labelTaskDescriptionDetail.setText(task.getDescription());
@@ -173,7 +178,10 @@ public class TasksBacklogController implements Initializable {
             labelTaskDescriptionDetail.setText("");
             labelTaskTypeDetail.setText("");
             labelTaskMemberDetail.setText("");
+            editTaskButton.setVisible(false);
+            deleteTaskButton.setVisible(false);
         }
+        
     }
 
     @FXML
@@ -203,10 +211,23 @@ public class TasksBacklogController implements Initializable {
     
     @FXML
     private void deleteTask(ActionEvent event) {
+        Project project = projectDao.readOne();
         Task task = tasksBacklog.getSelectionModel().getSelectedItem();
+        String taskStage = task.getStage();
+        if(taskStage.contentEquals("To Do Stage")) {
+            project.subNumberOfToDoTasks();
+        } else if(taskStage.contentEquals("In Progress Stage")) {
+            project.subNumberOfInProgressTasks();
+        } else if(taskStage.contentEquals("Done Stage")) {
+            project.subNumberOfDoneTasks();
+        }
+        
+        project.subNumberOfTasks();
+        projectDao.update(project);
+        
         taskDao.delete(task.getId());
         tasksBacklog.getItems().remove(task);
-        
+    
         saveChangesButton.setVisible(false);
         editTaskButton.setVisible(false);
         deleteTaskButton.setVisible(false);
@@ -222,6 +243,7 @@ public class TasksBacklogController implements Initializable {
     private void editTask(ActionEvent event) {
 
         Task taskSelected = tasksBacklog.getSelectionModel().getSelectedItem();
+        previousTaskStage = taskSelected.getStage();
         
         // Quando nenhuma task foi selecionada e não habilitada para edição.
         String value = labelTaskNameDetail.getText();
@@ -238,6 +260,7 @@ public class TasksBacklogController implements Initializable {
     @FXML
     private void saveChangesTask(ActionEvent event) {
        
+        Project project = projectDao.readOne();
         TaskDao taskDao = new TaskDao();
         this.taskDao.checkFile();
         
@@ -290,15 +313,30 @@ public class TasksBacklogController implements Initializable {
             task.setDescription(labelTaskDescriptionDetail.getText());
             task.setType(labelTaskTypeDetail.getText());
             
-            if(labelTaskStageDetail.getValue() == "A fazer") {
-                task.setStage("To Do Stage");
-            } else if(labelTaskStageDetail.getValue() == "Em Progresso") {
-                task.setStage("In Progress Stage");
-            } else if(labelTaskStageDetail.getValue() == "Concluído") {
-                task.setStage("Done Stage");
+            System.out.println("Save" + previousTaskStage);
+            if(previousTaskStage.contentEquals("To Do Stage")) {
+                project.subNumberOfToDoTasks();
+            } else if(previousTaskStage.contentEquals("In Progress Stage")) {
+                project.subNumberOfInProgressTasks();
+            } else if(previousTaskStage.contentEquals("Done Stage")) {
+                project.subNumberOfDoneTasks();
             }
             
+            System.out.println("INPUT " + labelTaskStageDetail.getValue());
+            if(labelTaskStageDetail.getValue() == "A fazer") {
+                task.setStage("To Do Stage");
+                project.addNumberOfToDoTasks();
+            } else if(labelTaskStageDetail.getValue() == "Em progresso") {
+                task.setStage("In Progress Stage");
+                project.addNumberOfInProgressTasks();
+            } else if(labelTaskStageDetail.getValue() == "Concluído") {
+                task.setStage("Done Stage");
+                project.addNumberOfDoneTasks();
+            }
+            
+
             task.setMember(labelTaskMemberDetail.getText());
+            this.projectDao.update(project);
             this.taskDao.update(task);
             fillTasksBacklog();
             labelTaskNameDetail.setDisable(true);
