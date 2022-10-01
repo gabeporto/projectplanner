@@ -80,18 +80,30 @@ public class HomeController implements Initializable {
         if(!isEmpty){
             Project project = projectDao.readOne();
             labelProjectName.setText(project.getName());
+            
+            project.filterType1Done();
+            float resultType1 = project.calculatePercentageType1();
             labelProjectType1.setText(project.getType1());
-            labelPercentageType1.setText("50%");
-            progressProjectType1.setProgress(0.5);
+            labelPercentageType1.setText(Float.toString(resultType1*100) + "%");
+            progressProjectType1.setProgress(resultType1);
+            
+            project.filterType2Done();
+            float resultType2 = project.calculatePercentageType2();
             labelProjectType2.setText(project.getType2());
-            labelPercentageType2.setText("30%");
-            progressProjectType2.setProgress(0.3);
+            labelPercentageType2.setText(Float.toString(resultType2*100) + "%");
+            progressProjectType2.setProgress(resultType2);
+            
+            project.filterType3Done();
+            float resultType3 = project.calculatePercentageType3();
             labelProjectType3.setText(project.getType3());
-            labelPercentageType3.setText("70%");
-            progressProjectType3.setProgress(0.7);
+            labelPercentageType3.setText(Float.toString(resultType3*100) + "%");
+            progressProjectType3.setProgress(resultType3);
+            
+            project.filterType4Done();
+            float resultType4 = project.calculatePercentageType4();
             labelProjectType4.setText(project.getType4());
-            labelPercentageType4.setText("90%");
-            progressProjectType4.setProgress(0.9);
+            labelPercentageType4.setText(Float.toString(resultType4*100) + "%");
+            progressProjectType4.setProgress(resultType4);
 
             projectProgress.setProgress(project.calculatePercentageProgress());
             if(project.calculatePercentageProgress() == 1) {

@@ -86,7 +86,7 @@ public class TaskDao {
         }
         return tasks;
     }
-
+    
     public List<Task> readAllByFilter(String filter) {
         List<Task> tasks = new ArrayList<>();
         try {

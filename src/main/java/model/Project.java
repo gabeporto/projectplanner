@@ -6,6 +6,8 @@ package model;
 
 import java.util.ArrayList;
 import java.util.List;
+import model.dao.ProjectDao;
+import model.dao.TaskDao;
 
 /**
  *
@@ -45,6 +47,7 @@ public class Project {
     private int numberOfInProgressTasks = 0;
     private int numberOfDoneTasks = 0;
     private int numberOfTasks = 0;
+    
     private float percentageProgress = 0;
     private float percentageType1 = 0;
     private float percentageType2 = 0;
@@ -163,88 +166,45 @@ public class Project {
         return numberOfType1ToDo;
     }
 
-    public void addNumberOfType1ToDo() {
-        this.numberOfType1ToDo = this.numberOfType1ToDo + 1;
-    }
-
     public int getNumberOfType1InProgress() {
         return numberOfType1InProgress;
-    }
-
-    public void addNumberOfType1InProgress() {
-        this.numberOfType1InProgress = this.numberOfType1InProgress + 1;
     }
 
     public int getNumberOfType2ToDo() {
         return numberOfType2ToDo;
     }
 
-    public void addNumberOfType2ToDo() {
-        this.numberOfType2ToDo = this.numberOfType2ToDo + 1;
-    }
 
     public int getNumberOfType2InProgress() {
         return numberOfType2InProgress;
-    }
-
-    public void addNumberOfType2InProgress() {
-        this.numberOfType2InProgress = this.numberOfType2InProgress + 1;
     }
 
     public int getNumberOfType2Done() {
         return numberOfType2Done;
     }
 
-    public void addNumberOfType2Done() {
-        this.numberOfType2Done = this.numberOfType2Done + 1;
-    }
-
     public int getNumberOfType3ToDo() {
         return numberOfType3ToDo;
-    }
-
-    public void addNumberOfType3ToDo() {
-        this.numberOfType3ToDo = this.numberOfType3ToDo + 1;
     }
 
     public int getNumberOfType3InProgress() {
         return numberOfType3InProgress;
     }
 
-    public void addNumberOfType3InProgress() {
-        this.numberOfType3InProgress = this.numberOfType3InProgress + 1;
-    }
-
     public int getNumberOfType3Done() {
         return numberOfType3Done;
-    }
-
-    public void addNumberOfType3Done() {
-        this.numberOfType3Done = this.numberOfType3Done + 1;
     }
 
     public int getNumberOfType4ToDo() {
         return numberOfType4ToDo;
     }
 
-    public void addNumberOfType4ToDo() {
-        this.numberOfType4ToDo = this.numberOfType4ToDo + 1;
-    }
-
     public int getNumberOfType4InProgress() {
         return numberOfType4InProgress;
     }
 
-    public void addNumberOfType4InProgress() {
-        this.numberOfType4InProgress = this.numberOfType4InProgress + 1;
-    }
-
     public int getNumberOfType4Done() {
         return numberOfType4Done;
-    }
-
-    public void addNumberOfType4Done() {
-        this.numberOfType4Done = this.numberOfType4Done + 1;
     }
     
     public void setId(String id) {
@@ -279,62 +239,6 @@ public class Project {
         this.allTypes = allTypes;
     }
 
-    public void addNumberOfType1Tasks() {
-        this.numberOfType1Tasks = this.numberOfType1Tasks + 1;
-    }
-
-    public void addNumberOfType2Tasks() {
-        this.numberOfType2Tasks = this.numberOfType2Tasks + 1;
-    }
-    
-    public void addNumberOfType3Tasks() {
-        this.numberOfType3Tasks = this.numberOfType3Tasks + 1;
-    }
-
-    public void addNumberOfType4Tasks() {
-        this.numberOfType4Tasks = this.numberOfType4Tasks + 1;
-    }
-
-    public void subNumberOfType1Tasks() {
-        this.numberOfType1Tasks = this.numberOfType1Tasks - 1;
-    }
-
-    public void subNumberOfType2Tasks() {
-        this.numberOfType2Tasks = this.numberOfType2Tasks - 1;
-    }
-    
-    public void subNumberOfType3Tasks() {
-        this.numberOfType3Tasks = this.numberOfType3Tasks - 1;
-    }
-
-    public void subNumberOfType4Tasks() {
-        this.numberOfType4Tasks = this.numberOfType4Tasks - 1;
-    }
-
-    public void addNumberOfToDoTasks() {
-        this.numberOfToDoTasks = this.numberOfToDoTasks + 1;
-    }
-
-    public void addNumberOfInProgressTasks() {
-        this.numberOfInProgressTasks = this.numberOfInProgressTasks + 1;
-    }
-
-    public void addNumberOfDoneTasks() {
-        this.numberOfDoneTasks = this.numberOfDoneTasks + 1;
-    }
-    
-    public void subNumberOfToDoTasks() {
-        this.numberOfToDoTasks = this.numberOfToDoTasks - 1;
-    }
-
-    public void subNumberOfInProgressTasks() {
-        this.numberOfInProgressTasks = this.numberOfInProgressTasks - 1;
-    }
-
-    public void subNumberOfDoneTasks() {
-        this.numberOfDoneTasks = this.numberOfDoneTasks - 1;
-    }
-
     public void addNumberOfTasks() {
         this.numberOfTasks = this.numberOfTasks + 1;
     }
@@ -344,6 +248,12 @@ public class Project {
     }
 
     public float calculatePercentageProgress() {
+        TaskDao taskDao = new TaskDao();
+        taskDao.checkFile();
+        
+        this.numberOfDoneTasks = this.numberOfType1Done + this.numberOfType2Done + this.numberOfType3Done + this.numberOfType4Done;
+        this.numberOfTasks = taskDao.readAll().size();
+        System.out.println(taskDao.readAll().size());
         float doneTasks = this.numberOfDoneTasks;
         float numOfTasks = this.numberOfTasks;
         
@@ -382,5 +292,259 @@ public class Project {
         this.percentageType4 = doneTasks / numOfTasks;
         return this.percentageType4;
     }
+
+    
+    public void filterType1ToDo() {
+        int quantity = 0;
+        TaskDao taskDao = new TaskDao();
+        taskDao.checkFile();
+        List<Task> firstFilteredTasks = taskDao.readAllByFilter(this.getType1());
+        
+        this.numberOfType1Tasks = firstFilteredTasks.size();
+        
+        List<Task> secondFilteredTasks = new ArrayList<>();
+        
+        for(Task task : firstFilteredTasks) {
+                if(task.getStage().contains("To Do Stage")) {
+                    secondFilteredTasks.add(task);
+                    quantity = quantity + 1;
+                }
+            }
+
+        this.numberOfType1ToDo = quantity;
+
+    }
+    
+    public void filterType1InProgress() {
+        int quantity = 0;
+        TaskDao taskDao = new TaskDao();
+        taskDao.checkFile();
+        List<Task> firstFilteredTasks = taskDao.readAllByFilter(this.getType1());
+        
+        this.numberOfType1Tasks = firstFilteredTasks.size();
+        
+        List<Task> secondFilteredTasks = new ArrayList<>();
+        
+        for(Task task : firstFilteredTasks) {
+                if(task.getStage().contains("In Progress Stage")) {
+                    secondFilteredTasks.add(task);
+                    quantity = quantity + 1;
+                }
+            }
+        
+        this.numberOfType1InProgress = quantity;
+
+    } 
+    
+    public void filterType1Done() {
+        int quantity = 0;
+        TaskDao taskDao = new TaskDao();
+        taskDao.checkFile();
+        List<Task> firstFilteredTasks = taskDao.readAllByFilter(this.getType1());
+        
+        this.numberOfType1Tasks = firstFilteredTasks.size();
+        
+        List<Task> secondFilteredTasks = new ArrayList<>();
+        
+        for(Task task : firstFilteredTasks) {
+                if(task.getStage().contains("Done Stage")) {
+                    secondFilteredTasks.add(task);
+                    quantity = quantity + 1;
+                }
+            }
+        
+        this.numberOfType1Done = quantity;
+
+    }
+    
+    public void filterType2ToDo() {
+        int quantity = 0;
+        TaskDao taskDao = new TaskDao();
+        taskDao.checkFile();
+        List<Task> firstFilteredTasks = taskDao.readAllByFilter(this.getType2());
+        
+        this.numberOfType2Tasks = firstFilteredTasks.size();
+        
+        List<Task> secondFilteredTasks = new ArrayList<>();
+        
+        for(Task task : firstFilteredTasks) {
+                if(task.getStage().contains("To Do Stage")) {
+                    secondFilteredTasks.add(task);
+                    quantity = quantity + 1;
+                }
+            }
+        
+        this.numberOfType2ToDo = quantity;
+
+    }
+    
+    public void filterType2InProgress() {
+        int quantity = 0;
+        TaskDao taskDao = new TaskDao();
+        taskDao.checkFile();
+        List<Task> firstFilteredTasks = taskDao.readAllByFilter(this.getType2());
+        
+        this.numberOfType2Tasks = firstFilteredTasks.size();
+        
+        List<Task> secondFilteredTasks = new ArrayList<>();
+        
+        for(Task task : firstFilteredTasks) {
+                if(task.getStage().contains("To Do Stage")) {
+                    secondFilteredTasks.add(task);
+                    quantity = quantity + 1;
+                }
+            }
+        
+        this.numberOfType2InProgress = quantity;
+
+    }
+    
+    public void filterType2Done() {
+        int quantity = 0;
+        TaskDao taskDao = new TaskDao();
+        taskDao.checkFile();
+        List<Task> firstFilteredTasks = taskDao.readAllByFilter(this.getType2());
+        
+        this.numberOfType2Tasks = firstFilteredTasks.size();
+        
+        List<Task> secondFilteredTasks = new ArrayList<>();
+        
+        for(Task task : firstFilteredTasks) {
+                if(task.getStage().contains("Done Stage")) {
+                    secondFilteredTasks.add(task);
+                    quantity = quantity + 1;
+                }
+            }
+        
+        this.numberOfType2Done = quantity;
+
+    }
+    
+    public void filterType3ToDo() {
+        int quantity = 0;
+        TaskDao taskDao = new TaskDao();
+        taskDao.checkFile();
+        List<Task> firstFilteredTasks = taskDao.readAllByFilter(this.getType3());
+        
+        this.numberOfType3Tasks = firstFilteredTasks.size();
+        
+        List<Task> secondFilteredTasks = new ArrayList<>();
+        
+        for(Task task : firstFilteredTasks) {
+                if(task.getStage().contains("To Do Stage")) {
+                    secondFilteredTasks.add(task);
+                    quantity = quantity + 1;
+                }
+            }
+        
+        this.numberOfType3ToDo = quantity;
+
+    }
+    
+    public void filterType3InProgress() {
+        int quantity = 0;
+        TaskDao taskDao = new TaskDao();
+        taskDao.checkFile();
+        List<Task> firstFilteredTasks = taskDao.readAllByFilter(this.getType3());
+        
+        this.numberOfType3Tasks = firstFilteredTasks.size();
+        
+        List<Task> secondFilteredTasks = new ArrayList<>();
+        
+        for(Task task : firstFilteredTasks) {
+                if(task.getStage().contains("In Progress Stage")) {
+                    secondFilteredTasks.add(task);
+                    quantity = quantity + 1;
+                }
+            }
+        
+        this.numberOfType3InProgress = quantity;
+
+    }
+    
+    public void filterType3Done() {
+        int quantity = 0;
+        TaskDao taskDao = new TaskDao();
+        taskDao.checkFile();
+        List<Task> firstFilteredTasks = taskDao.readAllByFilter(this.getType3());
+        
+        this.numberOfType3Tasks = firstFilteredTasks.size();
+        
+        List<Task> secondFilteredTasks = new ArrayList<>();
+        
+        for(Task task : firstFilteredTasks) {
+                if(task.getStage().contains("Done Stage")) {
+                    secondFilteredTasks.add(task);
+                    quantity = quantity + 1;
+                }
+            }
+        
+        this.numberOfType3Done = quantity;
+
+    }
+    
+    public void filterType4ToDo() {
+        int quantity = 0;
+        TaskDao taskDao = new TaskDao();
+        taskDao.checkFile();
+        List<Task> firstFilteredTasks = taskDao.readAllByFilter(this.getType4());
+        
+        this.numberOfType4Tasks = firstFilteredTasks.size();
+        
+        List<Task> secondFilteredTasks = new ArrayList<>();
+        
+        for(Task task : firstFilteredTasks) {
+                if(task.getStage().contains("To Do Stage")) {
+                    secondFilteredTasks.add(task);
+                    quantity = quantity + 1;
+                }
+            }
+        
+        this.numberOfType4ToDo = quantity;
+
+    }
+    
+    public void filterType4InProgress() {
+        int quantity = 0;
+        TaskDao taskDao = new TaskDao();
+        taskDao.checkFile();
+        List<Task> firstFilteredTasks = taskDao.readAllByFilter(this.getType4());
+        
+        this.numberOfType4Tasks = firstFilteredTasks.size();
+        
+        List<Task> secondFilteredTasks = new ArrayList<>();
+        
+        for(Task task : firstFilteredTasks) {
+                if(task.getStage().contains("In Progress Stage")) {
+                    secondFilteredTasks.add(task);
+                    quantity = quantity + 1;
+                }
+            }
+        
+        this.numberOfType4InProgress = quantity;
+
+    }
+    
+    public void filterType4Done() {
+        int quantity = 0;
+        TaskDao taskDao = new TaskDao();
+        taskDao.checkFile();
+        List<Task> firstFilteredTasks = taskDao.readAllByFilter(this.getType4());
+        
+        this.numberOfType4Tasks = firstFilteredTasks.size();
+        
+        List<Task> secondFilteredTasks = new ArrayList<>();
+        
+        for(Task task : firstFilteredTasks) {
+                if(task.getStage().contains("Done Stage")) {
+                    secondFilteredTasks.add(task);
+                    quantity = quantity + 1;
+                }
+            }
+        
+        this.numberOfType4Done = quantity;
+
+    }
+
 
 }

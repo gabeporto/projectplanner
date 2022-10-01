@@ -182,8 +182,6 @@ public class CreateTaskController implements Initializable {
             task.setMember(inputTaskMember.getValue());
             this.taskDao.create(task);
             
-            project.addNumberOfToDoTasks();
-            project.addNumberOfTasks();
             this.projectDao.update(project);
             App.setRoot("TasksBacklog");
         }

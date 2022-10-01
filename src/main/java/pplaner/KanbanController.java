@@ -185,12 +185,8 @@ public class KanbanController implements Initializable {
                     task.setStage("To Do Stage");
                 }  else if(selected == "Em progresso") {
                     task.setStage("In Progress Stage");
-                    project.addNumberOfInProgressTasks();
-                    project.subNumberOfToDoTasks();
                 } else if(selected == "Concluído") {
                     task.setStage("Done Stage");
-                    project.addNumberOfDoneTasks();
-                    project.subNumberOfToDoTasks();
                 }
                 this.taskDao.update(task);
                 this.projectDao.update(project);
@@ -230,14 +226,10 @@ public class KanbanController implements Initializable {
                 this.taskDao.checkFile();
                 if(selected == "A fazer") {
                     task.setStage("To Do Stage");
-                    project.addNumberOfToDoTasks();
-                    project.subNumberOfInProgressTasks();
                 }  else if(selected == "Em progresso") {
                     task.setStage("In Progress Stage");
                 } else if(selected == "Concluído") {
                     task.setStage("Done Stage");
-                    project.addNumberOfDoneTasks();
-                    project.subNumberOfInProgressTasks();
                 }
                 this.taskDao.update(task);
                 this.projectDao.update(project);
@@ -277,12 +269,8 @@ public class KanbanController implements Initializable {
                 this.taskDao.checkFile();
                 if(selected == "A fazer") {
                     task.setStage("To Do Stage");
-                    project.addNumberOfToDoTasks();
-                    project.subNumberOfDoneTasks();
                 }  else if(selected == "Em progresso") {
                     task.setStage("In Progress Stage");
-                    project.addNumberOfInProgressTasks();
-                    project.subNumberOfDoneTasks();
                 } else if(selected == "Concluído") {
                     task.setStage("Done Stage");
                 }
