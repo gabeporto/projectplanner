@@ -39,7 +39,6 @@ import model.dao.TaskDao;
  */
 public class ProjectController implements Initializable {
         
-    String[] projectsType = {"Prototipagem", "Desenvolvimento", "Documentação", "Testes"};
     private final ProjectDao projectDao = new ProjectDao();
     
     private List<Project> projectsList = new ArrayList();

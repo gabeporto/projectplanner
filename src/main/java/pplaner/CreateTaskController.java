@@ -43,7 +43,10 @@ public class CreateTaskController implements Initializable {
     String[] membersName = membersList.toArray(new String[membersList.size()]);
     
     
-    String[] tasksType = {"Prototipagem", "Desenvolvimento", "Documentação", "Testes"};
+    Project project = projectDao.readOne();
+    
+    List<String> tasksType = project.getAllTypes();
+
     
     @FXML
     private TextField inputTaskName;
@@ -85,7 +88,7 @@ public class CreateTaskController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         inputTaskType.getItems().addAll(tasksType);
-        inputTaskType.setValue(tasksType[0]);
+        inputTaskType.setValue(tasksType.get(0));
         inputTaskMember.getItems().addAll(membersList);
         inputTaskMember.setValue(membersName[0]);
 
