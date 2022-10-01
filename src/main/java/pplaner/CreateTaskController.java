@@ -143,8 +143,42 @@ public class CreateTaskController implements Initializable {
             Task task = new Task();
             Project project = projectDao.readOne();
             task.setName(inputTaskName.getText());
-            task.setDescription(inputTaskDescription.getText());
+            task.setDescription(inputTaskDescription.getText());      
             task.setType(inputTaskType.getValue());
+            
+            List<Integer> typeActive = new ArrayList<>();
+            int typeIndex = inputTaskType.getSelectionModel().getSelectedIndex();
+            switch (typeIndex) {
+                case 0:
+                    typeActive.add(1);
+                    typeActive.add(0);
+                    typeActive.add(0);
+                    typeActive.add(0);
+                    break;
+                case 1:
+                    typeActive.add(0);
+                    typeActive.add(1);
+                    typeActive.add(0);
+                    typeActive.add(0);
+                    break;
+                case 2:
+                    typeActive.add(0);
+                    typeActive.add(0);
+                    typeActive.add(1);
+                    typeActive.add(0);
+                    break;
+                case 3:
+                    typeActive.add(0);
+                    typeActive.add(0);
+                    typeActive.add(0);
+                    typeActive.add(1);
+                    break;
+                default:
+                    break;
+            }
+            
+            task.setTypeActive(typeActive);
+            
             task.setMember(inputTaskMember.getValue());
             this.taskDao.create(task);
             

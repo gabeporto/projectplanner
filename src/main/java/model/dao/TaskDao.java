@@ -10,6 +10,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
+import model.Member;
+import model.Project;
 import model.Task;
 import org.codehaus.jackson.map.ObjectMapper;
 
@@ -100,6 +102,41 @@ public class TaskDao {
             System.out.println("Exception reading objects. Exception: " + e);
         }
         return tasks;
+    }
+    
+    public List<Task> changeTaskType() {
+        List<Task> tasks = this.readAll();
+        List<Task> tasksUpdate = new ArrayList<>();
+        ProjectDao projectDao = new ProjectDao();
+        Project project = projectDao.readOne();
+
+        try {
+            BufferedReader br = new BufferedReader(new FileReader(DATA_FILE));
+            String data;
+            int i = 0;
+            while ((data = br.readLine()) != null) {
+                List<Integer> typeActive = new ArrayList<>();
+                String type = "";
+                Task task = tasks.get(i);
+                typeActive = tasks.get(i).getTypeActive();
+                if(typeActive.get(0) == 1) {
+                    type = project.getType1();
+                } else if(typeActive.get(1) == 1) {
+                    type = project.getType2();
+                } else if(typeActive.get(2) == 1) {
+                    type = project.getType3();
+                } else if(typeActive.get(3) == 1) {
+                    type = project.getType4();
+                }
+                task.setType(type);
+                tasksUpdate.add(task);
+                i++;
+            }
+            br.close();
+        } catch (IOException e) {
+            System.out.println("Exception reading objects. Exception: " + e);
+        }
+        return tasksUpdate;
     }
     
     public void update(Task task) {

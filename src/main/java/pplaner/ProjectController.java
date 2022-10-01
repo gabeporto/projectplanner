@@ -239,12 +239,22 @@ public class ProjectController implements Initializable {
         // Caso: quando os tipos de projeto forem alterados, os membros também devem trocar o tipo de projeto.
         if(!oldType1.contentEquals(project.getType1()) || !oldType2.contentEquals(project.getType2()) || !oldType3.contentEquals(project.getType3()) 
                 || !oldType4.contentEquals(project.getType4())) {
+            
             MemberDao memberDao = new MemberDao();
             
             List<Member> membersUpdate = memberDao.changeMemberTypes();
             for(Member member : membersUpdate) {
                 memberDao.update(member);        
             }
+            
+            TaskDao taskDao = new TaskDao();
+            
+            List<Task> tasksUpdate = taskDao.changeTaskType();
+            for(Task task : tasksUpdate) {
+                taskDao.update(task);        
+            }
+            
+            
         } 
         
         

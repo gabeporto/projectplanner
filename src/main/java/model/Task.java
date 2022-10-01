@@ -4,6 +4,9 @@
  */
 package model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author Gabriel Porto
@@ -15,6 +18,7 @@ public class Task {
     private String type;
     private String stage;
     private String member;
+    private List<Integer> typeActive = new ArrayList<>();
     
     public Task() {
         this.id = "";
@@ -58,6 +62,10 @@ public class Task {
         return member;
     }
 
+    public List<Integer> getTypeActive() {
+        return typeActive;
+    }
+    
     public void setId(String id) {
         this.id = id;
     }
@@ -81,7 +89,9 @@ public class Task {
     public void setMember(String member) {
         this.member = member;
     }
-    
-    
+
+    public void setTypeActive(List<Integer> typeActive) {
+        this.typeActive = typeActive;
+    }
     
 }

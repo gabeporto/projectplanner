@@ -43,14 +43,15 @@ public class TasksBacklogController implements Initializable {
     private List<Task> tasks = new ArrayList<>();
     private final TaskDao taskDao = new TaskDao();
     private final ProjectDao projectDao = new ProjectDao();
+    Project project = projectDao.readOne();
     
+    String[] tasksStage = {"A fazer", "Em progresso", "Concluído"};
     private List<Task> tasksList = new ArrayList();
     private ObservableList<Task> observableTasks;
     
     private List<Member> members = new ArrayList<>();
     private final MemberDao memberDao = new MemberDao();
     
-    String[] tasksStage = {"A fazer", "Em progresso", "Concluído"};
     String previousTaskStage;
 
     @FXML
@@ -68,7 +69,7 @@ public class TasksBacklogController implements Initializable {
     @FXML
     private TextField labelTaskDescriptionDetail;
     @FXML
-    private TextField labelTaskTypeDetail;
+    private ChoiceBox<String> labelTaskTypeDetail;
     @FXML
     private TextField labelTaskMemberDetail;
     @FXML
@@ -110,6 +111,8 @@ public class TasksBacklogController implements Initializable {
         fillTasksBacklog();
         labelTaskStageDetail.getItems().addAll(tasksStage);
         labelTaskStageDetail.setDisable(true);
+        labelTaskTypeDetail.getItems().addAll(project.getAllTypes());
+        labelTaskTypeDetail.setDisable(true);   
         labelTaskNameDetail.setDisable(true);
         labelTaskDescriptionDetail.setDisable(true);
         labelTaskTypeDetail.setDisable(true);
@@ -163,7 +166,7 @@ public class TasksBacklogController implements Initializable {
             } else if(taskStage.contentEquals("Done Stage")) {
                 labelTaskStageDetail.setValue("Concluído");
             }
-            labelTaskTypeDetail.setText(task.getType());
+            labelTaskTypeDetail.setValue(task.getType());
             labelTaskMemberDetail.setText(task.getMember());
             
         } else if(saveChangesButton.isVisible()) {
@@ -176,7 +179,7 @@ public class TasksBacklogController implements Initializable {
             
             labelTaskNameDetail.setText("");
             labelTaskDescriptionDetail.setText("");
-            labelTaskTypeDetail.setText("");
+            labelTaskTypeDetail.setValue("");
             labelTaskMemberDetail.setText("");
             editTaskButton.setVisible(false);
             deleteTaskButton.setVisible(false);
@@ -284,7 +287,7 @@ public class TasksBacklogController implements Initializable {
             labelTaskDescriptionDetail.setStyle("");
         }
         
-        if(labelTaskTypeDetail.getText().equals("")) {
+        if(labelTaskTypeDetail.getValue().equals("")) {
             labelType.setStyle("-fx-text-fill: #c71616;");
             labelTaskTypeDetail.setStyle("-fx-border-color: red;");
             allCorrect = false;
@@ -311,7 +314,41 @@ public class TasksBacklogController implements Initializable {
         if(allCorrect == true) {
             task.setName(labelTaskNameDetail.getText());
             task.setDescription(labelTaskDescriptionDetail.getText());
-            task.setType(labelTaskTypeDetail.getText());
+            task.setType(labelTaskTypeDetail.getValue());
+                       
+            List<Integer> typeActive = new ArrayList<>();
+            int typeIndex = labelTaskTypeDetail.getSelectionModel().getSelectedIndex();
+            switch (typeIndex) {
+                case 0:
+                    typeActive.add(1);
+                    typeActive.add(0);
+                    typeActive.add(0);
+                    typeActive.add(0);
+                    break;
+                case 1:
+                    typeActive.add(0);
+                    typeActive.add(1);
+                    typeActive.add(0);
+                    typeActive.add(0);
+                    break;
+                case 2:
+                    typeActive.add(0);
+                    typeActive.add(0);
+                    typeActive.add(1);
+                    typeActive.add(0);
+                    break;
+                case 3:
+                    typeActive.add(0);
+                    typeActive.add(0);
+                    typeActive.add(0);
+                    typeActive.add(1);
+                    break;
+                default:
+                    break;
+            }
+            
+            task.setTypeActive(typeActive);
+            
             
             if(previousTaskStage.contentEquals("To Do Stage")) {
                 project.subNumberOfToDoTasks();
@@ -357,14 +394,7 @@ public class TasksBacklogController implements Initializable {
         labelTaskDescriptionDetail.setStyle("");
         labelDescription.setStyle("");
     }
-    
-    @FXML
-    private void labelTaskTypeDetailPressed(KeyEvent event) {
-        labelTaskTypeDetail.setStyle("");
-        labelType.setStyle("");
-    }
-    
-    
+        
     @FXML
     private void labelTaskStageDetailPressed(MouseEvent event) {
         labelTaskStageDetail.setStyle("");

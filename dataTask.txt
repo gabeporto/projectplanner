@@ -1,11 +1,12 @@
-{"id":"de826289-6114-46d5-993e-60838a93c0ca","name":"Criar projeto","description":"Pontapé inicial","type":"Prototipagem","stage":"Done Stage","member":"Gabriel Porto"}
-{"id":"3a26c849-bcf6-4c91-bf6a-9c90d92b09be","name":"Documentar segunda entrega","description":"Segunda entrega para Professor Andrey","type":"Documentação","stage":"In Progress Stage","member":"Lucas Antônio"}
-{"id":"24ed61ba-bd9c-48b0-b94d-494b8083adb4","name":"Solucionar bug dos inputs","description":"Inputs de task","type":"Desenvolvimento","stage":"To Do Stage","member":"Nathan Faria"}
-{"id":"5cb4b4f5-86c2-4721-87ef-22c6620dcb8a","name":"Adicionar membros ao projeto","description":"Pra já","type":"Desenvolvimento","stage":"To Do Stage","member":"Gabriel Porto"}
-{"id":"4b43eeeb-c445-44bc-9edc-6fc065cdb6f0","name":"Enviar primeira entrega do projeto","description":"Para Professor Gavião","type":"Documentação","stage":"In Progress Stage","member":"Gabriel Porto"}
-{"id":"d4c8fff3-5bdd-4bf7-b17b-4183ff72ad7e","name":"Desenvolver aplicativo para controle de saida do bar P35","description":"Desenvolver aplicativo para controle de saida do bar P35","type":"Desenvolvimento","stage":"Done Stage","member":"Vinicius"}
-{"id":"830091c6-df73-4291-9425-5130ca84bd68","name":"Implementar tela Home","description":"test","type":"Desenvolvimento","stage":"Done Stage","member":"Gabriel Porto"}
-{"id":"c9e26dc4-8697-431a-b580-c46efde1579a","name":"Adicionar responsividade","description":"Teste","type":"Desenvolvimento","stage":"To Do Stage","member":"Gabriel Porto"}
-{"id":"6fa1a1a6-481e-4a27-ab05-ef7f82fd4c41","name":"Preparar apresentação para FAITEC","description":"Preparação","type":"Documentação","stage":"Done Stage","member":"Lucas Antônio"}
-{"id":"35f6b2e0-af25-4805-a13a-fc6af95018c0","name":"Criar vídeo de apresentação como projeto de Extensão","description":"Colocar no site após","type":"Desenvolvimento","stage":"Done Stage","member":"Gabriel Porto"}
-{"id":"bf3fe36e-8ebc-4a68-b98f-4f20d2d39b5d","name":"Teste do Teste","description":"Teste","type":"Desenvolvimento","stage":"Done Stage","member":"Gabriel Porto"}
+{"id":"de826289-6114-46d5-993e-60838a93c0ca","name":"Criar projeto","description":"Pontapé inicial","type":"Prototipagem","stage":"Done Stage","member":"Gabriel Porto","typeActive":[1,0,0,0]}
+{"id":"3a26c849-bcf6-4c91-bf6a-9c90d92b09be","name":"Documentar segunda entrega","description":"Segunda entrega para Professor Andrey","type":"Documentação","stage":"In Progress Stage","member":"Lucas Antônio","typeActive":[0,0,1,0]}
+{"id":"24ed61ba-bd9c-48b0-b94d-494b8083adb4","name":"Solucionar bug dos inputs","description":"Inputs de task","type":"Prototipagem","stage":"To Do Stage","member":"Nathan Faria","typeActive":[1,0,0,0]}
+{"id":"5cb4b4f5-86c2-4721-87ef-22c6620dcb8a","name":"Adicionar membros ao projeto","description":"Pra já","type":"Testes","stage":"To Do Stage","member":"Gabriel Porto","typeActive":[0,0,0,1]}
+{"id":"4b43eeeb-c445-44bc-9edc-6fc065cdb6f0","name":"Enviar primeira entrega do projeto","description":"Para Professor Gavião","type":"Desenvolvimento","stage":"In Progress Stage","member":"Gabriel Porto","typeActive":[0,1,0,0]}
+{"id":"d4c8fff3-5bdd-4bf7-b17b-4183ff72ad7e","name":"Desenvolver aplicativo para controle de saida do bar P35","description":"Desenvolver aplicativo para controle de saida do bar P35","type":"Testes","stage":"Done Stage","member":"Vinicius","typeActive":[0,0,0,1]}
+{"id":"830091c6-df73-4291-9425-5130ca84bd68","name":"Implementar tela Home","description":"test","type":"Documentação","stage":"Done Stage","member":"Gabriel Porto","typeActive":[0,0,1,0]}
+{"id":"c9e26dc4-8697-431a-b580-c46efde1579a","name":"Adicionar responsividade","description":"Teste","type":"Desenvolvimento","stage":"To Do Stage","member":"Gabriel Porto","typeActive":[0,1,0,0]}
+{"id":"6fa1a1a6-481e-4a27-ab05-ef7f82fd4c41","name":"Preparar apresentação para FAITEC","description":"Preparação","type":"Testes","stage":"Done Stage","member":"Lucas Antônio","typeActive":[0,0,0,1]}
+{"id":"35f6b2e0-af25-4805-a13a-fc6af95018c0","name":"Criar vídeo de apresentação como projeto de Extensão","description":"Colocar no site após","type":"Testes","stage":"Done Stage","member":"Gabriel Porto","typeActive":[0,0,0,1]}
+{"id":"bf3fe36e-8ebc-4a68-b98f-4f20d2d39b5d","name":"Teste do Teste","description":"Teste","type":"Documentação","stage":"Done Stage","member":"Gabriel Porto","typeActive":[0,0,1,0]}
+{"id":"c24f11ea-f98f-4d0c-bd3b-49ba908f4d3d","name":"Task 312312","description":"231232123","type":"Documentação","stage":"To Do Stage","member":"Gabriel Porto","typeActive":[0,0,1,0]}
