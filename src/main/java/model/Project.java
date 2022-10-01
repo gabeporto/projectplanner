@@ -46,6 +46,10 @@ public class Project {
     private int numberOfDoneTasks = 0;
     private int numberOfTasks = 0;
     private float percentageProgress = 0;
+    private float percentageType1 = 0;
+    private float percentageType2 = 0;
+    private float percentageType3 = 0;
+    private float percentageType4 = 0;
     
     public Project() {
         this.id = "";
@@ -133,6 +137,26 @@ public class Project {
 
     public float getPercentageProgress() {
         return percentageProgress;
+    }
+
+    public int getNumberOfType1Done() {
+        return numberOfType1Done;
+    }
+
+    public float getPercentageType1() {
+        return percentageType1;
+    }
+
+    public float getPercentageType2() {
+        return percentageType2;
+    }
+
+    public float getPercentageType3() {
+        return percentageType3;
+    }
+
+    public float getPercentageType4() {
+        return percentageType4;
     }
 
     public int getNumberOfType1ToDo() {
@@ -325,6 +349,38 @@ public class Project {
         
         this.percentageProgress = doneTasks / numOfTasks;
         return this.percentageProgress;
+    }
+    
+    public float calculatePercentageType1() {
+        float doneTasks = this.numberOfType1Done;
+        float numOfTasks = this.numberOfType1Tasks;
+        
+        this.percentageType1 = doneTasks / numOfTasks;
+        return this.percentageType1;
+    }
+    
+    public float calculatePercentageType2() {
+        float doneTasks = this.numberOfType2Done;
+        float numOfTasks = this.numberOfType2Tasks;
+        
+        this.percentageType2 = doneTasks / numOfTasks;
+        return this.percentageType2;
+    }
+    
+    public float calculatePercentageType3() {
+        float doneTasks = this.numberOfType3Done;
+        float numOfTasks = this.numberOfType3Tasks;
+        
+        this.percentageType3 = doneTasks / numOfTasks;
+        return this.percentageType3;
+    }
+    
+    public float calculatePercentageType4() {
+        float doneTasks = this.numberOfType4Done;
+        float numOfTasks = this.numberOfType4Tasks;
+        
+        this.percentageType4 = doneTasks / numOfTasks;
+        return this.percentageType4;
     }
 
 }

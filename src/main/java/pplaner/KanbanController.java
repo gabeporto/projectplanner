@@ -170,6 +170,7 @@ public class KanbanController implements Initializable {
             dialog.setTitle("Transferir task");
             dialog.setHeaderText("\nNome da task: " + 
                     tableTasksToDo.getSelectionModel().getSelectedItem().getName() + "\n\nDescrição: " + 
+                    tableTasksToDo.getSelectionModel().getSelectedItem().getType() + "\n\nTipo: " +
                     tableTasksToDo.getSelectionModel().getSelectedItem().getDescription() + "\n\nMembro: " +
                     tableTasksToDo.getSelectionModel().getSelectedItem().getMember() + "\n\n");
             Task task = tableTasksToDo.getSelectionModel().getSelectedItem();
@@ -216,6 +217,7 @@ public class KanbanController implements Initializable {
             dialog.setTitle("Transferir task");
             dialog.setHeaderText("\nNome da task: " + 
                     tableTasksInProgress.getSelectionModel().getSelectedItem().getName() + "\n\nDescrição: " + 
+                    tableTasksToDo.getSelectionModel().getSelectedItem().getType() + "\n\nTipo: " +
                     tableTasksInProgress.getSelectionModel().getSelectedItem().getDescription() + "\n\nMembro: " +
                     tableTasksInProgress.getSelectionModel().getSelectedItem().getMember() + "\n\n");
             Task task = tableTasksInProgress.getSelectionModel().getSelectedItem();
@@ -261,7 +263,8 @@ public class KanbanController implements Initializable {
             dialog.setContentText("Estado: ");
             dialog.setTitle("Transferir task");
             dialog.setHeaderText("\nNome da task: " + 
-                    tableTasksDone.getSelectionModel().getSelectedItem().getName() + "\n\nDescrição: " + 
+                    tableTasksDone.getSelectionModel().getSelectedItem().getName() + "\n\nDescrição: " +
+                    tableTasksToDo.getSelectionModel().getSelectedItem().getType() + "\n\nTipo: " +
                     tableTasksDone.getSelectionModel().getSelectedItem().getDescription() + "\n\nMembro: " +
                     tableTasksDone.getSelectionModel().getSelectedItem().getMember() + "\n\n");
             Task task = tableTasksDone.getSelectionModel().getSelectedItem();
