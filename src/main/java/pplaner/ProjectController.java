@@ -112,6 +112,8 @@ public class ProjectController implements Initializable {
            createProjectButton.setDisable(true);
         }
         
+        createProjectButton.setDisable(false);
+        
         inputProjectName.setDisable(true);
         inputProjectDate.setDisable(true);
         inputProjectType1.setDisable(true);
@@ -196,9 +198,6 @@ public class ProjectController implements Initializable {
         App.setRoot("Home");
     }
 
-    @FXML
-    private void labelMemberNameDetailPressed(KeyEvent event) {
-    }
 
     @FXML
     private void saveChangesProject(ActionEvent event) {
@@ -214,7 +213,55 @@ public class ProjectController implements Initializable {
         oldType3 = project.getType3();
         oldType4 = project.getType4();
 
-        // Ainda necessita validar os inputs para validar se está tudo Correto.
+        
+        if(inputProjectName.getText().equals("")) {
+            labelProjectName.setStyle("-fx-text-fill: #c71616;");
+            inputProjectName.setStyle("-fx-border-color: red;");
+            allCorrect = false;
+        } else {
+            labelProjectName.setStyle("");
+            inputProjectName.setStyle("");
+        }
+        
+        if(inputProjectType1.getText().equals("")) {
+            labelProjectType1.setStyle("-fx-text-fill: #c71616;");
+            inputProjectType1.setStyle("-fx-border-color: red;");
+            allCorrect = false;
+        } else {
+            labelProjectType1.setStyle("");
+            inputProjectType1.setStyle("");
+        }
+        
+        if(inputProjectType2.getText().equals("")) {
+            labelProjectType2.setStyle("-fx-text-fill: #c71616;");
+            inputProjectType2.setStyle("-fx-border-color: red;");
+            allCorrect = false;
+        } else {
+            labelProjectType2.setStyle("");
+            inputProjectType2.setStyle("");
+        }
+        
+        if(inputProjectType3.getText().equals("")) {
+            labelProjectType3.setStyle("-fx-text-fill: #c71616;");
+            inputProjectType3.setStyle("-fx-border-color: red;");
+            allCorrect = false;
+        } else {
+            labelProjectType3.setStyle("");
+            inputProjectType3.setStyle("");
+        }
+        
+        if(inputProjectType4.getText().equals("")) {
+            labelProjectType4.setStyle("-fx-text-fill: #c71616;");
+            inputProjectType4.setStyle("-fx-border-color: red;");
+            allCorrect = false;
+        } else {
+            labelProjectType4.setStyle("");
+            inputProjectType4.setStyle("");
+        }
+        
+        
+
+        
         if(allCorrect == true) {
 
             project.setName(inputProjectName.getText());
@@ -233,38 +280,41 @@ public class ProjectController implements Initializable {
             project.setAllTypes(types);
             this.projectDao.update(project);
             fillProjectsTable();
+            
+            // Caso: quando os tipos de projeto forem alterados, os membros também devem trocar o tipo de projeto.
+            if(!oldType1.contentEquals(project.getType1()) || !oldType2.contentEquals(project.getType2()) || !oldType3.contentEquals(project.getType3()) 
+                    || !oldType4.contentEquals(project.getType4())) {
+
+                MemberDao memberDao = new MemberDao();
+
+                List<Member> membersUpdate = memberDao.changeMemberTypes();
+                for(Member member : membersUpdate) {
+                    memberDao.update(member);        
+                }
+
+                TaskDao taskDao = new TaskDao();
+
+                List<Task> tasksUpdate = taskDao.changeTaskType();
+                for(Task task : tasksUpdate) {
+                    taskDao.update(task);        
+                }  
+            }         
+
+            inputProjectName.setDisable(true);
+            inputProjectDate.setDisable(true);
+            inputProjectType1.setDisable(true);
+            inputProjectType2.setDisable(true);
+            inputProjectType3.setDisable(true);
+            inputProjectType4.setDisable(true);
+            saveChangesButton.setVisible(false);
+            
+            inputProjectName.setText("");
+            inputProjectType1.setText("");
+            inputProjectType2.setText("");
+            inputProjectType3.setText("");
+            inputProjectType4.setText("");
+            
         }
-        
-        
-        // Caso: quando os tipos de projeto forem alterados, os membros também devem trocar o tipo de projeto.
-        if(!oldType1.contentEquals(project.getType1()) || !oldType2.contentEquals(project.getType2()) || !oldType3.contentEquals(project.getType3()) 
-                || !oldType4.contentEquals(project.getType4())) {
-            
-            MemberDao memberDao = new MemberDao();
-            
-            List<Member> membersUpdate = memberDao.changeMemberTypes();
-            for(Member member : membersUpdate) {
-                memberDao.update(member);        
-            }
-            
-            TaskDao taskDao = new TaskDao();
-            
-            List<Task> tasksUpdate = taskDao.changeTaskType();
-            for(Task task : tasksUpdate) {
-                taskDao.update(task);        
-            }
-            
-            
-        } 
-        
-        
-        inputProjectName.setDisable(true);
-        inputProjectDate.setDisable(true);
-        inputProjectType1.setDisable(true);
-        inputProjectType2.setDisable(true);
-        inputProjectType3.setDisable(true);
-        inputProjectType4.setDisable(true);
-        saveChangesButton.setVisible(false);
 
     }
     
@@ -278,10 +328,39 @@ public class ProjectController implements Initializable {
         inputProjectType4.setDisable(false);
         saveChangesButton.setVisible(true);
     }
-
+    
+    // Será implementado futuramente, ainda está em testes sob apenas um projeto.
     @FXML
     private void deleteProject(ActionEvent event) {
     }
 
+    @FXML
+    private void ProjectNameDetailPressed(KeyEvent event) {
+        labelProjectName.setStyle("");
+        inputProjectName.setStyle("");
+    }
 
+    @FXML
+    private void ProjectType1DetailPressed(KeyEvent event) {
+        labelProjectType1.setStyle("");
+        inputProjectType1.setStyle("");
+    }
+
+    @FXML
+    private void ProjectType2DetailPressed(KeyEvent event) {
+        labelProjectType2.setStyle("");
+        inputProjectType2.setStyle("");
+    }
+
+    @FXML
+    private void ProjectType3DetailPressed(KeyEvent event) {
+        labelProjectType3.setStyle("");
+        inputProjectType3.setStyle("");
+    }
+
+    @FXML
+    private void ProjectType4DetailPressed(KeyEvent event) {
+        labelProjectType4.setStyle("");
+        inputProjectType4.setStyle("");
+    }
 }

@@ -116,7 +116,7 @@
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <TextField fx:id="inputProjectName" layoutX="45.0" layoutY="100.0" onKeyPressed="#labelMemberNameDetailPressed" prefHeight="34.0" prefWidth="361.0" styleClass="text-field-backlogtask" stylesheets="@stylesheet.css" />
+            <TextField fx:id="inputProjectName" layoutX="45.0" layoutY="100.0" onKeyPressed="#ProjectNameDetailPressed" prefHeight="34.0" prefWidth="361.0" styleClass="text-field-backlogtask" stylesheets="@stylesheet.css" />
             <Label fx:id="labelProjectDate" layoutX="45.0" layoutY="147.0" prefHeight="35.0" prefWidth="165.0" styleClass="label-backlog" stylesheets="@stylesheet.css" text="Data de entrega">
                <font>
                   <Font name="System Bold" size="12.0" />
@@ -128,25 +128,25 @@
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <TextField fx:id="inputProjectType1" layoutX="45.0" layoutY="267.0" onKeyPressed="#labelMemberNameDetailPressed" prefHeight="34.0" prefWidth="171.0" styleClass="text-field-backlogtask" stylesheets="@stylesheet.css" />
+            <TextField fx:id="inputProjectType1" layoutX="45.0" layoutY="267.0" onKeyPressed="#ProjectType1DetailPressed" prefHeight="34.0" prefWidth="171.0" styleClass="text-field-backlogtask" stylesheets="@stylesheet.css" />
             <Label fx:id="labelProjectType2" layoutX="235.0" layoutY="237.0" prefHeight="25.0" prefWidth="171.0" styleClass="label-backlog" stylesheets="@stylesheet.css" text="Tipo 2">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <TextField fx:id="inputProjectType2" layoutX="235.0" layoutY="267.0" onKeyPressed="#labelMemberNameDetailPressed" prefHeight="34.0" prefWidth="171.0" styleClass="text-field-backlogtask" stylesheets="@stylesheet.css" />
+            <TextField fx:id="inputProjectType2" layoutX="235.0" layoutY="267.0" onKeyPressed="#ProjectType2DetailPressed" prefHeight="34.0" prefWidth="171.0" styleClass="text-field-backlogtask" stylesheets="@stylesheet.css" />
             <Label fx:id="labelProjectType3" layoutX="45.0" layoutY="319.0" prefHeight="25.0" prefWidth="171.0" styleClass="label-backlog" stylesheets="@stylesheet.css" text="Tipo 3">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <TextField fx:id="inputProjectType3" layoutX="45.0" layoutY="349.0" onKeyPressed="#labelMemberNameDetailPressed" prefHeight="34.0" prefWidth="171.0" styleClass="text-field-backlogtask" stylesheets="@stylesheet.css" />
+            <TextField fx:id="inputProjectType3" layoutX="45.0" layoutY="349.0" onKeyPressed="#ProjectType3DetailPressed" prefHeight="34.0" prefWidth="171.0" styleClass="text-field-backlogtask" stylesheets="@stylesheet.css" />
             <Label fx:id="labelProjectType4" layoutX="235.0" layoutY="319.0" prefHeight="25.0" prefWidth="171.0" styleClass="label-backlog" stylesheets="@stylesheet.css" text="Tipo 4">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <TextField fx:id="inputProjectType4" layoutX="235.0" layoutY="349.0" onKeyPressed="#labelMemberNameDetailPressed" prefHeight="34.0" prefWidth="171.0" styleClass="text-field-backlogtask" stylesheets="@stylesheet.css" />
+            <TextField fx:id="inputProjectType4" layoutX="235.0" layoutY="349.0" onKeyPressed="#ProjectType4DetailPressed" prefHeight="34.0" prefWidth="171.0" styleClass="text-field-backlogtask" stylesheets="@stylesheet.css" />
             <Button fx:id="saveChangesButton" layoutX="45.0" layoutY="412.0" mnemonicParsing="false" onAction="#saveChangesProject" prefHeight="25.0" prefWidth="361.0" styleClass="button2" stylesheets="@stylesheet.css" text="Salvar projeto" />
             <Button fx:id="editProjectButton" layoutX="129.0" layoutY="468.0" mnemonicParsing="false" onAction="#editProject" styleClass="button2" stylesheets="@stylesheet.css" text="Editar" />
             <Button fx:id="deleteProjectButton" layoutX="255.0" layoutY="468.0" mnemonicParsing="false" onAction="#deleteProject" styleClass="button-delete" stylesheets="@stylesheet.css" text="Deletar" />
