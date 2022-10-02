@@ -87,6 +87,8 @@ public class KanbanController implements Initializable {
     private Button projectButton;
     @FXML
     private Button homeButton;
+    @FXML
+    private Button analyticsButton;
     
     /**
      * Initializes the controller class.
@@ -128,12 +130,11 @@ public class KanbanController implements Initializable {
         tableTasksDone.setItems(observableTasks);
         
     }   
-    
 
     public void selectTaskInTabke(Task task) {
             System.out.println("Task selected!");
 
-        }
+    }
 
     @FXML
     private void switchToBacklog(ActionEvent event) throws IOException {
@@ -158,6 +159,11 @@ public class KanbanController implements Initializable {
     @FXML
     private void switchToAboutUs(ActionEvent event) throws IOException {
         App.setRoot("AboutUs");
+    }
+    
+    @FXML
+    private void switchToAnalytics(ActionEvent event) throws IOException {
+        App.setRoot("Analytics");
     }
 
     @FXML

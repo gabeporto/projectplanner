@@ -14,8 +14,13 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.geometry.Insets?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #2B2B2B;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pplaner.HomeController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #2B2B2B;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pplaner.AnalyticsController">
    <children>
+      <Text fill="WHITE" layoutX="244.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Analytics" wrappingWidth="322.13671875">
+         <font>
+            <Font name="System Bold" size="36.0" />
+         </font>
+      </Text>
       <AnchorPane prefHeight="720.0" prefWidth="200.0" style="-fx-background-color: #000000;">
          <children>
             <Button fx:id="kanbanButton" alignment="BASELINE_CENTER" graphicTextGap="15.0" layoutY="440.0" mnemonicParsing="false" onAction="#switchToKanban" prefHeight="57.0" prefWidth="207.0" styleClass="button1" stylesheets="@stylesheet.css" text=" Kanban" textFill="WHITE">
@@ -59,23 +64,23 @@
                   <Insets />
                </opaqueInsets>
             </Button>
-            <Button fx:id="analyticsButton" alignment="CENTER" graphicTextGap="15.0" layoutY="212.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#switchToAnalytics" prefHeight="57.0" prefWidth="207.0" styleClass="button1" stylesheets="@stylesheet.css" text="Analytics" textAlignment="CENTER" textFill="WHITE">
+            <Button alignment="CENTER" graphicTextGap="15.0" layoutY="212.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="57.0" prefWidth="207.0" styleClass="button1" stylesheets="@stylesheet.css" text="Analytics" textAlignment="CENTER" textFill="#05b80b">
                <font>
                   <Font size="18.0" />
                </font>
                <graphic>
-                  <SVGPath content="M4 11H2v3h2v-3zm5-4H7v7h2V7zm5-5v12h-2V2h2zm-2-1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1h-2zM6 7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm-5 4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-3z" fill="WHITE" scaleX="2.0" scaleY="2.0" />
+                  <SVGPath content="M4 11H2v3h2v-3zm5-4H7v7h2V7zm5-5v12h-2V2h2zm-2-1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1h-2zM6 7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm-5 4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-3z" fill="#05b80b" scaleX="2.0" scaleY="2.0" />
                </graphic>
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
             </Button>
-            <Button alignment="CENTER" graphicTextGap="30.0" layoutY="155.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="57.0" prefWidth="207.0" styleClass="button1" stylesheets="@stylesheet.css" text="Home" textAlignment="CENTER" textFill="#05b80b">
+            <Button fx:id="homeButton" alignment="CENTER" graphicTextGap="30.0" layoutY="155.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#switchToHome" prefHeight="57.0" prefWidth="207.0" styleClass="button1" stylesheets="@stylesheet.css" text="Home" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font>
                <graphic>
-                  <SVGPath content="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5z" fill="#05b80b" scaleX="2.0" scaleY="2.0" />
+                  <SVGPath content="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5z" fill="WHITE" scaleX="2.0" scaleY="2.0" />
                </graphic>
                <opaqueInsets>
                   <Insets />
@@ -103,68 +108,15 @@
             </Button>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="242.0" layoutY="141.0" prefHeight="503.0" prefWidth="635.0" style="-fx-background-radius: 20px; -fx-background-color: #484747;" styleClass="anchor-pane-backlog" stylesheets="@stylesheet.css">
+      <AnchorPane layoutX="494.0" layoutY="167.0" prefHeight="415.0" prefWidth="435.0" style="-fx-background-radius: 1000px; -fx-background-color: #484747;" styleClass="anchor-pane-backlog" stylesheets="@stylesheet.css">
          <children>
-            <Label fx:id="labelProjectType1" contentDisplay="CENTER" layoutX="52.0" layoutY="41.0" prefHeight="35.0" prefWidth="255.0" style="-fx-text-fill: white; -fx-font-size: 16px;" styleClass="label-backlog" stylesheets="@stylesheet.css" text="Tipo 1" textAlignment="CENTER">
+            <SVGPath content="M7.002 12a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 5.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995z" layoutX="204.0" layoutY="182.0" scaleX="10.0" scaleY="10.0" />
+            <SVGPath content="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z" layoutX="205.0" layoutY="176.0" scaleX="10.0" scaleY="10.0" />
+            <Label alignment="CENTER" layoutX="132.0" layoutY="272.0" prefHeight="62.0" prefWidth="160.0" text="Página em construção!" textFill="#aba3a3">
                <font>
-                  <Font name="System Bold" size="12.0" />
+                  <Font size="14.0" />
                </font>
             </Label>
-            <ProgressBar fx:id="progressProjectType1" layoutX="52.0" layoutY="86.0" prefHeight="35.0" prefWidth="524.0" progress="0.0" styleClass="progress-bar2" stylesheets="@stylesheet.css" />
-            <Label fx:id="labelPercentageType1" alignment="CENTER" layoutX="56.0" layoutY="86.0" prefHeight="35.0" prefWidth="44.0" text="0%" textAlignment="CENTER">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </Label>
-            <Label fx:id="labelProjectType2" contentDisplay="CENTER" layoutX="52.0" layoutY="155.0" prefHeight="35.0" prefWidth="255.0" style="-fx-text-fill: white; -fx-font-size: 16px;" styleClass="label-backlog" stylesheets="@stylesheet.css" text="Tipo 2" textAlignment="CENTER">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </Label>
-            <ProgressBar fx:id="progressProjectType2" layoutX="52.0" layoutY="200.0" prefHeight="35.0" prefWidth="524.0" progress="0.0" stylesheets="@stylesheet.css" />
-            <Label fx:id="labelPercentageType2" alignment="CENTER" layoutX="56.0" layoutY="200.0" prefHeight="35.0" prefWidth="44.0" text="0%" textAlignment="CENTER">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </Label>
-            <Label fx:id="labelProjectType3" contentDisplay="CENTER" layoutX="52.0" layoutY="267.0" prefHeight="35.0" prefWidth="255.0" style="-fx-text-fill: white; -fx-font-size: 16px;" styleClass="label-backlog" stylesheets="@stylesheet.css" text="Tipo 3" textAlignment="CENTER">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </Label>
-            <ProgressBar fx:id="progressProjectType3" layoutX="52.0" layoutY="312.0" prefHeight="35.0" prefWidth="524.0" progress="0.0" stylesheets="@stylesheet.css" />
-            <Label fx:id="labelPercentageType3" alignment="CENTER" layoutX="56.0" layoutY="312.0" prefHeight="35.0" prefWidth="44.0" text="0%" textAlignment="CENTER">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </Label>
-            <Label fx:id="labelProjectType4" contentDisplay="CENTER" layoutX="52.0" layoutY="375.0" prefHeight="35.0" prefWidth="255.0" style="-fx-text-fill: white; -fx-font-size: 16px;" styleClass="label-backlog" stylesheets="@stylesheet.css" text="Tipo 4" textAlignment="CENTER">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </Label>
-            <ProgressBar fx:id="progressProjectType4" layoutX="52.0" layoutY="420.0" prefHeight="35.0" prefWidth="524.0" progress="0.0" stylesheets="@stylesheet.css" />
-            <Label fx:id="labelPercentageType4" alignment="CENTER" layoutX="56.0" layoutY="420.0" prefHeight="35.0" prefWidth="44.0" text="0%" textAlignment="CENTER">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </Label>
-         </children>
-      </AnchorPane>
-      <Text fill="WHITE" layoutX="244.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Home" wrappingWidth="322.13671875">
-         <font>
-            <Font name="System Bold" size="36.0" />
-         </font>
-      </Text>
-      <AnchorPane layoutX="909.0" layoutY="141.0" prefHeight="503.0" prefWidth="334.0" style="-fx-background-radius: 20px; -fx-background-color: #484747;" styleClass="anchor-pane-backlog" stylesheets="@stylesheet.css">
-         <children>
-            <Label fx:id="labelProjectName" alignment="CENTER" contentDisplay="CENTER" layoutX="34.0" layoutY="55.0" prefHeight="48.0" prefWidth="266.0" style="-fx-text-fill: #3AD45C; -fx-font-size: 24px;" styleClass="label-backlog" stylesheets="@stylesheet.css" text="Nome do Projeto" textAlignment="CENTER" textFill="#3ad45c">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </Label>
-            <ProgressIndicator fx:id="projectProgress" layoutX="51.0" layoutY="138.0" prefHeight="219.0" prefWidth="232.0" progress="0.0" />
-            <Label fx:id="labelCompletedTasks" alignment="CENTER" contentDisplay="CENTER" layoutX="83.0" layoutY="404.0" prefHeight="35.0" prefWidth="168.0" style="-fx-text-fill: white; -fx-font-size: 16px;" styleClass="label-backlog" stylesheets="@stylesheet.css" text="das tarefas concluídas" textAlignment="CENTER" textFill="WHITE" />
          </children>
       </AnchorPane>
    </children>

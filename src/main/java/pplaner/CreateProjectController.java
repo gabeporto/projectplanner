@@ -70,6 +70,8 @@ public class CreateProjectController implements Initializable {
     private Label labelProjectType4;
     @FXML
     private Button leaveButton;
+    @FXML
+    private Button analyticsButton;
 
     /**
      * Initializes the controller class.
@@ -102,6 +104,11 @@ public class CreateProjectController implements Initializable {
     @FXML
     private void switchToAboutUs(ActionEvent event) throws IOException {
         App.setRoot("AboutUs");
+    }
+    
+    @FXML
+    private void switchToAnalytics(ActionEvent event) throws IOException {
+        App.setRoot("Analytics");
     }
 
     @FXML
@@ -214,5 +221,5 @@ public class CreateProjectController implements Initializable {
         System.out.println("Leaving application...");
         stage.close();
     }
-    
+
 }

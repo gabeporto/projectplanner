@@ -104,6 +104,8 @@ public class TasksBacklogController implements Initializable {
     private Button homeButton;
     @FXML
     private Button leaveButton;
+    @FXML
+    private Button analyticsButton;
 
     /**
      * Initializes the controller class.
@@ -217,6 +219,11 @@ public class TasksBacklogController implements Initializable {
     @FXML
     private void switchToAboutUs(ActionEvent event) throws IOException {
         App.setRoot("AboutUs");
+    }
+    
+    @FXML
+    private void switchToAnalytics(ActionEvent event) throws IOException {
+        App.setRoot("Analytics");
     }
     
     @FXML

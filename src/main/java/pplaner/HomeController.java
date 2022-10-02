@@ -68,6 +68,8 @@ public class HomeController implements Initializable {
     private Label labelPercentageType3;
     @FXML
     private Label labelPercentageType4;
+    @FXML
+    private Button analyticsButton;
 
     /**
      * Initializes the controller class.
@@ -145,6 +147,11 @@ public class HomeController implements Initializable {
     private void switchToAboutUs(ActionEvent event) throws IOException {
         App.setRoot("AboutUs");
     }
+    
+    @FXML
+    private void switchToAnalytics(ActionEvent event) throws IOException {
+        App.setRoot("Analytics");
+    }
 
     @FXML
     private void leaveProject(ActionEvent event) {
@@ -153,6 +160,5 @@ public class HomeController implements Initializable {
         System.out.println("Leaving application...");
         stage.close();
     } 
-
 
 }

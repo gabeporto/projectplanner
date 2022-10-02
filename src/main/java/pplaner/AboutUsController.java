@@ -56,6 +56,8 @@ public class AboutUsController implements Initializable {
     private Button gitHubMember3;
     @FXML
     private Button instagramMember3;
+    @FXML
+    private Button AnalyticsButton;
 
     /**
      * Initializes the controller class.
@@ -90,6 +92,11 @@ public class AboutUsController implements Initializable {
     @FXML
     private void switchToProject(ActionEvent event) throws IOException {
         App.setRoot("Project");
+    }
+    
+    @FXML
+    private void switchToAnalytics(ActionEvent event) throws IOException {
+        App.setRoot("Analytics");
     }
 
     @FXML

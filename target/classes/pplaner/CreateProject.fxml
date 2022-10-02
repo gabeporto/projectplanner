@@ -59,7 +59,7 @@
                   <Insets />
                </opaqueInsets>
             </Button>
-            <Button alignment="CENTER" graphicTextGap="15.0" layoutY="212.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="57.0" prefWidth="207.0" styleClass="button1" stylesheets="@stylesheet.css" text="Analytic" textAlignment="CENTER" textFill="WHITE">
+            <Button fx:id="analyticsButton" alignment="CENTER" graphicTextGap="15.0" layoutY="212.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#switchToAnalytics" prefHeight="57.0" prefWidth="207.0" styleClass="button1" stylesheets="@stylesheet.css" text="Analytics" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font>

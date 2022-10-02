@@ -90,6 +90,8 @@ public class MemberController implements Initializable {
     private Button homeButton;
     @FXML
     private Button leaveButton;
+    @FXML
+    private Button analyticsButton;
     
 
     /**
@@ -193,6 +195,11 @@ public class MemberController implements Initializable {
     @FXML
     private void switchToAboutUs(ActionEvent event) throws IOException {
         App.setRoot("AboutUs");
+    }
+    
+    @FXML
+    private void switchToAnalytics(ActionEvent event) throws IOException {
+        App.setRoot("Analytics");
     }
 
     private void fillMembersTable(){

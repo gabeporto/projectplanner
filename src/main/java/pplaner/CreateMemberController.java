@@ -66,6 +66,8 @@ public class CreateMemberController implements Initializable {
     private Button projectButton;
     @FXML
     private Button HomeButton;
+    @FXML
+    private Button AnalyticsButton;
 
     /**
      * Initializes the controller class.
@@ -107,6 +109,11 @@ public class CreateMemberController implements Initializable {
     @FXML
     private void switchToAboutUs(ActionEvent event) throws IOException {
         App.setRoot("AboutUs");
+    }
+    
+    @FXML
+    private void switchToAnalytics(ActionEvent event) throws IOException {
+        App.setRoot("Analytics");
     }
     
     @FXML

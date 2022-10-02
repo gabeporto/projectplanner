@@ -100,6 +100,8 @@ public class ProjectController implements Initializable {
     private Button HomeButton;
     @FXML
     private Button leaveButton;
+    @FXML
+    private Button analyticsButton;
 
     /**
      * Initializes the controller class.
@@ -203,7 +205,11 @@ public class ProjectController implements Initializable {
     private void switchToAboutUs(ActionEvent event) throws IOException {
         App.setRoot("AboutUs");
     }
-
+    
+    @FXML
+    private void switchToAnalytics(ActionEvent event) throws IOException {
+        App.setRoot("Analytics");
+    }
 
     @FXML
     private void saveChangesProject(ActionEvent event) {
@@ -378,5 +384,4 @@ public class ProjectController implements Initializable {
         stage.close();
     }
 
- 
 }
