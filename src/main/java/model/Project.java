@@ -253,7 +253,6 @@ public class Project {
         
         this.numberOfDoneTasks = this.numberOfType1Done + this.numberOfType2Done + this.numberOfType3Done + this.numberOfType4Done;
         this.numberOfTasks = taskDao.readAll().size();
-        System.out.println(taskDao.readAll().size());
         float doneTasks = this.numberOfDoneTasks;
         float numOfTasks = this.numberOfTasks;
         

@@ -84,31 +84,37 @@ public class HomeController implements Initializable {
             project.filterType1Done();
             float resultType1 = project.calculatePercentageType1();
             labelProjectType1.setText(project.getType1());
-            labelPercentageType1.setText(Float.toString(resultType1*100) + "%");
+            float result1 = resultType1 * 100;
+            labelPercentageType1.setText(String.format("%.1f", result1) + "%");
             progressProjectType1.setProgress(resultType1);
             
             project.filterType2Done();
             float resultType2 = project.calculatePercentageType2();
             labelProjectType2.setText(project.getType2());
-            labelPercentageType2.setText(Float.toString(resultType2*100) + "%");
+            float result2 = resultType2 * 100;
+            labelPercentageType2.setText(String.format("%.1f", result2) + "%");
             progressProjectType2.setProgress(resultType2);
             
             project.filterType3Done();
             float resultType3 = project.calculatePercentageType3();
             labelProjectType3.setText(project.getType3());
-            labelPercentageType3.setText(Float.toString(resultType3*100) + "%");
+            float result3 = resultType3 * 100;
+            labelPercentageType3.setText(String.format("%.1f", result3) + "%");
             progressProjectType3.setProgress(resultType3);
             
             project.filterType4Done();
             float resultType4 = project.calculatePercentageType4();
             labelProjectType4.setText(project.getType4());
-            labelPercentageType4.setText(Float.toString(resultType4*100) + "%");
+            float result4 = resultType4 * 100;
+            labelPercentageType4.setText(String.format("%.1f", result4) + "%");
             progressProjectType4.setProgress(resultType4);
 
             projectProgress.setProgress(project.calculatePercentageProgress());
             if(project.calculatePercentageProgress() == 1) {
                 labelCompletedTasks.setVisible(false);
             }
+            
+            projectDao.update(project);
             
         }
         
