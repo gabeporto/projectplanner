@@ -81,7 +81,7 @@
                   <Insets />
                </opaqueInsets>
             </Button>
-            <Button fx:id="LeaveButton" alignment="BASELINE_CENTER" graphicTextGap="15.0" layoutY="618.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="207.0" styleClass="button1" stylesheets="@stylesheet.css" textFill="WHITE">
+            <Button fx:id="leaveButton" alignment="BASELINE_CENTER" graphicTextGap="15.0" layoutY="618.0" mnemonicParsing="false" onAction="#leaveProject" prefHeight="57.0" prefWidth="207.0" styleClass="button1" stylesheets="@stylesheet.css" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font>

@@ -27,6 +27,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.DragEvent;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.shape.Circle;
+import javafx.stage.Stage;
 import model.Member;
 import model.Project;
 import model.dao.MemberDao;
@@ -53,8 +54,6 @@ public class MemberController implements Initializable {
     private Button ppButton;
     @FXML
     private Button kanbanButton;
-    @FXML
-    private Button LeaveButton;
     @FXML
     private TableView<Member> membersTable;
     @FXML
@@ -89,6 +88,8 @@ public class MemberController implements Initializable {
     private Button projectButton;
     @FXML
     private Button homeButton;
+    @FXML
+    private Button leaveButton;
     
 
     /**
@@ -320,4 +321,11 @@ public class MemberController implements Initializable {
         labelMemberName.setStyle("");
     }
 
+    @FXML
+    private void leaveProject(ActionEvent event) {
+        Stage stage;
+        stage = (Stage) leaveButton.getScene().getWindow();
+        System.out.println("Leaving application...");
+        stage.close();
+    }
 }

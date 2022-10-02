@@ -18,6 +18,7 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
+import javafx.stage.Stage;
 import model.Project;
 import model.dao.ProjectDao;
 
@@ -37,8 +38,6 @@ public class CreateProjectController implements Initializable {
     private Button backlogButton;
     @FXML
     private Button memberButton;
-    @FXML
-    private Button LeaveButton;
     @FXML
     private Button ppButton;
     @FXML
@@ -69,6 +68,8 @@ public class CreateProjectController implements Initializable {
     private Label labelProjectType3;
     @FXML
     private Label labelProjectType4;
+    @FXML
+    private Button leaveButton;
 
     /**
      * Initializes the controller class.
@@ -200,6 +201,14 @@ public class CreateProjectController implements Initializable {
     private void projectType4KeyPressed(KeyEvent event) {
         labelProjectType4.setStyle("");
         inputProjectType4.setStyle("");
+    }
+
+    @FXML
+    private void leaveProject(ActionEvent event) {
+        Stage stage;
+        stage = (Stage) leaveButton.getScene().getWindow();
+        System.out.println("Leaving application...");
+        stage.close();
     }
 
 }

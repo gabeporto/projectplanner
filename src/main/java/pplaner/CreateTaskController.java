@@ -19,6 +19,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.DragEvent;
 import javafx.scene.input.KeyEvent;
+import javafx.stage.Stage;
 import model.Member;
 import model.Project;
 import model.Task;
@@ -229,5 +230,13 @@ public class CreateTaskController implements Initializable {
     @FXML
     private void switchToHome(ActionEvent event) throws IOException {
         App.setRoot("Home");
+    }
+
+    @FXML
+    private void leaveProject(ActionEvent event) {
+        Stage stage;
+        stage = (Stage) leaveButton.getScene().getWindow();
+        System.out.println("Leaving application...");
+        stage.close();
     }
 }

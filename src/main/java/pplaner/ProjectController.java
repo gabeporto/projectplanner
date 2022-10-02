@@ -25,6 +25,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
+import javafx.stage.Stage;
 import model.Member;
 import model.Project;
 import model.Task;
@@ -53,8 +54,6 @@ public class ProjectController implements Initializable {
     private Button kanbanButton;
     @FXML
     private Button backlogButton;
-    @FXML
-    private Button LeaveButton;
     @FXML
     private Button ppButton;
     @FXML
@@ -99,6 +98,8 @@ public class ProjectController implements Initializable {
     private Button deleteProjectButton;
     @FXML
     private Button HomeButton;
+    @FXML
+    private Button leaveButton;
 
     /**
      * Initializes the controller class.
@@ -362,5 +363,13 @@ public class ProjectController implements Initializable {
     private void ProjectType4DetailPressed(KeyEvent event) {
         labelProjectType4.setStyle("");
         inputProjectType4.setStyle("");
+    }
+
+    @FXML
+    private void leaveProject(ActionEvent event) {
+        Stage stage;
+        stage = (Stage) leaveButton.getScene().getWindow();
+        System.out.println("Leaving application...");
+        stage.close();
     }
 }

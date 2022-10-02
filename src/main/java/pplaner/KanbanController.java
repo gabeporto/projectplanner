@@ -23,6 +23,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 import model.Project;
 import model.Task;
 import model.dao.ProjectDao;
@@ -281,6 +282,14 @@ public class KanbanController implements Initializable {
                 System.out.println("Transfer cancelled.");
             }
         }
+    }
+
+    @FXML
+    private void leaveProject(ActionEvent event) {
+        Stage stage;
+        stage = (Stage) leaveButton.getScene().getWindow();
+        System.out.println("Leaving application...");
+        stage.close();
     }
 
 }

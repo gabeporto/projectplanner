@@ -21,6 +21,7 @@ import javafx.scene.image.Image;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
+import javafx.stage.Stage;
 import model.Member;
 import model.Project;
 import model.dao.MemberDao;
@@ -37,9 +38,6 @@ public class CreateMemberController implements Initializable {
     private final ProjectDao projectDao = new ProjectDao();
     private Project project = projectDao.readOne();
     
-    
-    String[] tasksType = {"Prototipagem", "Desenvolvimento", "Documentação", "Testes"};
-
     @FXML
     private Button backlogButton;
     @FXML
@@ -196,5 +194,11 @@ public class CreateMemberController implements Initializable {
         labelMemberType.setStyle("");
     }
 
-    
+    @FXML
+    private void leaveProject(ActionEvent event) {
+        Stage stage;
+        stage = (Stage) leaveButton.getScene().getWindow();
+        System.out.println("Leaving application...");
+        stage.close();
+    }
 }

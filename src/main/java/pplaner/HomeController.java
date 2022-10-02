@@ -15,6 +15,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.control.ProgressIndicator;
+import javafx.stage.Stage;
 import model.Project;
 import model.dao.ProjectDao;
 
@@ -32,9 +33,9 @@ public class HomeController implements Initializable {
     @FXML
     private Button memberButton;
     @FXML
-    private Button LeaveButton;
-    @FXML
     private Button ppButton;
+    @FXML
+    private Button leaveButton;
     @FXML
     private Label labelProjectType1;
     @FXML
@@ -139,5 +140,12 @@ public class HomeController implements Initializable {
     private void switchToProject(ActionEvent event) throws IOException {
         App.setRoot("Project");
     }
-    
+
+    @FXML
+    private void leaveProject(ActionEvent event) {
+        Stage stage;
+        stage = (Stage) leaveButton.getScene().getWindow();
+        System.out.println("Leaving application...");
+        stage.close();
+    } 
 }
