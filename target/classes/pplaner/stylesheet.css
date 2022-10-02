@@ -13,7 +13,21 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
 
 .ppbutton {
     -fx-background-color : #3F045B00;
-    -fx-background-radius :  15 15 15 15;
+    -fx-background-radius :  20 20 20 20;
+}
+
+.socialmedia-icons {
+    -fx-background-color: #3F045B00;
+}
+
+.socialmedia-icons:hover {
+    -fx-background-color : #383838;
+    -fx-background-radius: 20 20 20 20;
+}
+
+.socialmedia-icons:pressed {
+    -fx-background-color : #333333;
+    -fx-background-radius: 20 20 20 20;
 }
 
 .addtask-button {

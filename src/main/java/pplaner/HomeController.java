@@ -140,6 +140,11 @@ public class HomeController implements Initializable {
     private void switchToProject(ActionEvent event) throws IOException {
         App.setRoot("Project");
     }
+    
+    @FXML
+    private void switchToAboutUs(ActionEvent event) throws IOException {
+        App.setRoot("AboutUs");
+    }
 
     @FXML
     private void leaveProject(ActionEvent event) {
@@ -148,4 +153,6 @@ public class HomeController implements Initializable {
         System.out.println("Leaving application...");
         stage.close();
     } 
+
+
 }

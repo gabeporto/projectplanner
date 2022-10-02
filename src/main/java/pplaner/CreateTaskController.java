@@ -231,6 +231,11 @@ public class CreateTaskController implements Initializable {
     private void switchToHome(ActionEvent event) throws IOException {
         App.setRoot("Home");
     }
+    
+    @FXML
+    private void switchToAboutUs(ActionEvent event) throws IOException {
+        App.setRoot("AboutUs");
+    }
 
     @FXML
     private void leaveProject(ActionEvent event) {

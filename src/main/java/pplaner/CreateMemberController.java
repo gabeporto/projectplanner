@@ -105,6 +105,11 @@ public class CreateMemberController implements Initializable {
     }
     
     @FXML
+    private void switchToAboutUs(ActionEvent event) throws IOException {
+        App.setRoot("AboutUs");
+    }
+    
+    @FXML
     private void createMember(ActionEvent event) throws IOException {
         MemberDao memberDao = new MemberDao();
         this.memberDao.checkFile();
@@ -201,4 +206,5 @@ public class CreateMemberController implements Initializable {
         System.out.println("Leaving application...");
         stage.close();
     }
+
 }

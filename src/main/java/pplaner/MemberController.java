@@ -189,6 +189,11 @@ public class MemberController implements Initializable {
     private void switchToHome(ActionEvent event) throws IOException {
         App.setRoot("Home");
     }
+    
+    @FXML
+    private void switchToAboutUs(ActionEvent event) throws IOException {
+        App.setRoot("AboutUs");
+    }
 
     private void fillMembersTable(){
         nameMemberColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
@@ -328,4 +333,5 @@ public class MemberController implements Initializable {
         System.out.println("Leaving application...");
         stage.close();
     }
+
 }

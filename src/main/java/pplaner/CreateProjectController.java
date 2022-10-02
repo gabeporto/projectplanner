@@ -98,7 +98,11 @@ public class CreateProjectController implements Initializable {
     private void switchToHome(ActionEvent event) throws IOException {
         App.setRoot("Home"); 
     }
-
+    
+    @FXML
+    private void switchToAboutUs(ActionEvent event) throws IOException {
+        App.setRoot("AboutUs");
+    }
 
     @FXML
     private void createProject(ActionEvent event) throws IOException {
@@ -210,5 +214,5 @@ public class CreateProjectController implements Initializable {
         System.out.println("Leaving application...");
         stage.close();
     }
-
+    
 }

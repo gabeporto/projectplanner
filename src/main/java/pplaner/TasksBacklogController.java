@@ -215,6 +215,11 @@ public class TasksBacklogController implements Initializable {
     }
     
     @FXML
+    private void switchToAboutUs(ActionEvent event) throws IOException {
+        App.setRoot("AboutUs");
+    }
+    
+    @FXML
     private void deleteTask(ActionEvent event) {
         Project project = projectDao.readOne();
         Task task = tasksBacklog.getSelectionModel().getSelectedItem();
@@ -398,4 +403,5 @@ public class TasksBacklogController implements Initializable {
         System.out.println("Leaving application...");
         stage.close();
     }
+
 }
