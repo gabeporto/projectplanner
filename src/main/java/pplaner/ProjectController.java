@@ -228,7 +228,7 @@ public class ProjectController implements Initializable {
         
         if(inputProjectName.getText().equals("")) {
             labelProjectName.setStyle("-fx-text-fill: #c71616;");
-            inputProjectName.setStyle("-fx-border-color: red;");
+            inputProjectName.setStyle("-fx-border-color: red; -fx-border-radius: 10px;");
             allCorrect = false;
         } else {
             labelProjectName.setStyle("");
@@ -237,7 +237,7 @@ public class ProjectController implements Initializable {
         
         if(inputProjectType1.getText().equals("")) {
             labelProjectType1.setStyle("-fx-text-fill: #c71616;");
-            inputProjectType1.setStyle("-fx-border-color: red;");
+            inputProjectType1.setStyle("-fx-border-color: red; -fx-border-radius: 10px;");
             allCorrect = false;
         } else {
             labelProjectType1.setStyle("");
@@ -246,7 +246,7 @@ public class ProjectController implements Initializable {
         
         if(inputProjectType2.getText().equals("")) {
             labelProjectType2.setStyle("-fx-text-fill: #c71616;");
-            inputProjectType2.setStyle("-fx-border-color: red;");
+            inputProjectType2.setStyle("-fx-border-color: red; -fx-border-radius: 10px;");
             allCorrect = false;
         } else {
             labelProjectType2.setStyle("");
@@ -255,7 +255,7 @@ public class ProjectController implements Initializable {
         
         if(inputProjectType3.getText().equals("")) {
             labelProjectType3.setStyle("-fx-text-fill: #c71616;");
-            inputProjectType3.setStyle("-fx-border-color: red;");
+            inputProjectType3.setStyle("-fx-border-color: red; -fx-border-radius: 10px;");
             allCorrect = false;
         } else {
             labelProjectType3.setStyle("");
@@ -264,7 +264,7 @@ public class ProjectController implements Initializable {
         
         if(inputProjectType4.getText().equals("")) {
             labelProjectType4.setStyle("-fx-text-fill: #c71616;");
-            inputProjectType4.setStyle("-fx-border-color: red;");
+            inputProjectType4.setStyle("-fx-border-color: red; -fx-border-radius: 10px;");
             allCorrect = false;
         } else {
             labelProjectType4.setStyle("");

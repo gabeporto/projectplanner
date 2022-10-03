@@ -1,5 +1,7 @@
 package pplaner;
 
+import java.awt.GraphicsDevice;
+import java.awt.GraphicsEnvironment;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -18,10 +20,14 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("Home"), 1280, 720);
+        GraphicsDevice gd = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
+        int width = gd.getDisplayMode().getWidth();
+        int height = gd.getDisplayMode().getHeight();
+        scene = new Scene(loadFXML("Home"), width, height);
         stage.setScene(scene);
         stage.setTitle("Project Planner");
         stage.setResizable(false);
+        stage.setFullScreen(false);
         stage.getIcons().add(new Image(App.class.getResourceAsStream("logo1000x1000.png")));
         stage.show();   
     }

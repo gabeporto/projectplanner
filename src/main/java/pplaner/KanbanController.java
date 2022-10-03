@@ -80,15 +80,15 @@ public class KanbanController implements Initializable {
     @FXML
     private Button leaveButton;
     @FXML
-    private Button ppButton;
-    @FXML
-    private Button MemberButton;
-    @FXML
-    private Button projectButton;
-    @FXML
-    private Button homeButton;
-    @FXML
     private Button analyticsButton;
+    @FXML
+    private Button memberButton;
+    @FXML
+    private Button ProjectButton;
+    @FXML
+    private Button HomeButton;
+    @FXML
+    private Button PPButton;
     
     /**
      * Initializes the controller class.

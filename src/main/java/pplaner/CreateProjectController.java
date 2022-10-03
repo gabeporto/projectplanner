@@ -39,8 +39,6 @@ public class CreateProjectController implements Initializable {
     @FXML
     private Button memberButton;
     @FXML
-    private Button ppButton;
-    @FXML
     private DatePicker inputProjectDate;
     @FXML
     private TextField inputProjectType1;
@@ -72,6 +70,10 @@ public class CreateProjectController implements Initializable {
     private Button leaveButton;
     @FXML
     private Button analyticsButton;
+    @FXML
+    private Button ProjectButton;
+    @FXML
+    private Button PPButton;
 
     /**
      * Initializes the controller class.
@@ -102,6 +104,11 @@ public class CreateProjectController implements Initializable {
     }
     
     @FXML
+    private void switchToProject(ActionEvent event) throws IOException {
+        App.setRoot("Project");
+    }
+    
+    @FXML
     private void switchToAboutUs(ActionEvent event) throws IOException {
         App.setRoot("AboutUs");
     }
@@ -119,7 +126,7 @@ public class CreateProjectController implements Initializable {
         
         if(inputProjectName.getText().equals("")) {
             labelProjectName.setStyle("-fx-text-fill: #c71616;");
-            inputProjectName.setStyle("-fx-border-color: red;");
+            inputProjectName.setStyle("-fx-border-color: red; -fx-border-radius: 10px;");
             allCorrect = false;
         } else {
             labelProjectName.setStyle("");
@@ -128,7 +135,7 @@ public class CreateProjectController implements Initializable {
 
         if(inputProjectType1.getText().equals("")) {
             labelProjectType1.setStyle("-fx-text-fill: #c71616;");
-            inputProjectType1.setStyle("-fx-border-color: red;");
+            inputProjectType1.setStyle("-fx-border-color: red; -fx-border-radius: 10px;");
             allCorrect = false;
         } else {
             labelProjectType1.setStyle("");
@@ -137,7 +144,7 @@ public class CreateProjectController implements Initializable {
         
         if(inputProjectType2.getText().equals("")) {
             labelProjectType2.setStyle("-fx-text-fill: #c71616;");
-            inputProjectType2.setStyle("-fx-border-color: red;");
+            inputProjectType2.setStyle("-fx-border-color: red; -fx-border-radius: 10px;");
             allCorrect = false;
         } else {
             labelProjectType2.setStyle("");
@@ -146,7 +153,7 @@ public class CreateProjectController implements Initializable {
         
         if(inputProjectType3.getText().equals("")) {
             labelProjectType3.setStyle("-fx-text-fill: #c71616;");
-            inputProjectType3.setStyle("-fx-border-color: red;");
+            inputProjectType3.setStyle("-fx-border-color: red; -fx-border-radius: 10px;");
             allCorrect = false;
         } else {
             labelProjectType3.setStyle("");
@@ -155,7 +162,7 @@ public class CreateProjectController implements Initializable {
         
         if(inputProjectType4.getText().equals("")) {
             labelProjectType4.setStyle("-fx-text-fill: #c71616;");
-            inputProjectType4.setStyle("-fx-border-color: red;");
+            inputProjectType4.setStyle("-fx-border-color: red; -fx-border-radius: 10px;");
             allCorrect = false;
         } else {
             labelProjectType4.setStyle("");
@@ -221,5 +228,6 @@ public class CreateProjectController implements Initializable {
         System.out.println("Leaving application...");
         stage.close();
     }
+
 
 }

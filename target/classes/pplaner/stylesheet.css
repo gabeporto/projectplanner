@@ -9,37 +9,44 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
 
 .button1 {
     -fx-background-color : #3F045B00;
+    -fx-cursor: hand;
 }
 
 .ppbutton {
     -fx-background-color : #3F045B00;
     -fx-background-radius :  20 20 20 20;
+    -fx-cursor: hand;
 }
 
 .socialmedia-icons {
     -fx-background-color: #3F045B00;
+    -fx-cursor: hand;
 }
 
 .socialmedia-icons:hover {
     -fx-background-color : #383838;
     -fx-background-radius: 20 20 20 20;
+    -fx-cursor: hand;
 }
 
 .socialmedia-icons:pressed {
     -fx-background-color : #333333;
     -fx-background-radius: 20 20 20 20;
+    -fx-cursor: hand;
 }
 
 .addtask-button {
     -fx-background-color: #8BF16C;
     -fx-padding: 5 20 5 20;
     -fx-text-fill: black;
+    -fx-cursor: hand;
 }
 
 .button2 {
     -fx-background-color: #333333;
     -fx-padding: 5 20 5 20;
     -fx-text-fill: white;
+    -fx-cursor: hand;
 }
 
 .button3 {
@@ -47,61 +54,77 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
     -fx-padding: 5 20 5 20;
     -fx-background-radius: 25px;
     -fx-text-fill: white;
+    -fx-cursor: hand;
 }
 
 .button-delete {
     -fx-background-color: #d66565;
     -fx-padding: 5 20 5 20;
     -fx-text-fill: black;
+    -fx-cursor: hand;
 }
 
 .ppbutton:hover {
     -fx-background-color : #1C1C1C ;
+    -fx-cursor: hand;
 }
 
 .ppbutton:pressed {
     -fx-background-color : #2B2B2B ;
+    -fx-cursor: hand;
 }
 
 .button1:hover {
     -fx-background-color : #1C1C1C ;
+    -fx-cursor: hand;
 }
 
 .button1:pressed {
     -fx-background-color : #2B2B2B ;
+    -fx-cursor: hand;
 }
 
 .button2:hover {
     -fx-background-color : #404040 ;
+    -fx-cursor: hand;
+    -fx-background-radius: 20px;
 }
 
 .button2:pressed {
     -fx-background-color : #606060 ;
+    -fx-cursor: hand;
+    -fx-background-radius: 20px;
 }
 
 .button3:hover {
     -fx-background-color: #181818;
+    -fx-cursor: hand;
 }
 
 .button3:pressed {
     -fx-background-color: #151515;
+    -fx-cursor: hand;
 }
 
 .addtask-button:hover {
     -fx-background-color: #b3f0a1;
+    -fx-cursor: hand;
 }
 
 .addtask-button:pressed {
     -fx-background-color: #80eb63;
+    -fx-cursor: hand;
 }
 
 
 .button-delete:hover {
     -fx-background-color: #e08d8d;
+    -fx-cursor: hand;
 }
 
 .button-delete:pressed {
     -fx-background-color: #c77373;
+    -fx-cursor: hand;
 }
 
 .table-view {
@@ -127,34 +150,76 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
 
 
 .table-view .column-header-background{
-    -fx-background-color: linear-gradient(#131313 0%, #424141 100%);
+    -fx-background-color: linear-gradient(#131313 00%, #424141 100%);
 }
 
 .table-view .column-header-background .label{
-    -fx-background-color: transparent;
+    -fx-background-color: #484747;
     -fx-text-fill: #3E983E;
+    -fx-font-size: 25px;
 }
 
 .table-view .column-header {
-    -fx-background-color: #000000;
+    -fx-background-color:  #484747;
 }
 
 .table-view .table-cell{
     -fx-alignment: center-left;
     -fx-text-fill: white;
+    -fx-font-size: 15px;
     -fx-transition: all ease 0.9s;
     -fx-alignment: center;
+    -fx-cursor: hand;
+}
+
+
+.table-viewToDo .table-cell{
+    -fx-alignment: center-left;
+    -fx-text-fill: #bb5d54;
+    -fx-font-size: 15px;
+    -fx-transition: all ease 0.9s;
+    -fx-alignment: center;
+    -fx-cursor: hand;
+}
+
+.table-viewInProgress .table-cell{
+    -fx-alignment: center-left;
+    -fx-text-fill: #d9d96f;
+    -fx-font-size: 15px;
+    -fx-transition: all ease 0.9s;
+    -fx-alignment: center;
+    -fx-cursor: hand;
+}
+
+.table-viewDone .table-cell{
+    -fx-alignment: center-left;
+    -fx-text-fill: #6fd9aa;
+    -fx-font-size: 15px;
+    -fx-transition: all ease 0.9s;
+    -fx-alignment: center;
+    -fx-cursor: hand;
+}
+
+.table-view2 .table-cell{
+    -fx-alignment: center-left;
+    -fx-text-fill: white;
+    -fx-font-size: 22px;
+    -fx-transition: all ease 0.9s;
+    -fx-alignment: center;
+    -fx-cursor: hand;
 }
 
 .table-row-cell{
-    -fx-background-color: -fx-table-cell-border-color, #616161;
+    -fx-background-color: -fx-table-cell-border-color, #313131;
     -fx-background-insets: 0, 0 0 1 0;
     -fx-padding: 0.0em; /* 0 */
     -fx-cell-size: 30px;
+    -fx-cursor: hand;
+    -fx-cell-size: 50px;
 }
 
 .table-row-cell:odd{
-    -fx-background-color: -fx-table-cell-border-color, #424242;
+    -fx-background-color: -fx-table-cell-border-color, #212121;
     -fx-background-insets: 0, 0 0 1 0;
     -fx-padding: 0.0em; /* 0 */  
 }
@@ -163,16 +228,18 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
     -fx-background-color: #557932;
     -fx-background-insets: 0;
     -fx-background-radius: 2;
+    -fx-cursor: hand;
 }
 
 .table-row-cell:hover {
     -fx-background-color: #6E9C41;
+    -fx-cursor: hand;
 }
 
 .table-row-cell:pressed {
     -fx-background-color: #557932;
+    -fx-cursor: hand;
 }
-
 
 .table-view > .virtual-flow > .scroll-bar:vertical,
 .table-view > .virtual-flow > .scroll-bar:vertical > .track,
@@ -222,8 +289,16 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
     -fx-font-weight: bold;
 }
 
+.label-backlog2 {
+    -fx-font-family: System;
+    -fx-font-size: 28px;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
 .text-field-backlogtask {
     -fx-background-color: #a6a6a6;
+    -fx-background-radius: 10px;
 
 }
 
@@ -231,6 +306,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
     -fx-background-color: #484848;
     -fx-background-radius: 5px;
     -fx-text-fill: white;
+    -fx-cursor: hand;
 }
 
 .inputTaskType {
@@ -238,14 +314,17 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
     -fx-background-radius: 5px;
     -fx-text-fill: white;
     -fx-mark-color: white;
+    -fx-cursor: hand;
 }
 
 .inputTaskType .menu-item .label {
     -fx-text-fill: black;
+    -fx-cursor: hand;
 }
 
 .inputTaskType .label {
     -fx-text-fill: white;
+    -fx-cursor: hand;
 }
 
 .text-field-selectstage {
@@ -266,7 +345,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
     -fx-alignment: center-left;
     -fx-text-fill: white;
     -fx-transition: all ease 0.9s;
-    -fx-cell-size: 75px;
+    -fx-cell-size: 100px;
 }
 
 .date-picker2:disabled {
@@ -275,6 +354,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
 
 .date-picker2 {
     -fx-opacity: 0.7;
+    -fx-cursor: hand;
 
 }
 

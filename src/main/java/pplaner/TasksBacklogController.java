@@ -79,8 +79,6 @@ public class TasksBacklogController implements Initializable {
     @FXML
     private Button saveChangesButton;
     @FXML
-    private Button ppButton;
-    @FXML
     private Button kanbanButton;
     @FXML
     private Label labelName;
@@ -99,13 +97,15 @@ public class TasksBacklogController implements Initializable {
     @FXML
     private Button createTaskButton;
     @FXML
-    private Button projectButton;
-    @FXML
-    private Button homeButton;
-    @FXML
     private Button leaveButton;
     @FXML
     private Button analyticsButton;
+    @FXML
+    private Button ProjectButton;
+    @FXML
+    private Button HomeButton;
+    @FXML
+    private Button PPButton;
 
     /**
      * Initializes the controller class.
@@ -280,7 +280,7 @@ public class TasksBacklogController implements Initializable {
         
         if(labelTaskNameDetail.getText().equals("")) {
             labelName.setStyle("-fx-text-fill: #c71616;");
-            labelTaskNameDetail.setStyle("-fx-border-color: red;");
+            labelTaskNameDetail.setStyle("-fx-border-color: red; -fx-border-radius: 10px;");
             allCorrect = false;
         } else {
             labelTaskNameDetail.setStyle("");
@@ -288,7 +288,7 @@ public class TasksBacklogController implements Initializable {
         
         if(labelTaskDescriptionDetail.getText().equals("")) {
             labelDescription.setStyle("-fx-text-fill: #c71616;");
-            labelTaskDescriptionDetail.setStyle("-fx-border-color: red;");
+            labelTaskDescriptionDetail.setStyle("-fx-border-color: red; -fx-border-radius: 10px;");
             allCorrect = false;
         } else {
             labelTaskDescriptionDetail.setStyle("");
@@ -296,7 +296,7 @@ public class TasksBacklogController implements Initializable {
         
         if(labelTaskTypeDetail.getValue().equals("")) {
             labelType.setStyle("-fx-text-fill: #c71616;");
-            labelTaskTypeDetail.setStyle("-fx-border-color: red;");
+            labelTaskTypeDetail.setStyle("-fx-border-color: red; -fx-border-radius: 10px;");
             allCorrect = false;
         } else {
             labelTaskTypeDetail.setStyle("");
@@ -304,7 +304,7 @@ public class TasksBacklogController implements Initializable {
         
         if(labelTaskStageDetail.getValue().equals("")) {
             labelStage.setStyle("-fx-text-fill: #c71616;");
-            labelTaskStageDetail.setStyle("-fx-border-color: red;");
+            labelTaskStageDetail.setStyle("-fx-border-color: red; -fx-border-radius: 10px;");
             allCorrect = false;
         } else {
             labelTaskStageDetail.setStyle("");
@@ -312,7 +312,7 @@ public class TasksBacklogController implements Initializable {
         
         if(labelTaskMemberDetail.getText().equals("")) {
             labelMember.setStyle("-fx-text-fill: #c71616;");
-            labelTaskMemberDetail.setStyle("-fx-border-color: red;");
+            labelTaskMemberDetail.setStyle("-fx-border-color: red; -fx-border-radius: 10px;");
             allCorrect = false;
         } else {
             labelTaskMemberDetail.setStyle("");

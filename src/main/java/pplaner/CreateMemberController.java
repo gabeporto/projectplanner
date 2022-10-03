@@ -125,7 +125,7 @@ public class CreateMemberController implements Initializable {
         
         if(inputMemberName.getText().equals("")) {
             labelMemberName.setStyle("-fx-text-fill: #c71616;");
-            inputMemberName.setStyle("-fx-border-color: red;");
+            inputMemberName.setStyle("-fx-border-color: red; -fx-border-radius: 10px;");
             allCorrect = false;
         } else {
             inputMemberName.setStyle("");

@@ -21,6 +21,12 @@ import javafx.stage.Stage;
 public class AnalyticsController implements Initializable {
 
     @FXML
+    private Button leaveButton;
+    @FXML
+    private Button HomeButton;
+    @FXML
+    private Button PPButton;
+    @FXML
     private Button kanbanButton;
     @FXML
     private Button backlogButton;
@@ -28,12 +34,6 @@ public class AnalyticsController implements Initializable {
     private Button memberButton;
     @FXML
     private Button ProjectButton;
-    @FXML
-    private Button homeButton;
-    @FXML
-    private Button leaveButton;
-    @FXML
-    private Button ppButton;
 
     /**
      * Initializes the controller class.

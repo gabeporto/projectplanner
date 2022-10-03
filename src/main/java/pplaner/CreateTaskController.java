@@ -60,8 +60,6 @@ public class CreateTaskController implements Initializable {
     @FXML
     private Button leaveButton;
     @FXML
-    private Button ppButton;
-    @FXML
     private TextField inputTaskDescription;
     @FXML
     private Button createTaskButton;
@@ -83,6 +81,8 @@ public class CreateTaskController implements Initializable {
     private Button HomeButton;
     @FXML
     private Button analyticsButton;
+    @FXML
+    private Button PPButton;
     
 
     /**
@@ -110,7 +110,7 @@ public class CreateTaskController implements Initializable {
         
         if(inputTaskName.getText().equals("")) {
             labelTaskName.setStyle("-fx-text-fill: #c71616;");
-            inputTaskName.setStyle("-fx-border-color: red;");
+            inputTaskName.setStyle("-fx-border-color: red; -fx-border-radius: 10px;");
             allCorrect = false;
         } else {
             inputTaskName.setStyle("");
@@ -118,7 +118,7 @@ public class CreateTaskController implements Initializable {
         
         if(inputTaskType.equals("")) {
             labelTaskType.setStyle("-fx-text-fill: #c71616;");
-            inputTaskType.setStyle("-fx-border-color: red;");
+            inputTaskType.setStyle("-fx-border-color: red; -fx-border-radius: 10px;");
             allCorrect = false;
         } else {
             inputTaskType.setStyle("");
@@ -126,7 +126,7 @@ public class CreateTaskController implements Initializable {
         
         if(inputTaskDescription.getText().equals("")) {
             labelTaskDescription.setStyle("-fx-text-fill: #c71616;");
-            inputTaskDescription.setStyle("-fx-border-color: red;");
+            inputTaskDescription.setStyle("-fx-border-color: red; -fx-border-radius: 10px;");
 
             allCorrect = false;
         } else {
@@ -135,7 +135,7 @@ public class CreateTaskController implements Initializable {
         
         if(inputTaskMember.equals("")) {
             labelTaskMember.setStyle("-fx-text-fill: #c71616;");
-            inputTaskMember.setStyle("-fx-border-color: red;");
+            inputTaskMember.setStyle("-fx-border-color: red; -fx-border-radius: 10px;");
             allCorrect = false;
         } else {
             inputTaskMember.setStyle("");

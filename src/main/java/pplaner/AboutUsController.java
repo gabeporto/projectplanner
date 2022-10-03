@@ -15,6 +15,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 /**
@@ -35,10 +36,6 @@ public class AboutUsController implements Initializable {
     @FXML
     private Button leaveButton;
     @FXML
-    private Button ppButton;
-    @FXML
-    private Button homeButton;
-    @FXML
     private Button linkedInMember1;
     @FXML
     private Button gitHubMember1;
@@ -57,7 +54,9 @@ public class AboutUsController implements Initializable {
     @FXML
     private Button instagramMember3;
     @FXML
-    private Button AnalyticsButton;
+    private Button analyticsButton;
+    @FXML
+    private Button HomeButton;
 
     /**
      * Initializes the controller class.
@@ -205,4 +204,5 @@ public class AboutUsController implements Initializable {
     @FXML
     private void goToInstagramMember3(ActionEvent event) {
     }
+    
 }

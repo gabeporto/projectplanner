@@ -26,6 +26,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.DragEvent;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 import model.Member;
@@ -50,8 +51,6 @@ public class MemberController implements Initializable {
     private ObservableList<Member> observableMembers;
     
 
-    @FXML
-    private Button ppButton;
     @FXML
     private Button kanbanButton;
     @FXML
@@ -85,13 +84,15 @@ public class MemberController implements Initializable {
     @FXML
     private CheckBox checkBoxType4;
     @FXML
-    private Button projectButton;
-    @FXML
-    private Button homeButton;
-    @FXML
     private Button leaveButton;
     @FXML
     private Button analyticsButton;
+    @FXML
+    private Button ProjectButton;
+    @FXML
+    private Button HomeButton;
+    @FXML
+    private Button PPButton;
     
 
     /**
@@ -251,7 +252,7 @@ public class MemberController implements Initializable {
         
         if(labelMemberNameDetail.getText().equals("")) {
             labelMemberName.setStyle("-fx-text-fill: #c71616;");
-            labelMemberNameDetail.setStyle("-fx-border-color: red;");
+            labelMemberNameDetail.setStyle("-fx-border-color: red; -fx-border-radius: 10px;");
             allCorrect = false;
         } else {
             labelMemberNameDetail.setStyle("");
@@ -339,6 +340,26 @@ public class MemberController implements Initializable {
         stage = (Stage) leaveButton.getScene().getWindow();
         System.out.println("Leaving application...");
         stage.close();
+    }
+
+    @FXML
+    private void memberType1Clicked(MouseEvent event) {
+        labelMemberType.setStyle("");
+    }
+
+    @FXML
+    private void memberType2Clicked(MouseEvent event) {
+        labelMemberType.setStyle("");
+    }
+
+    @FXML
+    private void memberType3Clicked(MouseEvent event) {
+        labelMemberType.setStyle("");
+    }
+
+    @FXML
+    private void memberType4Clicked(MouseEvent event) {
+        labelMemberType.setStyle("");
     }
 
 }
