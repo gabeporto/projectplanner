@@ -52,6 +52,7 @@ public class TasksBacklogController implements Initializable {
     
     private List<Member> members = new ArrayList<>();
     private final MemberDao memberDao = new MemberDao();
+    List<String> membersList = this.memberDao.readAllByName();
     
     String previousTaskStage;
     String previousTaskType;
@@ -73,7 +74,7 @@ public class TasksBacklogController implements Initializable {
     @FXML
     private ChoiceBox<String> labelTaskTypeDetail;
     @FXML
-    private TextField labelTaskMemberDetail;
+    private ChoiceBox<String> labelTaskMemberDetail;
     @FXML
     private Button editTaskButton;
     @FXML
@@ -116,6 +117,7 @@ public class TasksBacklogController implements Initializable {
         labelTaskStageDetail.getItems().addAll(tasksStage);
         labelTaskStageDetail.setDisable(true);
         labelTaskTypeDetail.getItems().addAll(project.getAllTypes());
+        labelTaskMemberDetail.getItems().addAll(membersList);
         labelTaskTypeDetail.setDisable(true);   
         labelTaskNameDetail.setDisable(true);
         labelTaskDescriptionDetail.setDisable(true);
@@ -171,7 +173,7 @@ public class TasksBacklogController implements Initializable {
                 labelTaskStageDetail.setValue("Concluído");
             }
             labelTaskTypeDetail.setValue(task.getType());
-            labelTaskMemberDetail.setText(task.getMember());
+            labelTaskMemberDetail.setValue(task.getMember());
             
         } else if(saveChangesButton.isVisible()) {
             labelTaskNameDetail.setDisable(true);
@@ -184,7 +186,7 @@ public class TasksBacklogController implements Initializable {
             labelTaskNameDetail.setText("");
             labelTaskDescriptionDetail.setText("");
             labelTaskTypeDetail.setValue("");
-            labelTaskMemberDetail.setText("");
+            labelTaskMemberDetail.setValue("");
             editTaskButton.setVisible(false);
             deleteTaskButton.setVisible(false);
         }
@@ -310,7 +312,7 @@ public class TasksBacklogController implements Initializable {
             labelTaskStageDetail.setStyle("");
         }
         
-        if(labelTaskMemberDetail.getText().equals("")) {
+        if(labelTaskMemberDetail.getValue().equals("")) {
             labelMember.setStyle("-fx-text-fill: #c71616;");
             labelTaskMemberDetail.setStyle("-fx-border-color: red; -fx-border-radius: 10px;");
             allCorrect = false;
@@ -366,7 +368,7 @@ public class TasksBacklogController implements Initializable {
             }
             
             
-            task.setMember(labelTaskMemberDetail.getText());
+            task.setMember(labelTaskMemberDetail.getValue());
             this.projectDao.update(project);
             this.taskDao.update(task);
             fillTasksBacklog();
@@ -397,7 +399,6 @@ public class TasksBacklogController implements Initializable {
         labelStage.setStyle("");
     }
 
-    @FXML
     private void labelTaskMemberDetailPressed(KeyEvent event) {
         labelTaskMemberDetail.setStyle("");
         labelMember.setStyle("");     

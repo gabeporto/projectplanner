@@ -61,7 +61,6 @@
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <TextField fx:id="labelTaskMemberDetail" layoutX="46.0" layoutY="581.0" onKeyPressed="#labelTaskMemberDetailPressed" prefHeight="52.0" prefWidth="430.0" styleClass="text-field-backlogtask" stylesheets="@stylesheet.css" />
             <Button fx:id="saveChangesButton" layoutX="46.0" layoutY="668.0" mnemonicParsing="false" onAction="#saveChangesTask" prefHeight="40.0" prefWidth="430.0" style="-fx-background-radius: 20px;" styleClass="button2" stylesheets="@stylesheet.css" text="Salvar alterações">
                <font>
                   <Font size="20.0" />
@@ -74,6 +73,7 @@
                <font>
                   <Font size="20.0" />
                </font></Button>
+            <ChoiceBox fx:id="labelTaskMemberDetail" layoutX="46.0" layoutY="583.0" onMousePressed="#labelTaskStageDetailPressed" prefHeight="52.0" prefWidth="430.0" styleClass="text-field-selectstage" stylesheets="@stylesheet.css" />
          </children>
       </AnchorPane>
       <AnchorPane prefHeight="1081.0" prefWidth="263.0" style="-fx-background-color: #000000;">

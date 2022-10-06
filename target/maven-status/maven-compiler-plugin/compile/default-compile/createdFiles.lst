@@ -1,6 +1,17 @@
 model\Task.class
+pplaner\CreateMemberController.class
+pplaner\MemberController.class
+pplaner\AboutUsController.class
+pplaner\AnalyticsController.class
+model\Member.class
 pplaner\CreateTaskController.class
 pplaner\KanbanController.class
 model\dao\TaskDao.class
+pplaner\HomeController.class
+model\dao\ProjectDao.class
+pplaner\CreateProjectController.class
+pplaner\ProjectController.class
 pplaner\App.class
+model\dao\MemberDao.class
 pplaner\TasksBacklogController.class
+model\Project.class
