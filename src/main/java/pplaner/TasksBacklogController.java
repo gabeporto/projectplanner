@@ -157,7 +157,7 @@ public class TasksBacklogController implements Initializable {
     }   
     
     public void selectTaskBacklog(Task task) throws InterruptedException {
-        
+      
         editTaskButton.setVisible(true);
         deleteTaskButton.setVisible(true);
         
