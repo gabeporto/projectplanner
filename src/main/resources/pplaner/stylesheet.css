@@ -182,6 +182,12 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
     -fx-cursor: hand;
 }
 
+.table-viewToDo .column-header-background .label{
+    -fx-background-color: #484747;
+    -fx-text-fill: gray;
+    -fx-font-size: 25px;
+}
+
 .table-viewInProgress .table-cell{
     -fx-alignment: center-left;
     -fx-text-fill: #d9d96f;
@@ -191,6 +197,12 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
     -fx-cursor: hand;
 }
 
+.table-viewInProgress .column-header-background .label{
+    -fx-background-color: #484747;
+    -fx-text-fill: gray;
+    -fx-font-size: 25px;
+}
+
 .table-viewDone .table-cell{
     -fx-alignment: center-left;
     -fx-text-fill: #6fd9aa;
@@ -198,6 +210,12 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
     -fx-transition: all ease 0.9s;
     -fx-alignment: center;
     -fx-cursor: hand;
+}
+
+.table-viewDone .column-header-background .label{
+    -fx-background-color: #484747;
+    -fx-text-fill: gray;
+    -fx-font-size: 25px;
 }
 
 .table-view2 .table-cell{
@@ -379,6 +397,24 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
 }
 
 .progress-bar > .track {
+   -fx-background-color: #D9D9D9;
+   -fx-background-radius: 10px;
+   -fx-background-insets: 0, 1;
+}
+
+.progress-bar3 {
+    -fx-accent: #3AD45C;
+    -fx-control-inner-background: #D9D9D9;
+}
+
+ .progress-bar3 > .bar {
+    -fx-padding: 0;
+    -fx-background-radius: 10px;
+    -fx-background-insets: 0;
+    -fx-background-color: #3AD45C;
+}
+
+.progress-bar3 > .track {
    -fx-background-color: #D9D9D9;
    -fx-background-radius: 10px;
    -fx-background-insets: 0, 1;

@@ -291,8 +291,35 @@ public class Project {
         this.percentageType4 = doneTasks / numOfTasks;
         return this.percentageType4;
     }
-
     
+    public float calculatePercentageTasksType1(int maxTasks) {
+        
+        float numOfTasks = this.numberOfType1Tasks;
+        
+        return numOfTasks / maxTasks;
+    }
+    
+    public float calculatePercentageTasksType2(int maxTasks) {
+        
+        float numOfTasks = this.numberOfType2Tasks;
+            
+        return numOfTasks / maxTasks;
+    }
+    
+    public float calculatePercentageTasksType3(int maxTasks) {
+        
+        float numOfTasks = this.numberOfType3Tasks;
+
+        return numOfTasks / maxTasks;
+    }
+    
+    public float calculatePercentageTasksType4(int maxTasks) {
+        
+        float numOfTasks = this.numberOfType4Tasks;
+
+        return numOfTasks / maxTasks;
+    }
+
     public void filterType1ToDo() {
         int quantity = 0;
         TaskDao taskDao = new TaskDao();
@@ -388,7 +415,7 @@ public class Project {
         List<Task> secondFilteredTasks = new ArrayList<>();
         
         for(Task task : firstFilteredTasks) {
-                if(task.getStage().contains("To Do Stage")) {
+                if(task.getStage().contains("In Progress Stage")) {
                     secondFilteredTasks.add(task);
                     quantity = quantity + 1;
                 }
