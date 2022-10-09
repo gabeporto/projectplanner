@@ -219,7 +219,7 @@ public class KanbanController implements Initializable {
                 }
                 this.taskDao.update(task);
                 this.projectDao.update(project);
-                fillTableTasks();
+                filterKanban();
             } else {
                 System.out.println("Transfer cancelled.");
             }
@@ -262,7 +262,7 @@ public class KanbanController implements Initializable {
                 }
                 this.taskDao.update(task);
                 this.projectDao.update(project);
-                fillTableTasks();
+                filterKanban();
             } else {
                 System.out.println("Transfer cancelled.");
             }
@@ -305,7 +305,7 @@ public class KanbanController implements Initializable {
                 }
                 this.taskDao.update(task);
                 this.projectDao.update(project);
-                fillTableTasks();
+                filterKanban();
             } else {
                 System.out.println("Transfer cancelled.");
             }
@@ -321,7 +321,7 @@ public class KanbanController implements Initializable {
     }
 
     @FXML
-    private void filterKanban(ActionEvent event) {
+    private void filterKanban() {
                
         if(!this.projectDao.checkEmpty()) {
             
