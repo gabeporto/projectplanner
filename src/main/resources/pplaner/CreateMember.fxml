@@ -34,22 +34,22 @@
                         <Font size="26.0" />
                      </font>
                   </Label>
-                  <CheckBox fx:id="checkBoxType1" layoutX="765.0" layoutY="395.0" mnemonicParsing="false" onAction="#selectType" prefHeight="50.0" prefWidth="257.0" text="Tipo 1" textFill="WHITE">
+                  <CheckBox fx:id="checkBoxType1" layoutX="765.0" layoutY="395.0" mnemonicParsing="false" onAction="#selectType" prefHeight="50.0" prefWidth="257.0" stylesheets="@stylesheet.css" text="Tipo 1" textFill="WHITE">
                      <font>
                         <Font size="20.0" />
                      </font>
                   </CheckBox>
-                  <CheckBox fx:id="checkBoxType2" layoutX="1036.0" layoutY="395.0" mnemonicParsing="false" onAction="#selectType" prefHeight="50.0" prefWidth="257.0" text="Tipo 2" textFill="WHITE">
+                  <CheckBox fx:id="checkBoxType2" layoutX="1036.0" layoutY="395.0" mnemonicParsing="false" onAction="#selectType" prefHeight="50.0" prefWidth="257.0" stylesheets="@stylesheet.css" text="Tipo 2" textFill="WHITE">
                      <font>
                         <Font size="20.0" />
                      </font>
                   </CheckBox>
-                  <CheckBox fx:id="checkBoxType3" layoutX="765.0" layoutY="465.0" mnemonicParsing="false" onAction="#selectType" prefHeight="50.0" prefWidth="257.0" text="Tipo 3" textFill="WHITE">
+                  <CheckBox fx:id="checkBoxType3" layoutX="765.0" layoutY="465.0" mnemonicParsing="false" onAction="#selectType" prefHeight="50.0" prefWidth="257.0" stylesheets="@stylesheet.css" text="Tipo 3" textFill="WHITE">
                      <font>
                         <Font size="20.0" />
                      </font>
                   </CheckBox>
-                  <CheckBox fx:id="checkBoxType4" layoutX="1036.0" layoutY="465.0" mnemonicParsing="false" onAction="#selectType" prefHeight="50.0" prefWidth="257.0" text="Tipo 4" textFill="WHITE">
+                  <CheckBox fx:id="checkBoxType4" layoutX="1036.0" layoutY="465.0" mnemonicParsing="false" onAction="#selectType" prefHeight="50.0" prefWidth="257.0" stylesheets="@stylesheet.css" text="Tipo 4" textFill="WHITE">
                      <font>
                         <Font size="20.0" />
                      </font>

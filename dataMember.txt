@@ -2,3 +2,4 @@
 {"id":"7446e685-48cc-45e4-862c-187ba4fb776a","name":"Nathan Faria","typeActive":[0,1,0,1],"type":["Desenvolvimento","Testes"]}
 {"id":"5576b968-3d4f-4d52-9ef3-247d23a4f814","name":"Lucas Antônio","typeActive":[0,0,1,1],"type":["Documentação","Testes"]}
 {"id":"7451cb9e-55f3-4e2c-a997-224b95527625","name":"Vinicius Castro","typeActive":[1,1,0,0],"type":["Prototipagem","Desenvolvimento"]}
+{"id":"83d79841-de17-48b8-b6b4-564e65ae68c1","name":"QA","typeActive":[1,1,1,1],"type":["Prototipagem","Desenvolvimento","Documentação","Testes"]}

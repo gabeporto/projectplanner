@@ -70,6 +70,23 @@
                   <Font name="System Bold" size="50.0" />
                </font>
             </Text>
+            <Text fill="WHITE" layoutX="1151.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MEMBRO" wrappingWidth="200.0">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Text>
+            <ChoiceBox fx:id="memberChoiceBox" layoutX="1151.0" layoutY="79.0" prefHeight="44.0" prefWidth="200.0" styleClass="text-field-selectstage" stylesheets="@stylesheet.css" />
+            <Text fill="WHITE" layoutX="1418.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TIPO" wrappingWidth="200.0">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Text>
+            <ChoiceBox fx:id="typeChoiceBox" layoutX="1418.0" layoutY="78.0" prefHeight="44.0" prefWidth="200.0" styleClass="text-field-selectstage" stylesheets="@stylesheet.css" />
+            <Button fx:id="filterKanbanButton" layoutX="1693.0" layoutY="75.0" mnemonicParsing="false" onAction="#filterKanban" prefHeight="44.0" prefWidth="150.0" styleClass="addtask-button" stylesheets="@stylesheet.css" text="Filtrar">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
          </children>
       </AnchorPane>
       <AnchorPane prefHeight="1081.0" prefWidth="263.0" style="-fx-background-color: #000000;">

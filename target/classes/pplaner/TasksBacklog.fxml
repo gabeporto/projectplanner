@@ -25,9 +25,9 @@
          </font></Button>
       <TableView fx:id="tasksBacklog" layoutX="322.0" layoutY="172.0" prefHeight="837.0" prefWidth="1001.0" styleClass="table-view2" stylesheets="@stylesheet.css">
         <columns>
-          <TableColumn fx:id="nameTaskColumn" editable="false" prefWidth="516.0" resizable="false" text="Task" />
-          <TableColumn fx:id="typeTaskColumn" editable="false" minWidth="0.0" prefWidth="250.0" resizable="false" text="Tipo" />
-            <TableColumn fx:id="memberTaskColumn" editable="false" prefWidth="232.0" resizable="false" text="Membro" />
+          <TableColumn fx:id="nameTaskColumn" editable="false" prefWidth="525.0" resizable="false" text="Task" />
+          <TableColumn fx:id="typeTaskColumn" editable="false" minWidth="0.0" prefWidth="262.0" resizable="false" text="Tipo" />
+            <TableColumn fx:id="memberTaskColumn" editable="false" prefWidth="211.0" resizable="false" text="Membro" />
         </columns>
       </TableView>
       <AnchorPane layoutX="1320.0" layoutY="173.0" prefHeight="837.0" prefWidth="523.0" style="-fx-background-radius: 0 20px 20px 0; -fx-background-color: #484747;" styleClass="anchor-pane-backlog" stylesheets="@stylesheet.css">

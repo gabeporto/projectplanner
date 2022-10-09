@@ -363,6 +363,14 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
     -fx-text-fill: black;
 }
 
+.text-field-selectstage .context-menu {
+    -fx-background-color: #a6a6a6;
+}
+
+.text-field-selectstage .menu-item:focused {
+    -fx-background-color: #557932;
+}
+
 .table-view2 .table-row-cell{
     -fx-alignment: center-left;
     -fx-text-fill: white;
@@ -431,4 +439,18 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
 .progress-indicator .percentage {
    -fx-fill: #3AD45C;
    -fx-font-size: 50px;
+}
+
+.check-box .box {
+-fx-background-color: #a6a6a6;
+-fx-border-color:grey;
+-fx-border-radius:3px; 
+}
+
+.check-box:selected .mark {
+-fx-background-color: black;
+}
+
+.check-box:selected .box {
+-fx-background-color: #3AD45C;
 }

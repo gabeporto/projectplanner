@@ -104,6 +104,67 @@ public class TaskDao {
         return tasks;
     }
     
+    public List<Task> readAllByType(String type) {
+        List<Task> tasks = this.readAll();
+        List<Task> tasksByType = new ArrayList<>();
+        try {
+            BufferedReader br = new BufferedReader(new FileReader(DATA_FILE));
+            String data;
+            int i = 0;
+            while ((data = br.readLine()) != null) {
+                if(type.contentEquals(tasks.get(i).getType())) {
+                    
+                    tasksByType.add(tasks.get(i)); 
+                }
+                i++;
+            }
+            br.close();
+        } catch (IOException e) {
+            System.out.println("Exception reading objects. Exception: " + e);
+        }
+        return tasksByType;
+    }
+    
+    public List<Task> readAllByMember(String member) {
+        List<Task> tasks = this.readAll();
+        List<Task> tasksByMember = new ArrayList<>();
+        try {
+            BufferedReader br = new BufferedReader(new FileReader(DATA_FILE));
+            String data;
+            int i = 0;
+            while ((data = br.readLine()) != null) {
+                if(member.contentEquals(tasks.get(i).getMember())) {   
+                    tasksByMember.add(tasks.get(i)); 
+                }
+                i++;
+            }
+            br.close();
+        } catch (IOException e) {
+            System.out.println("Exception reading objects. Exception: " + e);
+        }
+        return tasksByMember;
+    }
+    
+    public List<Task> readAllByTypeAndMember(String type, String member) {
+        List<Task> tasks = this.readAll();
+        List<Task> filteredTasks = new ArrayList<>();
+        try {
+            BufferedReader br = new BufferedReader(new FileReader(DATA_FILE));
+            String data;
+            int i = 0;
+            while ((data = br.readLine()) != null) {
+                if(member.contentEquals(tasks.get(i).getMember()) && type.contentEquals(tasks.get(i).getType())) {   
+                    filteredTasks.add(tasks.get(i)); 
+                }
+                i++;
+            }
+            br.close();
+        } catch (IOException e) {
+            System.out.println("Exception reading objects. Exception: " + e);
+        }
+        return filteredTasks;
+    }
+    
     public List<Task> changeTaskType() {
         List<Task> tasks = this.readAll();
         List<Task> tasksUpdate = new ArrayList<>();

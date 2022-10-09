@@ -1,12 +1,12 @@
 {"id":"3a26c849-bcf6-4c91-bf6a-9c90d92b09be","name":"Documentar segunda entrega","description":"Segunda entrega para Professor Andrey","type":"Documentação","stage":"Done Stage","member":"Lucas Antônio","typeActive":[0,0,1,0]}
-{"id":"5cb4b4f5-86c2-4721-87ef-22c6620dcb8a","name":"Adicionar membros ao projeto","description":"Pra já","type":"Testes","stage":"To Do Stage","member":"Lucas Antônio","typeActive":[0,0,0,1]}
+{"id":"5cb4b4f5-86c2-4721-87ef-22c6620dcb8a","name":"Adicionar membros ao projeto","description":"Pra já","type":"Testes","stage":"Done Stage","member":"Lucas Antônio","typeActive":[0,0,0,1]}
 {"id":"4b43eeeb-c445-44bc-9edc-6fc065cdb6f0","name":"Enviar primeira entrega do projeto","description":"Para Professor Gavião","type":"Desenvolvimento","stage":"Done Stage","member":"Gabriel Porto","typeActive":[0,1,0,0]}
-{"id":"830091c6-df73-4291-9425-5130ca84bd68","name":"Implementar tela Home","description":"JavaFX","type":"Documentação","stage":"Done Stage","member":"Gabriel Porto","typeActive":[0,0,1,0]}
-{"id":"c9e26dc4-8697-431a-b580-c46efde1579a","name":"Adicionar responsividade","description":"Teste","type":"Desenvolvimento","stage":"In Progress Stage","member":"Gabriel Porto","typeActive":[0,1,0,0]}
-{"id":"bf3fe36e-8ebc-4a68-b98f-4f20d2d39b5d","name":"Teste do Teste","description":"Teste","type":"Prototipagem","stage":"Done Stage","member":"Lucas Antônio","typeActive":[1,0,0,0]}
+{"id":"830091c6-df73-4291-9425-5130ca84bd68","name":"Implementar tela Home","description":"JavaFX","type":"Desenvolvimento","stage":"Done Stage","member":"Nathan Faria","typeActive":[0,1,0,0]}
+{"id":"c9e26dc4-8697-431a-b580-c46efde1579a","name":"Adicionar responsividade","description":"Teste","type":"Desenvolvimento","stage":"To Do Stage","member":"Gabriel Porto","typeActive":[0,1,0,0]}
+{"id":"bf3fe36e-8ebc-4a68-b98f-4f20d2d39b5d","name":"Teste do Teste","description":"Teste","type":"Prototipagem","stage":"In Progress Stage","member":"Lucas Antônio","typeActive":[1,0,0,0]}
 {"id":"5b3ae274-631f-4fb7-a559-fb277447e307","name":"Criar tela de Analytics","description":"Figma","type":"Prototipagem","stage":"In Progress Stage","member":"Gabriel Porto","typeActive":[1,0,0,0]}
-{"id":"9398417a-8872-4ab2-a2d5-af66b79fdfe1","name":"Preparar apresentação","description":"teste","type":"Documentação","stage":"Done Stage","member":"Gabriel Porto","typeActive":[0,0,1,0]}
-{"id":"fe7a32e1-10e6-4563-afda-6df3ae09de10","name":"Testar site ","description":"test","type":"Desenvolvimento","stage":"In Progress Stage","member":"Lucas Antônio","typeActive":[0,1,0,0]}
-{"id":"7bdac811-1533-4247-8a57-6b1c7c09ec6d","name":"Crias task de testes","description":"teste","type":"Testes","stage":"Done Stage","member":"Gabriel Porto","typeActive":[0,0,0,1]}
-{"id":"49a6d0ba-725b-4795-89cf-f7f548e5576a","name":"Criar tela do futuro","description":"Teste","type":"Prototipagem","stage":"To Do Stage","member":"Gabriel Porto","typeActive":[1,0,0,0]}
-{"id":"bc7f1585-782c-4dcc-a645-f05b5c4518a2","name":"Criar prototipagem de baixa fidelidade","description":"Figma","type":"Prototipagem","stage":"To Do Stage","member":"Gabriel Porto","typeActive":[1,0,0,0]}
+{"id":"9398417a-8872-4ab2-a2d5-af66b79fdfe1","name":"Preparar apresentação","description":"teste","type":"Documentação","stage":"In Progress Stage","member":"Gabriel Porto","typeActive":[0,0,1,0]}
+{"id":"fe7a32e1-10e6-4563-afda-6df3ae09de10","name":"Testar site ","description":"test","type":"Desenvolvimento","stage":"Done Stage","member":"Lucas Antônio","typeActive":[0,1,0,0]}
+{"id":"7bdac811-1533-4247-8a57-6b1c7c09ec6d","name":"Crias task de testes","description":"teste","type":"Testes","stage":"To Do Stage","member":"Gabriel Porto","typeActive":[0,0,0,1]}
+{"id":"49a6d0ba-725b-4795-89cf-f7f548e5576a","name":"Criar tela do futuro","description":"Teste","type":"Prototipagem","stage":"Done Stage","member":"Gabriel Porto","typeActive":[1,0,0,0]}
+{"id":"bc7f1585-782c-4dcc-a645-f05b5c4518a2","name":"Criar prototipagem de baixa fidelidade","description":"Figma","type":"Prototipagem","stage":"Done Stage","member":"Gabriel Porto","typeActive":[1,0,0,0]}

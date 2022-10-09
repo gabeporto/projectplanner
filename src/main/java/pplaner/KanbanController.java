@@ -17,6 +17,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ChoiceDialog;
 import javafx.scene.control.Dialog;
 import javafx.scene.control.TableColumn;
@@ -28,6 +29,7 @@ import model.Project;
 import model.Task;
 import model.dao.ProjectDao;
 import model.dao.TaskDao;
+import model.dao.MemberDao;
 
 /**
  * FXML Controller class
@@ -38,12 +40,15 @@ public class KanbanController implements Initializable {
     
     private List<Task> tasks = new ArrayList<>();
     private final TaskDao taskDao = new TaskDao();
+    private final MemberDao memberDao = new MemberDao();
     private final ProjectDao projectDao = new ProjectDao();
     
+    Project project = projectDao.readOne();
     private List<Task> tasksList = new ArrayList();
     private ObservableList<Task> observableTasks;
     
     String [] arrayData = {"A fazer", "Em progresso", "Concluído"};
+    List<String> membersList = this.memberDao.readAllByName();
 
     
     @FXML
@@ -54,8 +59,7 @@ public class KanbanController implements Initializable {
     private TableColumn<Task, String> typeTaskColumnToDo;
     @FXML
     private TableColumn<Task, String> memberTaskColumnToDo;
-    
-    
+      
     @FXML
     private TableView<Task> tableTasksInProgress;
     @FXML
@@ -89,16 +93,29 @@ public class KanbanController implements Initializable {
     private Button HomeButton;
     @FXML
     private Button PPButton;
+    @FXML
+    private ChoiceBox<String> memberChoiceBox;
+    @FXML
+    private ChoiceBox<String> typeChoiceBox;
+    @FXML
+    private Button filterKanbanButton;
     
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        typeChoiceBox.getItems().add("Todos");
+        typeChoiceBox.getItems().addAll(project.getAllTypes());
+        typeChoiceBox.setValue("Todos");
+        memberChoiceBox.getItems().add("Todos");
+        memberChoiceBox.getItems().addAll(membersList);
+        memberChoiceBox.setValue("Todos");
+        
         fillTableTasks();
         
         tableTasksToDo.getSelectionModel().selectedItemProperty().addListener(
-                (observable, oldValue, newValue) -> selectTaskInTabke(newValue));
+                (observable, oldValue, newValue) -> selectTaskInTable(newValue));
     }    
     
     private void fillTableTasks(){
@@ -131,7 +148,7 @@ public class KanbanController implements Initializable {
         
     }   
 
-    public void selectTaskInTabke(Task task) {
+    public void selectTaskInTable(Task task) {
             System.out.println("Task selected!");
 
     }
@@ -301,6 +318,138 @@ public class KanbanController implements Initializable {
         stage = (Stage) leaveButton.getScene().getWindow();
         System.out.println("Leaving application...");
         stage.close();
+    }
+
+    @FXML
+    private void filterKanban(ActionEvent event) {
+               
+        if(!this.projectDao.checkEmpty()) {
+            
+            taskDao.checkFile();
+                      
+            String chosenType = typeChoiceBox.getValue();
+            String chosenMember = memberChoiceBox.getValue();
+            
+            
+            // Caso seja filtrado apenas por Membro.
+            if(chosenType == "Todos" && chosenMember != "Todos") {
+                List<Task> filteredTasksMember = taskDao.readAllByMember(chosenMember); 
+                                         
+                // To Do tasks
+                List<Task> chosenTypeListToDo = new ArrayList<>();
+                for (Task typeList : filteredTasksMember) {
+                    if(typeList.getStage().contentEquals("To Do Stage")) {
+                        chosenTypeListToDo.add(typeList);
+                    }
+                }
+                
+                observableTasks = FXCollections.observableArrayList(chosenTypeListToDo);
+                tableTasksToDo.setItems(observableTasks);
+
+                // In progress tasks
+                List<Task> chosenTypeListInProgress = new ArrayList<>();
+                for (Task typeList : filteredTasksMember) {
+                    if(typeList.getStage().contentEquals("In Progress Stage")) {
+                        chosenTypeListInProgress.add(typeList);
+                    }
+                }
+                
+                observableTasks = FXCollections.observableArrayList(chosenTypeListInProgress);
+                tableTasksInProgress.setItems(observableTasks);
+
+                // Done tasks
+                List<Task> chosenTypeListDone = new ArrayList<>();
+                for (Task typeList : filteredTasksMember) {
+                    if(typeList.getStage().contentEquals("Done Stage")) {
+                        chosenTypeListDone.add(typeList);
+                    }
+                }
+                
+                observableTasks = FXCollections.observableArrayList(chosenTypeListDone);
+                tableTasksDone.setItems(observableTasks);
+
+                
+            // Caso seja filtrado apenas por Tipo.
+            } else if(chosenType != "Todos" && chosenMember == "Todos") {
+                List<Task> filteredTasksType = taskDao.readAllByType(chosenType);
+                
+                // To Do tasks
+                List<Task> chosenTypeListToDo = new ArrayList<>();
+                for (Task typeList : filteredTasksType) {
+                    if(typeList.getStage().contentEquals("To Do Stage")) {
+                        chosenTypeListToDo.add(typeList);
+                    }
+                }
+                
+                observableTasks = FXCollections.observableArrayList(chosenTypeListToDo);
+                tableTasksToDo.setItems(observableTasks);
+
+                // In progress tasks
+                List<Task> chosenTypeListInProgress = new ArrayList<>();
+                for (Task typeList : filteredTasksType) {
+                    if(typeList.getStage().contentEquals("In Progress Stage")) {
+                        chosenTypeListInProgress.add(typeList);
+                    }
+                }
+                
+                observableTasks = FXCollections.observableArrayList(chosenTypeListInProgress);
+                tableTasksInProgress.setItems(observableTasks);
+
+                // Done tasks
+                List<Task> chosenTypeListDone = new ArrayList<>();
+                for (Task typeList : filteredTasksType) {
+                    if(typeList.getStage().contentEquals("Done Stage")) {
+                        chosenTypeListDone.add(typeList);
+                    }
+                }
+                
+                observableTasks = FXCollections.observableArrayList(chosenTypeListDone);
+                tableTasksDone.setItems(observableTasks);
+                
+                
+            // Caso seja filtrado por Tipo e por Membro.  
+            } else if(chosenType != "Todos" && chosenMember != "Todos") {
+                List<Task> filteredTasksTypeMember = taskDao.readAllByTypeAndMember(chosenType, chosenMember);
+                
+                // To Do tasks
+                List<Task> chosenTypeListToDo = new ArrayList<>();
+                for (Task typeList : filteredTasksTypeMember) {
+                    if(typeList.getStage().contentEquals("To Do Stage")) {
+                        chosenTypeListToDo.add(typeList);
+                    }
+                }
+                
+                observableTasks = FXCollections.observableArrayList(chosenTypeListToDo);
+                tableTasksToDo.setItems(observableTasks);
+
+                // In progress tasks
+                List<Task> chosenTypeListInProgress = new ArrayList<>();
+                for (Task typeList : filteredTasksTypeMember) {
+                    if(typeList.getStage().contentEquals("In Progress Stage")) {
+                        chosenTypeListInProgress.add(typeList);
+                    }
+                }
+                
+                observableTasks = FXCollections.observableArrayList(chosenTypeListInProgress);
+                tableTasksInProgress.setItems(observableTasks);
+
+                // Done tasks
+                List<Task> chosenTypeListDone = new ArrayList<>();
+                for (Task typeList : filteredTasksTypeMember) {
+                    if(typeList.getStage().contentEquals("Done Stage")) {
+                        chosenTypeListDone.add(typeList);
+                    }
+                }
+                
+                observableTasks = FXCollections.observableArrayList(chosenTypeListDone);
+                tableTasksDone.setItems(observableTasks);
+            
+            // Caso o filtro seja Todas as tasks
+            } else if(chosenType == "Todos" && chosenMember == "Todos") {
+                fillTableTasks();
+            }
+       
+        }
     }
 
 }
