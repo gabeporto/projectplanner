@@ -56,8 +56,6 @@ public class KanbanController implements Initializable {
     @FXML
     private TableColumn<Task, String> nameTaskColumnToDo;
     @FXML
-    private TableColumn<Task, String> typeTaskColumnToDo;
-    @FXML
     private TableColumn<Task, String> memberTaskColumnToDo;
       
     @FXML
@@ -65,16 +63,12 @@ public class KanbanController implements Initializable {
     @FXML
     private TableColumn<Task, String> nameTaskColumnInProgress;
     @FXML
-    private TableColumn<Task, String> typeTaskColumnInProgress;
-    @FXML
     private TableColumn<Task, String> memberTaskColumnInProgress;
     
     @FXML
     private TableView<Task> tableTasksDone;
     @FXML
     private TableColumn<Task, String> nameTaskColumnDone;
-    @FXML
-    private TableColumn<Task, String> typeTaskColumnDone;
     @FXML
     private TableColumn<Task, String> memberTaskColumnDone;
    
@@ -121,7 +115,6 @@ public class KanbanController implements Initializable {
     private void fillTableTasks(){
         // To do tasks
         nameTaskColumnToDo.setCellValueFactory(new PropertyValueFactory<>("name"));
-        typeTaskColumnToDo.setCellValueFactory(new PropertyValueFactory<>("type"));
         memberTaskColumnToDo.setCellValueFactory(new PropertyValueFactory<>("member"));
         tasksList = taskDao.readAllByFilter("To Do Stage");
         observableTasks = FXCollections.observableArrayList(tasksList);
@@ -130,7 +123,6 @@ public class KanbanController implements Initializable {
         
         // In progress tasks
         nameTaskColumnInProgress.setCellValueFactory(new PropertyValueFactory<>("name"));
-        typeTaskColumnInProgress.setCellValueFactory(new PropertyValueFactory<>("type"));
         memberTaskColumnInProgress.setCellValueFactory(new PropertyValueFactory<>("member"));
         tasksList = taskDao.readAllByFilter("In Progress Stage");
         observableTasks = FXCollections.observableArrayList(tasksList);
@@ -139,7 +131,6 @@ public class KanbanController implements Initializable {
         
         // Done tasks
         nameTaskColumnDone.setCellValueFactory(new PropertyValueFactory<>("name"));
-        typeTaskColumnDone.setCellValueFactory(new PropertyValueFactory<>("type"));
         memberTaskColumnDone.setCellValueFactory(new PropertyValueFactory<>("member"));
         tasksList = taskDao.readAllByFilter("Done Stage");
         observableTasks = FXCollections.observableArrayList(tasksList);
