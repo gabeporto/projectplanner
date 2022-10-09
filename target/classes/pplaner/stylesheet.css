@@ -379,16 +379,17 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
 }
 
 .date-picker2:disabled {
+    -fx-background-radius: 10px;
     -fx-opacity: 0.3;
     -fx-text-fill: black;
 }
 
 .date-picker2 {
+    -fx-background-radius: 10px;
     -fx-opacity: 0.7;
     -fx-cursor: hand;
     -fx-font-size: 22px;
     -fx-font-family: 'System';
-
 }
 
 .progress-bar {

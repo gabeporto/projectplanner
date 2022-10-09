@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -132,6 +133,17 @@ public class CreateProjectController implements Initializable {
             labelProjectName.setStyle("");
             inputProjectName.setStyle("");
         }
+        
+        // Validação do LocalDate
+        LocalDate dateNow = LocalDate.now();
+        LocalDate dateProject = inputProjectDate.getValue();
+        
+        if(!dateProject.isAfter(dateNow)) {
+            labelProjectDate.setStyle("-fx-text-fill: #c71616;");
+            allCorrect = false;
+        } else {
+            labelProjectDate.setStyle("");
+        }
 
         if(inputProjectType1.getText().equals("")) {
             labelProjectType1.setStyle("-fx-text-fill: #c71616;");
@@ -229,5 +241,9 @@ public class CreateProjectController implements Initializable {
         stage.close();
     }
 
+    @FXML
+    private void ProjectDateDetailShowing(Event event) {
+        labelProjectDate.setStyle("");
+    }
 
 }

@@ -15,6 +15,7 @@ import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -54,8 +55,6 @@ public class ProjectController implements Initializable {
     private Button kanbanButton;
     @FXML
     private Button backlogButton;
-    @FXML
-    private Button ppButton;
     @FXML
     private Button saveChangesButton;
     @FXML
@@ -102,6 +101,8 @@ public class ProjectController implements Initializable {
     private Button leaveButton;
     @FXML
     private Button analyticsButton;
+    @FXML
+    private Button PPButton;
 
     /**
      * Initializes the controller class.
@@ -235,6 +236,17 @@ public class ProjectController implements Initializable {
             inputProjectName.setStyle("");
         }
         
+        // Validação do LocalDate
+        LocalDate dateNow = LocalDate.now();
+        LocalDate dateProject = inputProjectDate.getValue();
+        
+        if(!dateProject.isAfter(dateNow)) {
+            labelProjectDate.setStyle("-fx-text-fill: #c71616;");
+            allCorrect = false;
+        } else {
+            labelProjectDate.setStyle("");
+        }
+
         if(inputProjectType1.getText().equals("")) {
             labelProjectType1.setStyle("-fx-text-fill: #c71616;");
             inputProjectType1.setStyle("-fx-border-color: red; -fx-border-radius: 10px;");
@@ -382,6 +394,11 @@ public class ProjectController implements Initializable {
         stage = (Stage) leaveButton.getScene().getWindow();
         System.out.println("Leaving application...");
         stage.close();
+    }
+
+    @FXML
+    private void ProjectDateDetailShowing(Event event) {
+        labelProjectDate.setStyle("");
     }
 
 }
