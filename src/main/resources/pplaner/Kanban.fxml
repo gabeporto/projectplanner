@@ -82,7 +82,7 @@
                </font>
             </Text>
             <ChoiceBox fx:id="typeChoiceBox" layoutX="1418.0" layoutY="78.0" prefHeight="44.0" prefWidth="200.0" styleClass="text-field-selectstage" stylesheets="@stylesheet.css" />
-            <Button fx:id="filterKanbanButton" layoutX="1693.0" layoutY="75.0" mnemonicParsing="false" onAction="#filterKanban" prefHeight="44.0" prefWidth="150.0" styleClass="addtask-button" stylesheets="@stylesheet.css" text="Filtrar">
+            <Button fx:id="filterKanbanButton" layoutX="1693.0" layoutY="75.0" mnemonicParsing="false" onAction="#filterKanban" prefHeight="44.0" prefWidth="150.0" style="-fx-background-radius: 10px;" styleClass="addtask-button" stylesheets="@stylesheet.css" text="Filtrar">
                <font>
                   <Font size="16.0" />
                </font>

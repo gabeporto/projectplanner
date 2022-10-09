@@ -429,6 +429,23 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
    -fx-background-insets: 0, 1;
 }
 
+.progress-bar4 {
+    -fx-accent: #3AD45C;
+}
+
+ .progress-bar4 > .bar {
+    -fx-padding: 0;
+    -fx-background-radius: 10px;
+    -fx-background-insets: 0;
+    -fx-background-color: #aacf8c;
+}
+
+.progress-bar4 > .track {
+   -fx-background-color: #D9D9D9;
+   -fx-background-radius: 10px;
+   -fx-background-insets: 0, 1;
+}
+
 .progress-indicator {
     -fx-accent: #3AD45C;
 }
@@ -442,16 +459,32 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
    -fx-font-size: 50px;
 }
 
+.progress-indicator .indicator {
+    -fx-background-color: #D9D9D9;
+}
+
 .check-box .box {
--fx-background-color: #a6a6a6;
--fx-border-color:grey;
--fx-border-radius:3px; 
+    -fx-background-color: #a6a6a6;
+    -fx-border-color:grey;
+    -fx-border-radius:3px; 
 }
 
 .check-box:selected .mark {
--fx-background-color: black;
+    -fx-background-color: black;
 }
 
 .check-box:selected .box {
--fx-background-color: #3AD45C;
+    -fx-background-color: #3AD45C;
+}
+
+.default-color0.chart-pie {
+    -fx-pie-color: #bb5d54;
+}
+
+.default-color1.chart-pie {
+    -fx-pie-color: #d4d950;
+}
+
+.default-color2.chart-pie {
+    -fx-pie-color: #28d186;
 }

@@ -89,7 +89,7 @@ public class HomeController implements Initializable {
             labelProjectType1.setText(project.getType1());
             float result1 = resultType1 * 100;
             labelPercentageType1.setText(String.format("%.1f", result1) + "%");
-            progressProjectType1.setProgress(resultType1);
+            progressProjectType1.setProgress(resultType1);         
             
             project.filterType2Done();
             float resultType2 = project.calculatePercentageType2();

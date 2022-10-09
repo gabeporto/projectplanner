@@ -113,7 +113,7 @@
                   <Font size="26.0" />
                </font>
             </Label>
-            <DatePicker fx:id="inputProjectDate" layoutX="765.0" layoutY="316.0" onShowing="#ProjectDateDetailShowing" prefHeight="53.0" prefWidth="512.0" styleClass="date-picker2" stylesheets="@stylesheet.css" />
+            <DatePicker fx:id="inputProjectDate" layoutX="765.0" layoutY="316.0" onShowing="#ProjectDateDetailShowing" prefHeight="53.0" prefWidth="512.0" style="-fx-background-radius: 2;" styleClass="date-picker2" stylesheets="@stylesheet.css" />
             <Label fx:id="labelProjectDate" layoutX="765.0" layoutY="247.0" prefHeight="55.0" prefWidth="392.0" styleClass="label-backlog2" stylesheets="@stylesheet.css" text="Data final" textFill="WHITE">
                <font>
                   <Font size="26.0" />

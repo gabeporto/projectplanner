@@ -10,3 +10,4 @@
 {"id":"7bdac811-1533-4247-8a57-6b1c7c09ec6d","name":"Crias task de testes","description":"teste","type":"Testes","stage":"To Do Stage","member":"Gabriel Porto","typeActive":[0,0,0,1]}
 {"id":"49a6d0ba-725b-4795-89cf-f7f548e5576a","name":"Criar tela do futuro","description":"Teste","type":"Prototipagem","stage":"Done Stage","member":"Gabriel Porto","typeActive":[1,0,0,0]}
 {"id":"bc7f1585-782c-4dcc-a645-f05b5c4518a2","name":"Criar prototipagem de baixa fidelidade","description":"Figma","type":"Prototipagem","stage":"Done Stage","member":"Gabriel Porto","typeActive":[1,0,0,0]}
+{"id":"cee59fc6-6ae2-4ab6-9649-7b25124901bb","name":"Gravar vídeo de manual do usuário","description":"Para o site","type":"Desenvolvimento","stage":"In Progress Stage","member":"Gabriel Porto","typeActive":[0,1,0,0]}
