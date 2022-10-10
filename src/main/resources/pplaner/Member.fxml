@@ -124,29 +124,22 @@
       </TableView>
       <AnchorPane layoutX="1237.0" layoutY="173.0" prefHeight="837.0" prefWidth="606.0" style="-fx-background-radius: 0 20px 20px 0; -fx-background-color: #484747;" styleClass="anchor-pane-backlog" stylesheets="@stylesheet.css">
          <children>
-            <Button fx:id="deleteMemberButton" layoutX="324.0" layoutY="742.0" mnemonicParsing="false" onAction="#deleteMember" prefHeight="40.0" prefWidth="130.0" style="-fx-background-radius: 10px;" styleClass="button-delete" stylesheets="@stylesheet.css" text="Deletar">
-               <font>
-                  <Font size="20.0" />
-               </font></Button>
+            <ImageView fitHeight="248.0" fitWidth="242.0" layoutX="183.0" layoutY="57.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@teammatte.png" />
+               </image>
+            </ImageView>
             <Label fx:id="labelMemberName" layoutX="45.0" layoutY="334.0" prefHeight="45.0" prefWidth="397.0" styleClass="label-backlog2" stylesheets="@stylesheet.css" text="Nome do Membro">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
+            <TextField fx:id="labelMemberNameDetail" layoutX="45.0" layoutY="389.0" onKeyPressed="#labelMemberNameDetailPressed" prefHeight="52.0" prefWidth="512.0" styleClass="text-field-backlogtask" stylesheets="@stylesheet.css" />
             <Label fx:id="labelMemberType" layoutX="45.0" layoutY="461.0" prefHeight="45.0" prefWidth="397.0" styleClass="label-backlog2" stylesheets="@stylesheet.css" text="Tipo">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <TextField fx:id="labelMemberNameDetail" layoutX="45.0" layoutY="389.0" onKeyPressed="#labelMemberNameDetailPressed" prefHeight="52.0" prefWidth="512.0" styleClass="text-field-backlogtask" stylesheets="@stylesheet.css" />
-            <Button fx:id="editMemberButton" layoutX="157.0" layoutY="742.0" mnemonicParsing="false" onAction="#editMember" prefHeight="40.0" prefWidth="130.0" style="-fx-background-radius: 10px;" styleClass="button2" stylesheets="@stylesheet.css" text="Editar">
-               <font>
-                  <Font size="20.0" />
-               </font></Button>
-            <Button fx:id="saveChangesButton" layoutX="45.0" layoutY="668.0" mnemonicParsing="false" onAction="#saveChangesTask" prefHeight="40.0" prefWidth="512.0" style="-fx-background-radius: 20px;" styleClass="button2" stylesheets="@stylesheet.css" text="Salvar alterações">
-               <font>
-                  <Font size="20.0" />
-               </font></Button>
             <CheckBox fx:id="checkBoxType1" layoutX="45.0" layoutY="516.0" mnemonicParsing="false" onMouseClicked="#memberType1Clicked" prefHeight="50.0" prefWidth="257.0" stylesheets="@stylesheet.css" text="Tipo 1" textFill="WHITE">
                <font>
                   <Font size="20.0" />
@@ -167,11 +160,18 @@
                   <Font size="20.0" />
                </font>
             </CheckBox>
-            <ImageView fitHeight="248.0" fitWidth="242.0" layoutX="183.0" layoutY="57.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@teammatte.png" />
-               </image>
-            </ImageView>
+            <Button fx:id="saveChangesButton" layoutX="45.0" layoutY="668.0" mnemonicParsing="false" onAction="#saveChangesTask" prefHeight="40.0" prefWidth="512.0" style="-fx-background-radius: 20px;" styleClass="button2" stylesheets="@stylesheet.css" text="Salvar alterações">
+               <font>
+                  <Font size="20.0" />
+               </font></Button>
+            <Button fx:id="editMemberButton" layoutX="157.0" layoutY="742.0" mnemonicParsing="false" onAction="#editMember" prefHeight="40.0" prefWidth="130.0" style="-fx-background-radius: 10px;" styleClass="button2" stylesheets="@stylesheet.css" text="Editar">
+               <font>
+                  <Font size="20.0" />
+               </font></Button>
+            <Button fx:id="deleteMemberButton" layoutX="324.0" layoutY="742.0" mnemonicParsing="false" onAction="#deleteMember" prefHeight="40.0" prefWidth="130.0" style="-fx-background-radius: 10px;" styleClass="button-delete" stylesheets="@stylesheet.css" text="Deletar">
+               <font>
+                  <Font size="20.0" />
+               </font></Button>
          </children>
       </AnchorPane>
       <Text fill="WHITE" layoutX="330.0" layoutY="118.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Equipe" wrappingWidth="322.13671875">

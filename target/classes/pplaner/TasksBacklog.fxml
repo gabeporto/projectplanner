@@ -32,12 +32,12 @@
       </TableView>
       <AnchorPane layoutX="1320.0" layoutY="173.0" prefHeight="837.0" prefWidth="523.0" style="-fx-background-radius: 0 20px 20px 0; -fx-background-color: #484747;" styleClass="anchor-pane-backlog" stylesheets="@stylesheet.css">
          <children>
-            <Label fx:id="labelName" layoutX="46.0" layoutY="77.0" prefHeight="45.0" prefWidth="397.0" styleClass="label-backlog2" stylesheets="@stylesheet.css" text="Nome da tarefa">
+            <Label fx:id="labelName" layoutX="46.0" layoutY="78.0" prefHeight="45.0" prefWidth="397.0" styleClass="label-backlog2" stylesheets="@stylesheet.css" text="Nome da tarefa">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <TextField fx:id="labelTaskNameDetail" layoutX="46.0" layoutY="142.0" onKeyPressed="#labelTaskNameDetailPressed" prefHeight="52.0" prefWidth="430.0" styleClass="text-field-backlogtask" stylesheets="@stylesheet.css" />
+            <TextField fx:id="labelTaskNameDetail" layoutX="46.0" layoutY="137.0" onKeyPressed="#labelTaskNameDetailPressed" prefHeight="52.0" prefWidth="430.0" styleClass="text-field-backlogtask" stylesheets="@stylesheet.css" />
             <Label fx:id="labelDescription" layoutX="46.0" layoutY="217.0" prefHeight="45.0" prefWidth="397.0" styleClass="label-backlog2" stylesheets="@stylesheet.css" text="Descrição">
                <font>
                   <Font name="System Bold" size="12.0" />

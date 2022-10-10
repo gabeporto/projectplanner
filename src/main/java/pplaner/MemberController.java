@@ -114,6 +114,12 @@ public class MemberController implements Initializable {
         editMemberButton.setVisible(false);
         deleteMemberButton.setVisible(false);
         
+        if(projectDao.checkEmpty()) {
+            createMemberButton.setDisable(true);
+        } else {
+            createMemberButton.setDisable(false);
+        }
+        
         membersTable.getSelectionModel().selectedItemProperty().addListener(
                 
                 (observable, oldValue, newValue) -> 

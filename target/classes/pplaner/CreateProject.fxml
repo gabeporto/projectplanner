@@ -108,52 +108,52 @@
       </AnchorPane>
       <AnchorPane layoutX="324.0" layoutY="172.0" prefHeight="837.0" prefWidth="1519.0" style="-fx-background-color: #484747; -fx-background-radius: 20px;">
          <children>
+            <ImageView fitHeight="508.0" fitWidth="526.0" layoutX="171.0" layoutY="141.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@projectimg.png" />
+               </image>
+            </ImageView>
             <Label fx:id="labelProjectName" layoutX="765.0" layoutY="96.0" prefHeight="55.0" prefWidth="406.0" styleClass="label-backlog2" stylesheets="@stylesheet.css" text="Nome do projeto" textFill="WHITE">
                <font>
                   <Font size="26.0" />
                </font>
             </Label>
-            <DatePicker fx:id="inputProjectDate" layoutX="765.0" layoutY="316.0" onShowing="#ProjectDateDetailShowing" prefHeight="53.0" prefWidth="512.0" style="-fx-background-radius: 2;" styleClass="date-picker2" stylesheets="@stylesheet.css" />
-            <Label fx:id="labelProjectDate" layoutX="765.0" layoutY="247.0" prefHeight="55.0" prefWidth="392.0" styleClass="label-backlog2" stylesheets="@stylesheet.css" text="Data final" textFill="WHITE">
+            <TextField fx:id="inputProjectName" layoutX="765.0" layoutY="164.0" onKeyPressed="#projectNameKeyPressed" prefHeight="53.0" prefWidth="512.0" style="-fx-background-radius: 10px;" styleClass="text-field-backlogtask" stylesheets="@stylesheet.css" />
+            <Label fx:id="labelProjectDate" layoutX="765.0" layoutY="248.0" prefHeight="55.0" prefWidth="392.0" styleClass="label-backlog2" stylesheets="@stylesheet.css" text="Data final" textFill="WHITE">
                <font>
                   <Font size="26.0" />
                </font>
             </Label>
+            <DatePicker fx:id="inputProjectDate" layoutX="765.0" layoutY="316.0" onShowing="#ProjectDateDetailShowing" prefHeight="53.0" prefWidth="512.0" style="-fx-background-radius: 2;" styleClass="date-picker2" stylesheets="@stylesheet.css" />
             <Label fx:id="labelProjectType1" layoutX="765.0" layoutY="403.0" prefHeight="50.0" prefWidth="220.0" styleClass="label-backlog2" stylesheets="@stylesheet.css" text="Tipo 1" textFill="WHITE">
                <font>
                   <Font size="26.0" />
                </font>
             </Label>
             <TextField fx:id="inputProjectType1" layoutX="765.0" layoutY="468.0" onKeyPressed="#projectType1KeyPressed" prefHeight="53.0" prefWidth="230.0" style="-fx-background-radius: 10;" styleClass="text-field-backlogtask" stylesheets="@stylesheet.css" />
-            <TextField fx:id="inputProjectType2" layoutX="1045.0" layoutY="468.0" onKeyPressed="#projectType2KeyPressed" prefHeight="53.0" prefWidth="232.0" style="-fx-background-radius: 10;" styleClass="text-field-backlogtask" stylesheets="@stylesheet.css" />
-            <Button fx:id="createTaskButton" layoutX="765.0" layoutY="705.0" mnemonicParsing="false" onAction="#createProject" prefHeight="50.0" prefWidth="512.0" styleClass="button3" stylesheets="@stylesheet.css" text="Criar projeto">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Button>
-            <TextField fx:id="inputProjectName" layoutX="765.0" layoutY="164.0" onKeyPressed="#projectNameKeyPressed" prefHeight="53.0" prefWidth="512.0" style="-fx-background-radius: 10px;" styleClass="text-field-backlogtask" stylesheets="@stylesheet.css" />
-            <ImageView fitHeight="508.0" fitWidth="526.0" layoutX="171.0" layoutY="141.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@projectimg.png" />
-               </image>
-            </ImageView>
             <Label fx:id="labelProjectType2" layoutX="1045.0" layoutY="403.0" prefHeight="50.0" prefWidth="220.0" styleClass="label-backlog2" stylesheets="@stylesheet.css" text="Tipo 2" textFill="WHITE">
                <font>
                   <Font size="26.0" />
                </font>
             </Label>
+            <TextField fx:id="inputProjectType2" layoutX="1045.0" layoutY="468.0" onKeyPressed="#projectType2KeyPressed" prefHeight="53.0" prefWidth="232.0" style="-fx-background-radius: 10;" styleClass="text-field-backlogtask" stylesheets="@stylesheet.css" />
+            <Label fx:id="labelProjectType3" layoutX="765.0" layoutY="544.0" prefHeight="50.0" prefWidth="220.0" styleClass="label-backlog2" stylesheets="@stylesheet.css" text="Tipo 3" textFill="WHITE">
+               <font>
+                  <Font size="26.0" />
+               </font>
+            </Label>
+            <TextField fx:id="inputProjectType3" layoutX="765.0" layoutY="609.0" onKeyPressed="#projectType3KeyPressed" prefHeight="53.0" prefWidth="230.0" style="-fx-background-radius: 10;" styleClass="text-field-backlogtask" stylesheets="@stylesheet.css" />
             <Label fx:id="labelProjectType4" layoutX="1045.0" layoutY="544.0" prefHeight="50.0" prefWidth="220.0" styleClass="label-backlog2" stylesheets="@stylesheet.css" text="Tipo 4" textFill="WHITE">
                <font>
                   <Font size="26.0" />
                </font>
             </Label>
             <TextField fx:id="inputProjectType4" layoutX="1045.0" layoutY="609.0" onKeyPressed="#projectType4KeyPressed" prefHeight="53.0" prefWidth="232.0" style="-fx-background-radius: 10;" styleClass="text-field-backlogtask" stylesheets="@stylesheet.css" />
-            <TextField fx:id="inputProjectType3" layoutX="765.0" layoutY="609.0" onKeyPressed="#projectType3KeyPressed" prefHeight="53.0" prefWidth="230.0" style="-fx-background-radius: 10;" styleClass="text-field-backlogtask" stylesheets="@stylesheet.css" />
-            <Label fx:id="labelProjectType3" layoutX="765.0" layoutY="544.0" prefHeight="50.0" prefWidth="220.0" styleClass="label-backlog2" stylesheets="@stylesheet.css" text="Tipo 3" textFill="WHITE">
+            <Button fx:id="createTaskButton" layoutX="765.0" layoutY="705.0" mnemonicParsing="false" onAction="#createProject" prefHeight="50.0" prefWidth="512.0" styleClass="button3" stylesheets="@stylesheet.css" text="Criar projeto">
                <font>
-                  <Font size="26.0" />
+                  <Font size="18.0" />
                </font>
-            </Label>
+            </Button>
          </children>
       </AnchorPane>
       <Text fill="WHITE" layoutX="330.0" layoutY="118.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Criar projeto" wrappingWidth="637.13671875">

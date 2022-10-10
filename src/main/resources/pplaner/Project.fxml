@@ -120,30 +120,18 @@
                </font>
             </Label>
             <TextField fx:id="inputProjectName" layoutX="45.0" layoutY="128.0" onKeyPressed="#ProjectNameDetailPressed" prefHeight="53.0" prefWidth="512.0" style="-fx-background-radius: 10px;" styleClass="text-field-backlogtask" stylesheets="@stylesheet.css" />
-            <DatePicker fx:id="inputProjectDate" layoutX="45.0" layoutY="294.0" onShowing="#ProjectDateDetailShowing" prefHeight="53.0" prefWidth="512.0" style="-fx-background-radius: 2;" styleClass="date-picker2" stylesheets="@stylesheet.css" />
-            <TextField fx:id="inputProjectType1" layoutX="45.0" layoutY="443.0" onKeyPressed="#ProjectType1DetailPressed" prefHeight="53.0" prefWidth="241.0" styleClass="text-field-backlogtask" stylesheets="@stylesheet.css" />
-            <Button fx:id="saveChangesButton" layoutX="45.0" layoutY="668.0" mnemonicParsing="false" onAction="#saveChangesProject" prefHeight="40.0" prefWidth="512.0" style="-fx-background-radius: 20px;" styleClass="button2" stylesheets="@stylesheet.css" text="Salvar alterações">
-               <font>
-                  <Font size="20.0" />
-               </font></Button>
-            <Button fx:id="editProjectButton" layoutX="157.0" layoutY="742.0" mnemonicParsing="false" onAction="#editProject" prefHeight="40.0" prefWidth="130.0" style="-fx-background-radius: 10px;" styleClass="button2" stylesheets="@stylesheet.css" text="Editar">
-               <font>
-                  <Font size="20.0" />
-               </font></Button>
-            <Button fx:id="deleteProjectButton" layoutX="324.0" layoutY="742.0" mnemonicParsing="false" onAction="#deleteProject" prefHeight="40.0" prefWidth="130.0" style="-fx-background-radius: 10px;" styleClass="button-delete" stylesheets="@stylesheet.css" text="Deletar">
-               <font>
-                  <Font size="20.0" />
-               </font></Button>
-            <Label fx:id="labelProjectDate" layoutX="45.0" layoutY="237.0" prefHeight="45.0" prefWidth="372.0" styleClass="label-backlog2" stylesheets="@stylesheet.css" text="Data final">
+            <Label fx:id="labelProjectDate" layoutX="45.0" layoutY="235.0" prefHeight="45.0" prefWidth="372.0" styleClass="label-backlog2" stylesheets="@stylesheet.css" text="Data final">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
+            <DatePicker fx:id="inputProjectDate" layoutX="45.0" layoutY="292.0" onShowing="#ProjectDateDetailShowing" prefHeight="53.0" prefWidth="512.0" style="-fx-background-radius: 2;" styleClass="date-picker2" stylesheets="@stylesheet.css" />
             <Label fx:id="labelProjectType1" layoutX="45.0" layoutY="388.0" prefHeight="45.0" prefWidth="241.0" styleClass="label-backlog2" stylesheets="@stylesheet.css" text="Tipo 1">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
+            <TextField fx:id="inputProjectType1" layoutX="45.0" layoutY="443.0" onKeyPressed="#ProjectType1DetailPressed" prefHeight="53.0" prefWidth="241.0" styleClass="text-field-backlogtask" stylesheets="@stylesheet.css" />
             <Label fx:id="labelProjectType2" layoutX="321.0" layoutY="388.0" prefHeight="45.0" prefWidth="241.0" styleClass="label-backlog2" stylesheets="@stylesheet.css" text="Tipo 2">
                <font>
                   <Font name="System Bold" size="12.0" />
@@ -156,12 +144,24 @@
                </font>
             </Label>
             <TextField fx:id="inputProjectType3" layoutX="45.0" layoutY="582.0" onKeyPressed="#ProjectType3DetailPressed" prefHeight="53.0" prefWidth="241.0" styleClass="text-field-backlogtask" stylesheets="@stylesheet.css" />
-            <TextField fx:id="inputProjectType4" layoutX="321.0" layoutY="583.0" onKeyPressed="#ProjectType4DetailPressed" prefHeight="53.0" prefWidth="236.0" styleClass="text-field-backlogtask" stylesheets="@stylesheet.css" />
             <Label fx:id="labelProjectType4" layoutX="321.0" layoutY="528.0" prefHeight="45.0" prefWidth="241.0" styleClass="label-backlog2" stylesheets="@stylesheet.css" text="Tipo 4">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
+            <TextField fx:id="inputProjectType4" layoutX="321.0" layoutY="583.0" onKeyPressed="#ProjectType4DetailPressed" prefHeight="53.0" prefWidth="236.0" styleClass="text-field-backlogtask" stylesheets="@stylesheet.css" />
+            <Button fx:id="saveChangesButton" layoutX="45.0" layoutY="668.0" mnemonicParsing="false" onAction="#saveChangesProject" prefHeight="40.0" prefWidth="512.0" style="-fx-background-radius: 20px;" styleClass="button2" stylesheets="@stylesheet.css" text="Salvar alterações">
+               <font>
+                  <Font size="20.0" />
+               </font></Button>
+            <Button fx:id="editProjectButton" layoutX="157.0" layoutY="742.0" mnemonicParsing="false" onAction="#editProject" prefHeight="40.0" prefWidth="130.0" style="-fx-background-radius: 10px;" styleClass="button2" stylesheets="@stylesheet.css" text="Editar">
+               <font>
+                  <Font size="20.0" />
+               </font></Button>
+            <Button fx:id="deleteProjectButton" layoutX="324.0" layoutY="742.0" mnemonicParsing="false" onAction="#deleteProject" prefHeight="40.0" prefWidth="130.0" style="-fx-background-radius: 10px;" styleClass="button-delete" stylesheets="@stylesheet.css" text="Deletar">
+               <font>
+                  <Font size="20.0" />
+               </font></Button>
          </children>
       </AnchorPane>
       <Button fx:id="createProjectButton" graphicTextGap="15.0" layoutX="1623.0" layoutY="78.0" mnemonicParsing="false" onAction="#switchToCreateProject" prefHeight="50.0" prefWidth="217.0" style="-fx-background-radius: 10px;" styleClass="addtask-button" stylesheets="@stylesheet.css" text="Criar projeto">

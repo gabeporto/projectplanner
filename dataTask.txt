@@ -15,7 +15,7 @@
 {"id":"06d91699-1506-43a7-b29e-dcbb0b19c012","name":"Criar nova branch para desenvolvimento","description":"Git","type":"Desenvolvimento","stage":"To Do Stage","member":"Nathan Faria","typeActive":[0,1,0,0]}
 {"id":"24a7d48e-89a5-4c71-86f7-a1c356066abc","name":"Comentar códigos para manutenção","description":"Não esquecer, pois será importante","type":"Desenvolvimento","stage":"To Do Stage","member":"Nathan Faria","typeActive":[0,1,0,0]}
 {"id":"89875f22-c82f-4749-b6ef-e651bd23e7d6","name":"Implantar site no Netlify","description":"Versão 2.0","type":"Desenvolvimento","stage":"Done Stage","member":"Gabriel Porto","typeActive":[0,1,0,0]}
-{"id":"4f4278af-b58f-41dc-a933-99da20a574ee","name":"Testar última versão da Main","description":"Achar bugs","type":"Testes","stage":"To Do Stage","member":"Nathan Faria","typeActive":[0,0,0,1]}
+{"id":"4f4278af-b58f-41dc-a933-99da20a574ee","name":"Testar última versão da Main","description":"Achar bugs","type":"Testes","stage":"In Progress Stage","member":"Nathan Faria","typeActive":[0,0,0,1]}
 {"id":"6bfa6d20-654d-42b8-b4b3-935e222e0c9a","name":"Corrigir bugs reportados pela equipe","description":"QA","type":"Desenvolvimento","stage":"To Do Stage","member":"Gabriel Porto","typeActive":[0,1,0,0]}
 {"id":"1c3a9a7c-6e69-4843-a63e-3f93766f4f47","name":"Criar filtro de Tipo e Membro no Kanban","description":"Esse filtro será utilizado em outras páginas futuramente","type":"Desenvolvimento","stage":"Done Stage","member":"Gabriel Porto","typeActive":[0,1,0,0]}
 {"id":"f3573616-ac21-4278-acda-d9933560c775","name":"Primeira versão da Prototipagem no Figma","description":"Figma","type":"Prototipagem","stage":"Done Stage","member":"Gabriel Porto","typeActive":[1,0,0,0]}
