@@ -175,8 +175,9 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
 
 .table-viewToDo .table-cell{
     -fx-alignment: center-left;
-    -fx-text-fill: #bb5d54;
-    -fx-font-size: 15px;
+    -fx-text-fill: #ad3838;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
     -fx-transition: all ease 0.9s;
     -fx-alignment: center;
     -fx-cursor: hand;
@@ -191,7 +192,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
 .table-viewInProgress .table-cell{
     -fx-alignment: center-left;
     -fx-text-fill: #d9d96f;
-    -fx-font-size: 15px;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
     -fx-transition: all ease 0.9s;
     -fx-alignment: center;
     -fx-cursor: hand;
@@ -206,7 +208,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
 .table-viewDone .table-cell{
     -fx-alignment: center-left;
     -fx-text-fill: #6fd9aa;
-    -fx-font-size: 15px;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
     -fx-transition: all ease 0.9s;
     -fx-alignment: center;
     -fx-cursor: hand;
@@ -237,25 +240,25 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
 }
 
 .table-row-cell:odd{
-    -fx-background-color: -fx-table-cell-border-color, #212121;
+    -fx-background-color: -fx-table-cell-border-color, #373737;
     -fx-background-insets: 0, 0 0 1 0;
     -fx-padding: 0.0em; /* 0 */  
 }
 
 .table-row-cell:selected {
-    -fx-background-color: #6E9C41;
+    -fx-background-color: #2c4d2d;
     -fx-background-insets: 0;
     -fx-background-radius: 2;
     -fx-cursor: hand;
 }
 
 .table-row-cell:hover {
-    -fx-background-color: #6E9C41;
+    -fx-background-color: #233d24;
     -fx-cursor: hand;
 }
 
 .table-row-cell:pressed {
-    -fx-background-color: #557932;
+    -fx-background-color: #204521;
     -fx-cursor: hand;
 }
 
