@@ -184,17 +184,17 @@
          <children>
             <PieChart fx:id="PieChartType1" layoutX="65.0" layoutY="57.0" prefHeight="220.0" prefWidth="220.0" />
             <Label fx:id="PieChartType1Title" alignment="CENTER" layoutX="24.0" layoutY="15.0" prefHeight="41.0" prefWidth="304.0" styleClass="label-backlog2" text="Tipo 1" />
-            <Text fx:id="type1ToDoQuantity" fill="#bb5d54" layoutX="22.0" layoutY="297.0" strokeType="OUTSIDE" strokeWidth="0.0" text="00" textAlignment="CENTER" wrappingWidth="75.0">
+            <Text fx:id="type1ToDoQuantity" fill="#bb5d54" layoutX="22.0" layoutY="297.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0%" textAlignment="CENTER" wrappingWidth="75.0">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </Text>
-            <Text fx:id="type1InProgressQuantity" fill="#d4d950" layoutX="134.0" layoutY="297.0" strokeType="OUTSIDE" strokeWidth="0.0" text="00" textAlignment="CENTER" wrappingWidth="83.0">
+            <Text fx:id="type1InProgressQuantity" fill="#d4d950" layoutX="134.0" layoutY="297.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0%" textAlignment="CENTER" wrappingWidth="83.0">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </Text>
-            <Text fx:id="type1DoneQuantity" fill="#28d186" layoutX="248.0" layoutY="297.0" strokeType="OUTSIDE" strokeWidth="0.0" text="00" textAlignment="CENTER" wrappingWidth="75.0">
+            <Text fx:id="type1DoneQuantity" fill="#28d186" layoutX="248.0" layoutY="297.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0%" textAlignment="CENTER" wrappingWidth="75.0">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
@@ -220,17 +220,17 @@
          <children>
             <PieChart fx:id="PieChartType2" layoutX="65.0" layoutY="57.0" prefHeight="220.0" prefWidth="220.0" />
             <Label fx:id="PieChartType2Title" alignment="CENTER" layoutX="24.0" layoutY="15.0" prefHeight="41.0" prefWidth="304.0" styleClass="label-backlog2" text="Tipo 2" />
-            <Text fx:id="type2ToDoQuantity" fill="#bb5d54" layoutX="22.0" layoutY="297.0" strokeType="OUTSIDE" strokeWidth="0.0" text="00" textAlignment="CENTER" wrappingWidth="75.0">
+            <Text fx:id="type2ToDoQuantity" fill="#bb5d54" layoutX="22.0" layoutY="297.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0%" textAlignment="CENTER" wrappingWidth="75.0">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </Text>
-            <Text fx:id="type2InProgressQuantity" fill="#d4d950" layoutX="134.0" layoutY="297.0" strokeType="OUTSIDE" strokeWidth="0.0" text="00" textAlignment="CENTER" wrappingWidth="83.0">
+            <Text fx:id="type2InProgressQuantity" fill="#d4d950" layoutX="134.0" layoutY="297.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0%" textAlignment="CENTER" wrappingWidth="83.0">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </Text>
-            <Text fx:id="type2DoneQuantity" fill="#28d186" layoutX="248.0" layoutY="297.0" strokeType="OUTSIDE" strokeWidth="0.0" text="00" textAlignment="CENTER" wrappingWidth="75.0">
+            <Text fx:id="type2DoneQuantity" fill="#28d186" layoutX="248.0" layoutY="297.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0%" textAlignment="CENTER" wrappingWidth="75.0">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
@@ -256,17 +256,17 @@
          <children>
             <PieChart fx:id="PieChartType3" layoutX="65.0" layoutY="57.0" prefHeight="220.0" prefWidth="220.0" />
             <Label fx:id="PieChartType3Title" alignment="CENTER" layoutX="24.0" layoutY="15.0" prefHeight="41.0" prefWidth="304.0" styleClass="label-backlog2" text="Tipo 3" />
-            <Text fx:id="type3ToDoQuantity" fill="#bb5d54" layoutX="22.0" layoutY="297.0" strokeType="OUTSIDE" strokeWidth="0.0" text="00" textAlignment="CENTER" wrappingWidth="75.0">
+            <Text fx:id="type3ToDoQuantity" fill="#bb5d54" layoutX="22.0" layoutY="297.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0%" textAlignment="CENTER" wrappingWidth="75.0">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </Text>
-            <Text fx:id="type3InProgressQuantity" fill="#d4d950" layoutX="134.0" layoutY="297.0" strokeType="OUTSIDE" strokeWidth="0.0" text="00" textAlignment="CENTER" wrappingWidth="83.0">
+            <Text fx:id="type3InProgressQuantity" fill="#d4d950" layoutX="134.0" layoutY="297.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0%" textAlignment="CENTER" wrappingWidth="83.0">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </Text>
-            <Text fx:id="type3DoneQuantity" fill="#28d186" layoutX="248.0" layoutY="297.0" strokeType="OUTSIDE" strokeWidth="0.0" text="00" textAlignment="CENTER" wrappingWidth="75.0">
+            <Text fx:id="type3DoneQuantity" fill="#28d186" layoutX="248.0" layoutY="297.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0%" textAlignment="CENTER" wrappingWidth="75.0">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
@@ -292,17 +292,17 @@
          <children>
             <PieChart fx:id="PieChartType4" layoutX="65.0" layoutY="57.0" prefHeight="220.0" prefWidth="220.0" />
             <Label fx:id="PieChartType4Title" alignment="CENTER" layoutX="24.0" layoutY="15.0" prefHeight="41.0" prefWidth="304.0" styleClass="label-backlog2" text="Tipo 4" />
-            <Text fx:id="type4ToDoQuantity" fill="#bb5d54" layoutX="22.0" layoutY="297.0" strokeType="OUTSIDE" strokeWidth="0.0" text="00" textAlignment="CENTER" wrappingWidth="75.0">
+            <Text fx:id="type4ToDoQuantity" fill="#bb5d54" layoutX="22.0" layoutY="297.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0%" textAlignment="CENTER" wrappingWidth="75.0">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </Text>
-            <Text fx:id="type4InProgressQuantity" fill="#d4d950" layoutX="134.0" layoutY="297.0" strokeType="OUTSIDE" strokeWidth="0.0" text="00" textAlignment="CENTER" wrappingWidth="83.0">
+            <Text fx:id="type4InProgressQuantity" fill="#d4d950" layoutX="134.0" layoutY="297.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0%" textAlignment="CENTER" wrappingWidth="83.0">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </Text>
-            <Text fx:id="type4DoneQuantity" fill="#28d186" layoutX="248.0" layoutY="297.0" strokeType="OUTSIDE" strokeWidth="0.0" text="00" textAlignment="CENTER" wrappingWidth="75.0">
+            <Text fx:id="type4DoneQuantity" fill="#28d186" layoutX="248.0" layoutY="297.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0%" textAlignment="CENTER" wrappingWidth="75.0">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>

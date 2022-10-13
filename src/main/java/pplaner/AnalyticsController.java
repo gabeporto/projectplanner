@@ -194,11 +194,13 @@ public class AnalyticsController implements Initializable {
             PieChartType1Title.setText(project.getType1());
             PieChartType1.setLabelsVisible(false);
             PieChartType1.setLegendVisible(false);
+                     
+            if(project.getNumberOfType1Tasks() > 0) {
+                type1ToDoQuantity.setText(String.format("%.0f", ((double) project.getNumberOfType1ToDo()) / project.getNumberOfType1Tasks()*100) + "%");
+                type1InProgressQuantity.setText(String.format("%.0f", ((double) project.getNumberOfType1InProgress()) / project.getNumberOfType1Tasks()*100) + "%");
+                type1DoneQuantity.setText(String.format("%.0f", ((double) project.getNumberOfType1Done()) / project.getNumberOfType1Tasks()*100) + "%");
+            }
             
-            type1ToDoQuantity.setText(String.format("%.0f", ((double) project.getNumberOfType1ToDo()) / project.getNumberOfType1Tasks()*100) + "%");
-            type1InProgressQuantity.setText(String.format("%.0f", ((double) project.getNumberOfType1InProgress()) / project.getNumberOfType1Tasks()*100) + "%");
-            type1DoneQuantity.setText(String.format("%.0f", ((double) project.getNumberOfType1Done()) / project.getNumberOfType1Tasks()*100) + "%");
-
             // Propriedades do gráfico de progresso do Tipo 2
             PieChartType2.setData(
                     FXCollections.observableArrayList(
@@ -210,10 +212,12 @@ public class AnalyticsController implements Initializable {
             PieChartType2.setLabelsVisible(false);
             PieChartType2.setLegendVisible(false);
             
-            type2ToDoQuantity.setText(String.format("%.0f", ((double) project.getNumberOfType2ToDo()) / project.getNumberOfType2Tasks()*100) + "%");
-            type2InProgressQuantity.setText(String.format("%.0f", ((double) project.getNumberOfType2InProgress()) / project.getNumberOfType2Tasks()*100) + "%");
-            type2DoneQuantity.setText(String.format("%.0f", ((double) project.getNumberOfType2Done()) / project.getNumberOfType2Tasks()*100) + "%");
-            
+            if(project.getNumberOfType2Tasks() > 0) {
+                type2ToDoQuantity.setText(String.format("%.0f", ((double) project.getNumberOfType2ToDo()) / project.getNumberOfType2Tasks()*100) + "%");
+                type2InProgressQuantity.setText(String.format("%.0f", ((double) project.getNumberOfType2InProgress()) / project.getNumberOfType2Tasks()*100) + "%");
+                type2DoneQuantity.setText(String.format("%.0f", ((double) project.getNumberOfType2Done()) / project.getNumberOfType2Tasks()*100) + "%");        
+            }
+
             // Propriedades do gráfico de progresso do Tipo 3
             PieChartType3.setData(
                     FXCollections.observableArrayList(
@@ -225,9 +229,11 @@ public class AnalyticsController implements Initializable {
             PieChartType3.setLabelsVisible(false);
             PieChartType3.setLegendVisible(false);
             
-            type3ToDoQuantity.setText(String.format("%.0f", ((double) project.getNumberOfType3ToDo()) / project.getNumberOfType3Tasks()*100) + "%");
-            type3InProgressQuantity.setText(String.format("%.0f", ((double) project.getNumberOfType3InProgress()) / project.getNumberOfType3Tasks()*100) + "%");
-            type3DoneQuantity.setText(String.format("%.0f", ((double) project.getNumberOfType3Done()) / project.getNumberOfType3Tasks()*100) + "%");
+            if(project.getNumberOfType3Tasks() > 0) {
+                type3ToDoQuantity.setText(String.format("%.0f", ((double) project.getNumberOfType3ToDo()) / project.getNumberOfType3Tasks()*100) + "%");
+                type3InProgressQuantity.setText(String.format("%.0f", ((double) project.getNumberOfType3InProgress()) / project.getNumberOfType3Tasks()*100) + "%");
+                type3DoneQuantity.setText(String.format("%.0f", ((double) project.getNumberOfType3Done()) / project.getNumberOfType3Tasks()*100) + "%");
+            }
 
             // Propriedades do gráfico de progresso do Tipo 4
             PieChartType4.setData(
@@ -240,10 +246,11 @@ public class AnalyticsController implements Initializable {
             PieChartType4.setLabelsVisible(false);
             PieChartType4.setLegendVisible(false);
             
-            type4ToDoQuantity.setText(String.format("%.0f", ((double) project.getNumberOfType4ToDo()) / project.getNumberOfType4Tasks()*100) + "%");
-            type4InProgressQuantity.setText(String.format("%.0f", ((double) project.getNumberOfType4InProgress()) / project.getNumberOfType4Tasks()*100) + "%");
-            type4DoneQuantity.setText(String.format("%.0f", ((double) project.getNumberOfType4Done()) / project.getNumberOfType4Tasks()*100) + "%");
-            
+            if(project.getNumberOfType4Tasks() > 0) {        
+                type4ToDoQuantity.setText(String.format("%.0f", ((double) project.getNumberOfType4ToDo()) / project.getNumberOfType4Tasks()*100) + "%");
+                type4InProgressQuantity.setText(String.format("%.0f", ((double) project.getNumberOfType4InProgress()) / project.getNumberOfType4Tasks()*100) + "%");
+                type4DoneQuantity.setText(String.format("%.0f", ((double) project.getNumberOfType4Done()) / project.getNumberOfType4Tasks()*100) + "%");
+            }
             
             // Propriedades da Data final do Projeto
             LocalDate dateAfter = LocalDate.parse(project.getDeliveryDate());

@@ -88,29 +88,41 @@ public class HomeController implements Initializable {
             float resultType1 = project.calculatePercentageType1();
             labelProjectType1.setText(project.getType1());
             float result1 = resultType1 * 100;
-            labelPercentageType1.setText(String.format("%.1f", result1) + "%");
-            progressProjectType1.setProgress(resultType1);         
             
+            if(result1 >= 0) {
+                labelPercentageType1.setText(String.format("%.1f", result1) + "%");
+                progressProjectType1.setProgress(resultType1);         
+            } 
+                                   
             project.filterType2Done();
             float resultType2 = project.calculatePercentageType2();
             labelProjectType2.setText(project.getType2());
             float result2 = resultType2 * 100;
-            labelPercentageType2.setText(String.format("%.1f", result2) + "%");
-            progressProjectType2.setProgress(resultType2);
             
+            if(result2 >= 0) {
+                labelPercentageType2.setText(String.format("%.1f", result2) + "%");
+                progressProjectType2.setProgress(resultType2);        
+            }
+
             project.filterType3Done();
             float resultType3 = project.calculatePercentageType3();
             labelProjectType3.setText(project.getType3());
             float result3 = resultType3 * 100;
-            labelPercentageType3.setText(String.format("%.1f", result3) + "%");
-            progressProjectType3.setProgress(resultType3);
+            
+            if(result3 >= 0) {
+                labelPercentageType3.setText(String.format("%.1f", result3) + "%");
+                progressProjectType3.setProgress(resultType3);       
+            }          
             
             project.filterType4Done();
             float resultType4 = project.calculatePercentageType4();
             labelProjectType4.setText(project.getType4());
             float result4 = resultType4 * 100;
-            labelPercentageType4.setText(String.format("%.1f", result4) + "%");
-            progressProjectType4.setProgress(resultType4);
+            
+            if(result4 >= 0) {
+                labelPercentageType4.setText(String.format("%.1f", result4) + "%");
+                progressProjectType4.setProgress(resultType4);       
+            }
 
             projectProgress.setProgress(project.calculatePercentageProgress());
             if(project.calculatePercentageProgress() == 1) {
