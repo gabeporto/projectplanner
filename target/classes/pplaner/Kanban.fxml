@@ -18,31 +18,31 @@
          <children>
             <AnchorPane layoutX="324.0" layoutY="172.0" prefHeight="837.0" prefWidth="1519.0" style="-fx-background-color: #212121; -fx-background-radius: 20px;">
                <children>
-                  <TableView fx:id="tableTasksToDo" layoutY="90.0" onMouseClicked="#transferTaskToDo" prefHeight="748.0" prefWidth="450.0" styleClass="table-viewToDo" stylesheets="@stylesheet.css">
+                  <TableView fx:id="tableTasksToDo" layoutY="90.0" onMouseClicked="#transferTaskToDo" onMousePressed="#selectToDoTable" prefHeight="748.0" prefWidth="450.0" styleClass="table-viewToDo" stylesheets="@stylesheet.css">
                     <columns>
-                      <TableColumn fx:id="nameTaskColumnToDo" prefWidth="293.0" resizable="false" text="Task" />
+                      <TableColumn fx:id="nameTaskColumnToDo" prefWidth="293.0" resizable="false" text="Tarefa" />
                        <TableColumn fx:id="memberTaskColumnToDo" editable="false" prefWidth="156.0" resizable="false" text="Membro" />
                     </columns>
                      <columnResizePolicy>
                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                      </columnResizePolicy>
                   </TableView>
-                  <TableView fx:id="tableTasksInProgress" layoutX="537.0" layoutY="90.0" onMouseClicked="#transferTaskInProgress" prefHeight="748.0" prefWidth="450.0" styleClass="table-viewInProgress" stylesheets="@stylesheet.css">
+                  <TableView fx:id="tableTasksInProgress" layoutX="537.0" layoutY="90.0" onMouseClicked="#transferTaskInProgress" onMousePressed="#selectInProgressTable" prefHeight="748.0" prefWidth="450.0" styleClass="table-viewInProgress" stylesheets="@stylesheet.css">
                      <columnResizePolicy>
                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                      </columnResizePolicy>
                      <columns>
-                        <TableColumn fx:id="nameTaskColumnInProgress" editable="false" prefWidth="295.0" text="Task" />
-                        <TableColumn fx:id="memberTaskColumnInProgress" editable="false" prefWidth="153.0" text="Membro" />
+                        <TableColumn fx:id="nameTaskColumnInProgress" prefWidth="294.0" resizable="false" text="Tarefa" />
+                        <TableColumn fx:id="memberTaskColumnInProgress" editable="false" prefWidth="157.0" resizable="false" text="Membro" />
                      </columns>
                   </TableView>
-                  <TableView fx:id="tableTasksDone" layoutX="1069.0" layoutY="90.0" onMouseClicked="#transferTaskDone" prefHeight="748.0" prefWidth="450.0" styleClass="table-viewDone" stylesheets="@stylesheet.css">
+                  <TableView fx:id="tableTasksDone" layoutX="1069.0" layoutY="90.0" onMouseClicked="#transferTaskDone" onMousePressed="#selectDoneTable" prefHeight="748.0" prefWidth="450.0" styleClass="table-viewDone" stylesheets="@stylesheet.css">
                      <columnResizePolicy>
                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                      </columnResizePolicy>
                      <columns>
-                        <TableColumn fx:id="nameTaskColumnDone" editable="false" prefWidth="297.0" text="Task" />
-                        <TableColumn fx:id="memberTaskColumnDone" editable="false" prefWidth="152.0" resizable="false" text="Membro" />
+                        <TableColumn fx:id="nameTaskColumnDone" prefWidth="292.0" resizable="false" text="Tarefa" />
+                        <TableColumn fx:id="memberTaskColumnDone" editable="false" minWidth="0.0" prefWidth="157.0" resizable="false" text="Membro" />
                      </columns>
                   </TableView>
                   <Text fill="#6fd9aa" layoutX="1165.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Concluído" textAlignment="CENTER" wrappingWidth="253.803466796875">
@@ -55,7 +55,7 @@
                         <Font size="40.0" />
                      </font>
                   </Text>
-                  <Text fill="#bb5d54" layoutX="80.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A fazer" textAlignment="CENTER" wrappingWidth="288.4700622558594">
+                  <Text fill="#ad3838" layoutX="80.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A fazer" textAlignment="CENTER" wrappingWidth="288.4700622558594">
                      <font>
                         <Font size="40.0" />
                      </font>

@@ -20,11 +20,15 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ChoiceDialog;
 import javafx.scene.control.Dialog;
+import javafx.scene.control.DialogPane;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import model.Project;
 import model.Task;
 import model.dao.ProjectDao;
@@ -109,7 +113,7 @@ public class KanbanController implements Initializable {
         fillTableTasks();
         
         tableTasksToDo.getSelectionModel().selectedItemProperty().addListener(
-                (observable, oldValue, newValue) -> selectTaskInTable(newValue));
+                (observable, oldValue, newValue) -> selectTaskInTable(newValue));      
     }    
     
     private void fillTableTasks(){
@@ -179,12 +183,15 @@ public class KanbanController implements Initializable {
         List<String> dialogData;
         
         Project project = projectDao.readOne();
+        
+        // Checking double click
+        if (event.getClickCount() == 2)  {     
 
-        if (event.getClickCount() == 2) // Checking double click
-        {
             Dialog dialog = new Dialog();
             dialogData = Arrays.asList(arrayData);
             dialog = new ChoiceDialog(dialogData.get(0), dialogData);
+            dialog.initStyle(StageStyle.UTILITY);
+            dialog.getDialogPane().setStyle("-fx-background-color: #a6a6a6;");
             dialog.setGraphic(null);
             dialog.setContentText("Estado: ");
             dialog.setTitle("Transferir task");
@@ -226,7 +233,8 @@ public class KanbanController implements Initializable {
         if (event.getClickCount() == 2) // Checking double click
         {
             Dialog dialog = new Dialog();
-            dialogData = Arrays.asList(arrayData);
+            String [] arrayDataInProgress = {"Em progresso", "A fazer", "Concluído"};
+            dialogData = Arrays.asList(arrayDataInProgress);
             dialog = new ChoiceDialog(dialogData.get(0), dialogData);
             dialog.setGraphic(null);
             dialog.setContentText("Estado: ");
@@ -269,7 +277,8 @@ public class KanbanController implements Initializable {
         if (event.getClickCount() == 2) // Checking double click
         {
             Dialog dialog = new Dialog();
-            dialogData = Arrays.asList(arrayData);
+            String [] arrayDataDone = {"Concluído", "A fazer", "Em progresso"};
+            dialogData = Arrays.asList(arrayDataDone);
             dialog = new ChoiceDialog(dialogData.get(0), dialogData);
             dialog.setGraphic(null);
             dialog.setContentText("Estado: ");
@@ -441,6 +450,24 @@ public class KanbanController implements Initializable {
             }
        
         }
+    }
+
+    @FXML
+    private void selectToDoTable(MouseEvent event) {
+        tableTasksInProgress.getSelectionModel().clearSelection();
+        tableTasksDone.getSelectionModel().clearSelection();
+    }
+
+    @FXML
+    private void selectInProgressTable(MouseEvent event) {
+        tableTasksToDo.getSelectionModel().clearSelection();
+        tableTasksDone.getSelectionModel().clearSelection();
+    }
+
+    @FXML
+    private void selectDoneTable(MouseEvent event) {
+        tableTasksToDo.getSelectionModel().clearSelection();
+        tableTasksInProgress.getSelectionModel().clearSelection();
     }
 
 }
