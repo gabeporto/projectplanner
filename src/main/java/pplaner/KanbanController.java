@@ -185,9 +185,9 @@ public class KanbanController implements Initializable {
         Project project = projectDao.readOne();
         
         // Checking double click
-        if (event.getClickCount() == 2)  {     
+        if (event.getClickCount() == 2)  {  
 
-            Dialog dialog = new Dialog();
+            Dialog dialog = new Dialog();         
             dialogData = Arrays.asList(arrayData);
             dialog = new ChoiceDialog(dialogData.get(0), dialogData);
             dialog.initStyle(StageStyle.UTILITY);
@@ -236,6 +236,8 @@ public class KanbanController implements Initializable {
             String [] arrayDataInProgress = {"Em progresso", "A fazer", "Concluído"};
             dialogData = Arrays.asList(arrayDataInProgress);
             dialog = new ChoiceDialog(dialogData.get(0), dialogData);
+            dialog.initStyle(StageStyle.UTILITY);
+            dialog.getDialogPane().setStyle("-fx-background-color: #a6a6a6;");
             dialog.setGraphic(null);
             dialog.setContentText("Estado: ");
             dialog.setTitle("Transferir task");
@@ -280,6 +282,8 @@ public class KanbanController implements Initializable {
             String [] arrayDataDone = {"Concluído", "A fazer", "Em progresso"};
             dialogData = Arrays.asList(arrayDataDone);
             dialog = new ChoiceDialog(dialogData.get(0), dialogData);
+            dialog.initStyle(StageStyle.UTILITY);
+            dialog.getDialogPane().setStyle("-fx-background-color: #a6a6a6;");
             dialog.setGraphic(null);
             dialog.setContentText("Estado: ");
             dialog.setTitle("Transferir task");

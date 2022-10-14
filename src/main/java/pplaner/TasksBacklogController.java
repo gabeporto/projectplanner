@@ -157,7 +157,7 @@ public class TasksBacklogController implements Initializable {
     }   
     
     public void selectTaskBacklog(Task task) throws InterruptedException {
-      
+                      
         editTaskButton.setVisible(true);
         deleteTaskButton.setVisible(true);
         
@@ -238,11 +238,12 @@ public class TasksBacklogController implements Initializable {
         
         taskDao.delete(task.getId());
         tasksBacklog.getItems().remove(task);
-    
+          
         saveChangesButton.setVisible(false);
         editTaskButton.setVisible(false);
         deleteTaskButton.setVisible(false);
         
+                      
     }
     
     private void showTaskDetails() throws IOException{     
