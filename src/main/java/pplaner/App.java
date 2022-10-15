@@ -17,7 +17,7 @@ public class App extends Application {
 
     private static Scene scene;
     
-
+    // Teste
     @Override
     public void start(Stage stage) throws IOException {
         GraphicsDevice gd = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
