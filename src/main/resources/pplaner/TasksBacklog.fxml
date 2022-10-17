@@ -166,9 +166,26 @@
             </Button>
          </children>
       </AnchorPane>
-      <Text fill="WHITE" layoutX="330.0" layoutY="118.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Backlog de tarefas" wrappingWidth="696.8034057617188">
+      <Text fill="WHITE" layoutX="330.0" layoutY="118.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tarefas" wrappingWidth="290.0">
          <font>
             <Font name="System Bold" size="50.0" />
+         </font>
+      </Text>
+      <Button fx:id="filterKanbanButton" layoutX="1255.0" layoutY="81.0" mnemonicParsing="false" onAction="#filterKanban" prefHeight="50.0" prefWidth="150.0" style="-fx-background-radius: 10px;" styleClass="button3" stylesheets="@stylesheet.css" text="Filtrar">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <ChoiceBox fx:id="typeChoiceBox" layoutX="982.0" layoutY="83.0" prefHeight="44.0" prefWidth="200.0" styleClass="text-field-selectstage" stylesheets="@stylesheet.css" />
+      <Text fill="WHITE" layoutX="982.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TIPO" wrappingWidth="200.0">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Text>
+      <ChoiceBox fx:id="memberChoiceBox" layoutX="715.0" layoutY="84.0" prefHeight="44.0" prefWidth="200.0" styleClass="text-field-selectstage" stylesheets="@stylesheet.css" />
+      <Text fill="WHITE" layoutX="715.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MEMBRO" wrappingWidth="200.0">
+         <font>
+            <Font name="System Bold" size="17.0" />
          </font>
       </Text>
    </children>

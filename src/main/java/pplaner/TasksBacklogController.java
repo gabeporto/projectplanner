@@ -107,6 +107,12 @@ public class TasksBacklogController implements Initializable {
     private Button HomeButton;
     @FXML
     private Button PPButton;
+    @FXML
+    private Button filterKanbanButton;
+    @FXML
+    private ChoiceBox<String> typeChoiceBox;
+    @FXML
+    private ChoiceBox<String> memberChoiceBox;
 
     /**
      * Initializes the controller class.
@@ -126,6 +132,14 @@ public class TasksBacklogController implements Initializable {
         saveChangesButton.setVisible(false);
         editTaskButton.setVisible(false);
         deleteTaskButton.setVisible(false);
+        
+        typeChoiceBox.getItems().add("Todos");
+        typeChoiceBox.getItems().addAll(project.getAllTypes());
+        typeChoiceBox.setValue("Todos");
+        memberChoiceBox.getItems().add("Todos");
+        memberChoiceBox.getItems().addAll(membersList);
+        memberChoiceBox.setValue("Todos");
+        
         
         if(memberDao.checkEmpty()) {
             createTaskButton.setDisable(true);
@@ -411,6 +425,46 @@ public class TasksBacklogController implements Initializable {
         stage = (Stage) leaveButton.getScene().getWindow();
         System.out.println("Leaving application...");
         stage.close();
+    }
+
+    @FXML
+    private void filterKanban(ActionEvent event) {
+        if(!this.projectDao.checkEmpty()) {
+            
+            taskDao.checkFile();
+                      
+            String chosenType = typeChoiceBox.getValue();
+            String chosenMember = memberChoiceBox.getValue();
+            
+       
+            // Caso seja filtrado apenas por Membro.
+            if(chosenType == "Todos" && chosenMember != "Todos") {
+                List<Task> filteredTasksMember = taskDao.readAllByMember(chosenMember); 
+                                                       
+                observableTasks = FXCollections.observableArrayList(filteredTasksMember);
+                tasksBacklog.setItems(observableTasks);
+               
+            // Caso seja filtrado apenas por Tipo.
+            } else if(chosenType != "Todos" && chosenMember == "Todos") {
+                List<Task> filteredTasksType = taskDao.readAllByType(chosenType);
+
+                observableTasks = FXCollections.observableArrayList(filteredTasksType);
+                tasksBacklog.setItems(observableTasks);
+
+            // Caso seja filtrado por Tipo e por Membro.  
+            } else if(chosenType != "Todos" && chosenMember != "Todos") {
+                List<Task> filteredTasksTypeMember = taskDao.readAllByTypeAndMember(chosenType, chosenMember);
+                
+                observableTasks = FXCollections.observableArrayList(filteredTasksTypeMember);
+                tasksBacklog.setItems(observableTasks);
+              
+            // Caso o filtro seja Todas as tasks
+            } else if(chosenType == "Todos" && chosenMember == "Todos") {
+                fillTasksBacklog();
+            }
+       
+        }
+        
     }
 
 }
